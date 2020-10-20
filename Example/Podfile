@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RSocketSwift_Example' do
+  pod 'RSocketSwift', :path => '../'
+
+  target 'RSocketSwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
