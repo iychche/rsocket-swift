@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		092D39CACCAC2A22CD0E45B8FDA382A7 /* Pods-RSocketSwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D844D1118CDECF0B5949F24A1DFD73A /* Pods-RSocketSwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		221996DD1C4E2497D0EB35A75D9A8C94 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4262F13D2E7BC43E8D3FD8D956D98151 /* ReplaceMe.swift */; };
-		3194E4F66BE0A334948C63F19ACBEEC8 /* RSocketSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C2C542D5E3A6382209F05CE5522F29 /* RSocketSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94E04208A0DA3E83F999439F5AB3C434 /* RSocketSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F27B5BA291E928FCE3004AAC7C79C1DE /* RSocketSwift-dummy.m */; };
+		3ADF8792F203D96D6430A6A081FFE42A /* FrameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBB10ADDC9001558482474DD966C86 /* FrameType.swift */; };
+		574ED76E17C5FFB80E65061441C48ADF /* RSocketSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5FD0FD29957605920A6235A4DA52B2 /* RSocketSwift-dummy.m */; };
+		7B261A03120CB9C147F4EB626102698E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		95EC8080D19A783D985F6F0AC3CFB020 /* Pods-RSocketSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CEE7AD624AAA2ABE168409D0D7ED5F /* Pods-RSocketSwift_Example-dummy.m */; };
-		ABA267806A44CC24BFC15E62788D8F06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		B397E943F200A3EFF00A5060B8E67BA0 /* Pods-RSocketSwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D41440DA4CD0D5570AD2BCF7928AFD74 /* Pods-RSocketSwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B597699BA4500F2330FA70CC8DD609A7 /* CancelFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DFB4521A3EB6AA232712B08526ED03 /* CancelFrame.swift */; };
 		B60F179AF23D17D4CDAE025C37E6CAFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		CB60AA21B33C16FF9C85D53D36CED762 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE7DFB7FF23D090EC7FB56FAB420DA /* Frame.swift */; };
+		E4514C15273E75B39E37D5BC3770DB6F /* RSocketSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 699E1C20D9C10D146772C6981C1E55CB /* RSocketSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E62BE307706644C4CBF618C2CCAE1EFE /* Pods-RSocketSwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FA4646D7AD53DAE5E5524847E11794 /* Pods-RSocketSwift_Tests-dummy.m */; };
 		F756176105ECE0AAB24504866BA1C70A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -41,43 +43,45 @@
 		0988818D84DE92533CDEAAB8C8BE109B /* Pods-RSocketSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0D844D1118CDECF0B5949F24A1DFD73A /* Pods-RSocketSwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSocketSwift_Tests-umbrella.h"; sourceTree = "<group>"; };
 		12CC3B8A89DED98C9E3115E77D56D769 /* Pods-RSocketSwift_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Tests-Info.plist"; sourceTree = "<group>"; };
-		1BA50F3F004F2D35C53DC41613C23B15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		1BC3DE44F1FDE344C0B165FF43409FC3 /* RSocketSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RSocketSwift.modulemap; sourceTree = "<group>"; };
-		1BCA2BEEF4CD640388EA541B09D91416 /* RSocketSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RSocketSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		32DFB4521A3EB6AA232712B08526ED03 /* CancelFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CancelFrame.swift; path = RSocketSwift/Classes/CancelFrame.swift; sourceTree = "<group>"; };
 		3CC39B5F94C8310FDC4EF522CA171A0E /* Pods-RSocketSwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		4262F13D2E7BC43E8D3FD8D956D98151 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = RSocketSwift/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		42CEE7AD624AAA2ABE168409D0D7ED5F /* Pods-RSocketSwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSocketSwift_Example-dummy.m"; sourceTree = "<group>"; };
 		4DA45F4B13FA9D4A1C6D9E907F5AA617 /* Pods_RSocketSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RSocketSwift_Example.framework; path = "Pods-RSocketSwift_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D8D59A20A274FF59D0C6F65BEAA31C /* Pods-RSocketSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6304B51D0C0862F3959C666395608962 /* Pods-RSocketSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSocketSwift_Tests.modulemap"; sourceTree = "<group>"; };
+		659FC67A51E9DC6DF48A95003C2EBD38 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		6852BD6ADFF80F01DD135A34599756BB /* Pods-RSocketSwift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSocketSwift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		68C1885A248079CAA71A5D29DCD8E25B /* RSocketSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSocketSwift-prefix.pch"; sourceTree = "<group>"; };
+		699E1C20D9C10D146772C6981C1E55CB /* RSocketSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSocketSwift-umbrella.h"; sourceTree = "<group>"; };
+		6C8FA3A3B25A2E8F1AC73E1D19092913 /* RSocketSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RSocketSwift-Info.plist"; sourceTree = "<group>"; };
+		6EFE7DFB7FF23D090EC7FB56FAB420DA /* Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Frame.swift; path = RSocketSwift/Classes/Frame.swift; sourceTree = "<group>"; };
 		70B1A0C64EE1AB4FDC26166604BC5728 /* Pods-RSocketSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		71CAA5F5F861BD585EFBC555187DE144 /* RSocketSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSocketSwift-prefix.pch"; sourceTree = "<group>"; };
 		778384830279B94982969F8429C1285C /* Pods-RSocketSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RSocketSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
+		7B9473217910BF3D034786A454575CB9 /* RSocketSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RSocketSwift.modulemap; sourceTree = "<group>"; };
 		89EB71A9ED1BB372B3BE5B107A84658F /* Pods_RSocketSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RSocketSwift_Tests.framework; path = "Pods-RSocketSwift_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D890C0626763CB1231AAA07A5BF018 /* Pods-RSocketSwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A69B8E77A0FB8445B0085C4F69DA440C /* Pods-RSocketSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CAB51BA54126A9EA3DFB0DEB0C32D6A1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BF3D5BA4BC3F56BEF0F24438A0971B8A /* RSocketSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSocketSwift.debug.xcconfig; sourceTree = "<group>"; };
+		C4FBB10ADDC9001558482474DD966C86 /* FrameType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameType.swift; path = RSocketSwift/Classes/FrameType.swift; sourceTree = "<group>"; };
+		CA625E0D0AF0B6F0F28B14B7948FD625 /* RSocketSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSocketSwift.release.xcconfig; sourceTree = "<group>"; };
+		CF5FD0FD29957605920A6235A4DA52B2 /* RSocketSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSocketSwift-dummy.m"; sourceTree = "<group>"; };
+		D2BEFD971A4D59DF8E41338F073B00C8 /* RSocketSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RSocketSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D41440DA4CD0D5570AD2BCF7928AFD74 /* Pods-RSocketSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSocketSwift_Example-umbrella.h"; sourceTree = "<group>"; };
-		D4C2C542D5E3A6382209F05CE5522F29 /* RSocketSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSocketSwift-umbrella.h"; sourceTree = "<group>"; };
 		DDFFCF1963A25741F9B7F697CFAD1D95 /* Pods-RSocketSwift_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Example-Info.plist"; sourceTree = "<group>"; };
-		E1B474A6442B35C31B3704AD5A0F5E71 /* RSocketSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSocketSwift.debug.xcconfig; sourceTree = "<group>"; };
 		E68708882C96FBD2222235494030B250 /* Pods-RSocketSwift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSocketSwift_Example.modulemap"; sourceTree = "<group>"; };
 		E722383EFBEFC7AA4A52B484807A3F9F /* RSocketSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RSocketSwift.framework; path = RSocketSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE7472B6DB55E7DEE0822BCED2B292C1 /* RSocketSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSocketSwift.release.xcconfig; sourceTree = "<group>"; };
-		F27B5BA291E928FCE3004AAC7C79C1DE /* RSocketSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSocketSwift-dummy.m"; sourceTree = "<group>"; };
+		EED3E68B179B8D90AB546F8CA787B1E4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		F6FA4646D7AD53DAE5E5524847E11794 /* Pods-RSocketSwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSocketSwift_Tests-dummy.m"; sourceTree = "<group>"; };
-		FAEF298FE657F39DE3696663817F7A17 /* RSocketSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RSocketSwift-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B86F70D0083D17ABC7E1650172DE368F /* Frameworks */ = {
+		AFDC4EF60945B1BAC65FC3194C296A1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABA267806A44CC24BFC15E62788D8F06 /* Foundation.framework in Frameworks */,
+				7B261A03120CB9C147F4EB626102698E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		43012827C6B0E75EA6501E0ACCA93882 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60572498F467C3C686FAF13FD98D21E1 /* RSocketSwift */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		60572498F467C3C686FAF13FD98D21E1 /* RSocketSwift */ = {
+			isa = PBXGroup;
+			children = (
+				32DFB4521A3EB6AA232712B08526ED03 /* CancelFrame.swift */,
+				6EFE7DFB7FF23D090EC7FB56FAB420DA /* Frame.swift */,
+				C4FBB10ADDC9001558482474DD966C86 /* FrameType.swift */,
+				9CB7E7E53795C3B542DB80F016319701 /* Pod */,
+				90AA5DDF62B44FC04645E0C318263654 /* Support Files */,
+			);
+			name = RSocketSwift;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		726442F0F92B1CCE4592C980A7BF6196 /* Pods-RSocketSwift_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,23 +150,27 @@
 			path = "Target Support Files/Pods-RSocketSwift_Tests";
 			sourceTree = "<group>";
 		};
-		8698C6B12ED00070C1A71622AD603779 /* RSocketSwift */ = {
+		90AA5DDF62B44FC04645E0C318263654 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4262F13D2E7BC43E8D3FD8D956D98151 /* ReplaceMe.swift */,
-				9194286998DAC3060CC164AC2B0D3B94 /* Pod */,
-				D861DA0ED61AAFD1E7B2BBA38987A9E7 /* Support Files */,
+				7B9473217910BF3D034786A454575CB9 /* RSocketSwift.modulemap */,
+				CF5FD0FD29957605920A6235A4DA52B2 /* RSocketSwift-dummy.m */,
+				6C8FA3A3B25A2E8F1AC73E1D19092913 /* RSocketSwift-Info.plist */,
+				71CAA5F5F861BD585EFBC555187DE144 /* RSocketSwift-prefix.pch */,
+				699E1C20D9C10D146772C6981C1E55CB /* RSocketSwift-umbrella.h */,
+				BF3D5BA4BC3F56BEF0F24438A0971B8A /* RSocketSwift.debug.xcconfig */,
+				CA625E0D0AF0B6F0F28B14B7948FD625 /* RSocketSwift.release.xcconfig */,
 			);
-			name = RSocketSwift;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/RSocketSwift";
 			sourceTree = "<group>";
 		};
-		9194286998DAC3060CC164AC2B0D3B94 /* Pod */ = {
+		9CB7E7E53795C3B542DB80F016319701 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				CAB51BA54126A9EA3DFB0DEB0C32D6A1 /* LICENSE */,
-				1BA50F3F004F2D35C53DC41613C23B15 /* README.md */,
-				1BCA2BEEF4CD640388EA541B09D91416 /* RSocketSwift.podspec */,
+				659FC67A51E9DC6DF48A95003C2EBD38 /* LICENSE */,
+				EED3E68B179B8D90AB546F8CA787B1E4 /* README.md */,
+				D2BEFD971A4D59DF8E41338F073B00C8 /* RSocketSwift.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -163,14 +192,6 @@
 			path = "Target Support Files/Pods-RSocketSwift_Example";
 			sourceTree = "<group>";
 		};
-		B9A2DEC36FCF7CA50C4D8CCADC2B479D /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8698C6B12ED00070C1A71622AD603779 /* RSocketSwift */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				B9A2DEC36FCF7CA50C4D8CCADC2B479D /* Development Pods */,
+				43012827C6B0E75EA6501E0ACCA93882 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				E33B2BA0D5FB8F69D89CFBCACC55D8D7 /* Products */,
 				349611B88E52CA5F766ED51450F0813B /* Targets Support Files */,
@@ -196,21 +217,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D861DA0ED61AAFD1E7B2BBA38987A9E7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1BC3DE44F1FDE344C0B165FF43409FC3 /* RSocketSwift.modulemap */,
-				F27B5BA291E928FCE3004AAC7C79C1DE /* RSocketSwift-dummy.m */,
-				FAEF298FE657F39DE3696663817F7A17 /* RSocketSwift-Info.plist */,
-				68C1885A248079CAA71A5D29DCD8E25B /* RSocketSwift-prefix.pch */,
-				D4C2C542D5E3A6382209F05CE5522F29 /* RSocketSwift-umbrella.h */,
-				E1B474A6442B35C31B3704AD5A0F5E71 /* RSocketSwift.debug.xcconfig */,
-				EE7472B6DB55E7DEE0822BCED2B292C1 /* RSocketSwift.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/RSocketSwift";
 			sourceTree = "<group>";
 		};
 		E33B2BA0D5FB8F69D89CFBCACC55D8D7 /* Products */ = {
@@ -234,19 +240,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67572D6641AD2A711A7AB77ECC7048FD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3194E4F66BE0A334948C63F19ACBEEC8 /* RSocketSwift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		68429DC2911A82D9F3177184516096C4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				092D39CACCAC2A22CD0E45B8FDA382A7 /* Pods-RSocketSwift_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCAF9A223E564BC6D87B98DCD573FB2B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4514C15273E75B39E37D5BC3770DB6F /* RSocketSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,12 +299,12 @@
 		};
 		C4E439D3E3B5FBAAAACFD50A553E5673 /* RSocketSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 683F6F9187901CA4DC5888CBBDA73181 /* Build configuration list for PBXNativeTarget "RSocketSwift" */;
+			buildConfigurationList = CD5E282EEE998996DFE58C426BA4D8E9 /* Build configuration list for PBXNativeTarget "RSocketSwift" */;
 			buildPhases = (
-				67572D6641AD2A711A7AB77ECC7048FD /* Headers */,
-				9BA258005FBA025081017B759AD0FAEC /* Sources */,
-				B86F70D0083D17ABC7E1650172DE368F /* Frameworks */,
-				0AF049068894E1C04A64807D7B11EF63 /* Resources */,
+				FCAF9A223E564BC6D87B98DCD573FB2B /* Headers */,
+				6BA404C6A7C08B5375E063FFDC643A16 /* Sources */,
+				AFDC4EF60945B1BAC65FC3194C296A1F /* Frameworks */,
+				A856427C502C5798806DB09CA1ED6EC2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -346,14 +352,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0AF049068894E1C04A64807D7B11EF63 /* Resources */ = {
+		0CA0C643485F1172F78B887040684DC4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0CA0C643485F1172F78B887040684DC4 /* Resources */ = {
+		A856427C502C5798806DB09CA1ED6EC2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,12 +377,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BA258005FBA025081017B759AD0FAEC /* Sources */ = {
+		6BA404C6A7C08B5375E063FFDC643A16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221996DD1C4E2497D0EB35A75D9A8C94 /* ReplaceMe.swift in Sources */,
-				94E04208A0DA3E83F999439F5AB3C434 /* RSocketSwift-dummy.m in Sources */,
+				B597699BA4500F2330FA70CC8DD609A7 /* CancelFrame.swift in Sources */,
+				CB60AA21B33C16FF9C85D53D36CED762 /* Frame.swift in Sources */,
+				3ADF8792F203D96D6430A6A081FFE42A /* FrameType.swift in Sources */,
+				574ED76E17C5FFB80E65061441C48ADF /* RSocketSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +414,37 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		971D80D6C7919C8194B7DF01C1F7AFDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF3D5BA4BC3F56BEF0F24438A0971B8A /* RSocketSwift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSocketSwift/RSocketSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSocketSwift/RSocketSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSocketSwift/RSocketSwift.modulemap";
+				PRODUCT_MODULE_NAME = RSocketSwift;
+				PRODUCT_NAME = RSocketSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		A0EAD68F70DEC1F38F32D4E4E89AC398 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 70B1A0C64EE1AB4FDC26166604BC5728 /* Pods-RSocketSwift_Example.release.xcconfig */;
@@ -566,9 +605,9 @@
 			};
 			name = Release;
 		};
-		B541F0AEDA325F7A96E6969602183895 /* Debug */ = {
+		B4A086F2B1F5BB5BBD455F6EBF146FF7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1B474A6442B35C31B3704AD5A0F5E71 /* RSocketSwift.debug.xcconfig */;
+			baseConfigurationReference = CA625E0D0AF0B6F0F28B14B7948FD625 /* RSocketSwift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -592,10 +631,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -695,38 +735,6 @@
 			};
 			name = Release;
 		};
-		E6B8D8C227895B725C4D8C64D98594B3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE7472B6DB55E7DEE0822BCED2B292C1 /* RSocketSwift.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RSocketSwift/RSocketSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RSocketSwift/RSocketSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RSocketSwift/RSocketSwift.modulemap";
-				PRODUCT_MODULE_NAME = RSocketSwift;
-				PRODUCT_NAME = RSocketSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -748,20 +756,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		683F6F9187901CA4DC5888CBBDA73181 /* Build configuration list for PBXNativeTarget "RSocketSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B541F0AEDA325F7A96E6969602183895 /* Debug */,
-				E6B8D8C227895B725C4D8C64D98594B3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A70157D802EDE28BBED13D3CF65AE609 /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADA489FBF682B2EB7A0E716FFB3E1374 /* Debug */,
 				A0EAD68F70DEC1F38F32D4E4E89AC398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD5E282EEE998996DFE58C426BA4D8E9 /* Build configuration list for PBXNativeTarget "RSocketSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				971D80D6C7919C8194B7DF01C1F7AFDC /* Debug */,
+				B4A086F2B1F5BB5BBD455F6EBF146FF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
