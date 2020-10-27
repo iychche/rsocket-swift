@@ -1,6 +1,0 @@
-framework module RSocketSwift {
-  umbrella header "RSocketSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}
