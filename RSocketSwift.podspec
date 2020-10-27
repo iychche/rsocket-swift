@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Sumit Nathany' => 'sumit_nathany@intuit.com' }
-  s.source           = { :git => 'https://github.com/Sumit Nathany/RSocketSwift.git', :branch => 'WS/rsocket-frame-updates' }
+  s.source           = { :git => 'https://github.com/Sumit Nathany/RSocketSwift.git', :branch => 'master' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
