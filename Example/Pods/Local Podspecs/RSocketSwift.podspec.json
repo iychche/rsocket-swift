@@ -13,10 +13,15 @@
   },
   "source": {
     "git": "https://github.com/Sumit Nathany/RSocketSwift.git",
-    "tag": "0.1.0"
+    "branch": "WS/rsocket-frame-updates"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "RSocketSwift/Classes/**/*"
+  "source_files": "RSocketSwift/Classes/**/*",
+  "dependencies": {
+    "SwiftNIO": [
+      "2.23.0"
+    ]
+  }
 }

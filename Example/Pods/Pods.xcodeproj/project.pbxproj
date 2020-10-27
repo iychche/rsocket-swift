@@ -7,103 +7,585 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		092D39CACCAC2A22CD0E45B8FDA382A7 /* Pods-RSocketSwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D844D1118CDECF0B5949F24A1DFD73A /* Pods-RSocketSwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3ADF8792F203D96D6430A6A081FFE42A /* FrameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBB10ADDC9001558482474DD966C86 /* FrameType.swift */; };
-		574ED76E17C5FFB80E65061441C48ADF /* RSocketSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5FD0FD29957605920A6235A4DA52B2 /* RSocketSwift-dummy.m */; };
-		7B261A03120CB9C147F4EB626102698E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		95EC8080D19A783D985F6F0AC3CFB020 /* Pods-RSocketSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CEE7AD624AAA2ABE168409D0D7ED5F /* Pods-RSocketSwift_Example-dummy.m */; };
-		B397E943F200A3EFF00A5060B8E67BA0 /* Pods-RSocketSwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D41440DA4CD0D5570AD2BCF7928AFD74 /* Pods-RSocketSwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B597699BA4500F2330FA70CC8DD609A7 /* CancelFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DFB4521A3EB6AA232712B08526ED03 /* CancelFrame.swift */; };
-		B60F179AF23D17D4CDAE025C37E6CAFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		CB60AA21B33C16FF9C85D53D36CED762 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE7DFB7FF23D090EC7FB56FAB420DA /* Frame.swift */; };
-		E4514C15273E75B39E37D5BC3770DB6F /* RSocketSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 699E1C20D9C10D146772C6981C1E55CB /* RSocketSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E62BE307706644C4CBF618C2CCAE1EFE /* Pods-RSocketSwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FA4646D7AD53DAE5E5524847E11794 /* Pods-RSocketSwift_Tests-dummy.m */; };
-		F756176105ECE0AAB24504866BA1C70A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		005D864AF3DA89802515353245BA00AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		00B885EE85A4ADA3809935FE59F49E55 /* HappyEyeballs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625CB1C9862E9AED30CA4E1A12BA27DE /* HappyEyeballs.swift */; };
+		015854DECF5B2BFC0A164C403A2FF9B7 /* DispathQueue+WithFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF323E6AC161BEC510103AD267FC8742 /* DispathQueue+WithFuture.swift */; };
+		016A9D29C1884DFDDE95865E86A503CE /* CNIOLinux-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EECAB435207A345AD0BD163E4072385 /* CNIOLinux-dummy.m */; };
+		02D8234AB404D6D049C6E7E9B67988C8 /* MulticastChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB95C052B529A80F6F8A7042B33423 /* MulticastChannel.swift */; };
+		0B831E60BA9B8BE42F20C2637FB634DC /* Pods-RSocketSwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D41440DA4CD0D5570AD2BCF7928AFD74 /* Pods-RSocketSwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B8AF16C4590E517AA461B19B91BA986 /* ifaddrs-android.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B418C2511F8A3317023E3107135574B /* ifaddrs-android.c */; };
+		0B97D751B9B7C231483900524E99F12F /* UniversalBootstrapSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDB936D4A76DCDAF3E0B8E814601DD1 /* UniversalBootstrapSupport.swift */; };
+		1080E8B40E8F21D72BF5DC947A212786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		125A256620638BB77BD4F84B8755BFD6 /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F28238ADBE2268A44285EF8277F18 /* Selectable.swift */; };
+		137FB2FF61DDF89041484D4CAB2E38AC /* LinuxCPUSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848177F53167D59EF285691E37110E02 /* LinuxCPUSet.swift */; };
+		13EF1D089F3EF640EBE6C902C5E6B6D7 /* FrameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FBB10ADDC9001558482474DD966C86 /* FrameType.swift */; };
+		1C646075475647737C3BE3FCFFAC22DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		1EBEF55A95277F4C0A74FB0D739149B1 /* BaseStreamSocketChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D03A2DBA8B0F6D700CCF8193CF075 /* BaseStreamSocketChannel.swift */; };
+		1F4CA36F64E78E9FA02D464F4DA530FA /* BSDSocketAPIWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0080A3A08375A8AAA6D1AAF6DDA56E8C /* BSDSocketAPIWindows.swift */; };
+		260C10983A5B1592E50CA5B55A4DC9F2 /* Pods-RSocketSwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D844D1118CDECF0B5949F24A1DFD73A /* Pods-RSocketSwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26B6ED28EB36239924AB0EAAF748378F /* lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29570CEBA09FCDD99741F4884A0609 /* lock.swift */; };
+		26C0ED9976ACC1A952586BE84B5486F1 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE7DFB7FF23D090EC7FB56FAB420DA /* Frame.swift */; };
+		2C4444B75917395F7C59600AF02E7655 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870514FBCE0286F3318D2DBFC87B9678 /* SocketProtocols.swift */; };
+		2E134A84C6B552EC8E25301BDB9EEF6B /* WSAStartup.c in Sources */ = {isa = PBXBuildFile; fileRef = ED576A0207036F72D247CB3CF1C60999 /* WSAStartup.c */; };
+		2F229172A9B7500147B32954B1467790 /* SwiftNIOConcurrencyHelpers-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51F9E58207D4EE1A9320ED42B3A3D904 /* SwiftNIOConcurrencyHelpers-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F6E977E49A0D20E7E29B23A577631C8 /* SwiftNIOConcurrencyHelpers-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1806B8A25642F2B42A581E5D483991 /* SwiftNIOConcurrencyHelpers-dummy.m */; };
+		3058B406BDCCBE82BB67F76FC2099D29 /* ByteBuffer-aux.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CF841CD36DD57EC6E604D1099F3B70 /* ByteBuffer-aux.swift */; };
+		30A94E81A8E3F344EFC9C900CE734A97 /* ChannelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C32E346587B6A6C37AD86C78881D4B /* ChannelHandler.swift */; };
+		31098614F13E61A8FFEA85B05904C2D1 /* NIOThreadPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369149CB7FD5E2BB00087F9A5B546E4D /* NIOThreadPool.swift */; };
+		331A9CA65A97FDC17B1497E794B76826 /* ChannelOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE2E3DFE6DFA520C7800B78C9FCFFC /* ChannelOption.swift */; };
+		337475E7AA952628D747A79341B56340 /* SocketOptionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697AD5BF8B54513E880CFBE1A0BE3A1 /* SocketOptionProvider.swift */; };
+		37DE8106BDDBAF7971CA0EF0909E658B /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CDBCFAA500AAA056A036595C1B6F87 /* Heap.swift */; };
+		3A457914CC68F7598C0151CFFB221F7B /* CNIOWindows.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6656D1D7FC9DBF76692B7A4CB639E6 /* CNIOWindows.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A7B8CF5500E26562B1C1639C64CEDF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		3A84EEE43FF979B331A34F76CD99FD88 /* PendingWritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E93B9109DD74537F5C26B725F66B0 /* PendingWritesManager.swift */; };
+		3BFE35D4D13095C28285D35C69745FF5 /* BaseSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CD748ED5D362FB5C05A887CDF0442 /* BaseSocket.swift */; };
+		3E78F10B0F5EE758914742606949BA6E /* IntegerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455CB0B4700F0C1F290E750850BBBFB /* IntegerTypes.swift */; };
+		3E9478A74E23AAB81C4CA8D8D48EC6C8 /* DeadChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DB11168001F0678117E0CA76ECC9C9 /* DeadChannel.swift */; };
+		3F2683126D7F77F84C02A7BC26164C41 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B087B83302CAC2786BC08CCCA7827F /* Channel.swift */; };
+		403C8DA4838C96ED5BAA987D8B981416 /* NIOCloseOnErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10FB2F393CC51C7EBEFE52DA9412112 /* NIOCloseOnErrorHandler.swift */; };
+		41236C35F9C9F706B6E89AB3A2E8EFBD /* ThreadWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401FE2548EDE717D6485D83ED89DA20 /* ThreadWindows.swift */; };
+		41F49B120B23704B342F0982059200E7 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAFA92BE90D1F8E2B6E6BB7D01AF1 /* Thread.swift */; };
+		42DE689F9FFE58E654941E94752FB765 /* ThreadPosix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A25FE5BC964B39CD5D8BF237EC5D28E /* ThreadPosix.swift */; };
+		43270E81DDBFE6F26C41E4AE2269038F /* SingleStepByteToMessageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4E454FCEB8E6962BF000C66EDB5044 /* SingleStepByteToMessageDecoder.swift */; };
+		45D5A76B423A05A9A4C4C7CD6E891C18 /* CNIOAtomics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FF808089B29B41511A4C8B2834DEC2 /* CNIOAtomics-dummy.m */; };
+		48ABDB686114D6538C64777DEEA9F8A9 /* EventLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486833F356569CEA56B50482A0B4AA14 /* EventLoop.swift */; };
+		52CDB6662B1286D44839775F03D6B2A1 /* Codec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A5629C697EE5E9F3E14C027F8589A /* Codec.swift */; };
+		54C5CF34D4373E81176186D263EB7784 /* NonBlockingFileIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0AC6470AE1DB652AB9216AFBAD62D /* NonBlockingFileIO.swift */; };
+		57A311218DA737993A4BC2B53A1EA1CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		58170E4053E3ABE4035A624B7E6962BD /* ChannelPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931C9CA2D3931D8A946DDB6A87C69EC /* ChannelPipeline.swift */; };
+		5918116D3066B4D4396DB74196F7FCB2 /* c-atomics.c in Sources */ = {isa = PBXBuildFile; fileRef = 90A4A7C676FBC0A947110679FB4E24ED /* c-atomics.c */; };
+		5FEC48D1F9768A2EEE539D34AB19B11D /* NIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7535CD95E2D19DBF1E3A7C6D441A301 /* NIO.framework */; };
+		623880CE1AF8D81F3F289A61A410AD3F /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E84E95B35CDD73EDF39BBBF7B40C76 /* PriorityQueue.swift */; };
+		65466FB166BD26CC3235ECB36353A536 /* AddressedEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1730C569FEF6103C926E07F6F4BF7B /* AddressedEnvelope.swift */; };
+		693BDA03C58397B784DD74C337C39BE6 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32FB70057C87D416234738742C4F3F /* Bootstrap.swift */; };
+		6AE8B2B7D6C4AA7AA7438A33AA9E34E5 /* ByteBuffer-views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149F7CCF882CF8BDECF4FFA614F13E02 /* ByteBuffer-views.swift */; };
+		6BD1604B9563F6B4317BD3D98F69703F /* SwiftNIO-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F4ABE9EC7BF31372C4B7BB34B1A638 /* SwiftNIO-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F5AAA586B8287AE05DC3A68AE4C9469 /* ifaddrs-android.h in Headers */ = {isa = PBXBuildFile; fileRef = AC85CE1BC856AA3180B082330A9B8AD6 /* ifaddrs-android.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F9E87CE84594230E7C74DEC7902C449 /* atomics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C61BB1B19AE10B4B65F11429138280 /* atomics.swift */; };
+		70D78D332B258DE52DEBEBE6D2F9024F /* CircularBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B33855DBCE5FEC670F696D322339CBB /* CircularBuffer.swift */; };
+		78141CFB392B65315A937510854768F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		798EB269577660FB8CD4BC6310EB4EE2 /* SocketAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836A217620A0715A59BC516E4A8B602A /* SocketAddresses.swift */; };
+		7BC524FB4848926E81A5BD461D842A9B /* BSDSocketAPIPosix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D24F943235C17D5C709D91D231230F /* BSDSocketAPIPosix.swift */; };
+		81AE24A967126DEBF0C57D30C5D01BC1 /* Pods-RSocketSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CEE7AD624AAA2ABE168409D0D7ED5F /* Pods-RSocketSwift_Example-dummy.m */; };
+		8270C3C80B2EA5A122B0F9852A87FF12 /* c-nioatomics.c in Sources */ = {isa = PBXBuildFile; fileRef = 90B855E082E40A004C7B84C9FFC6D460 /* c-nioatomics.c */; };
+		83CB58EE98967283A2ECD3FDB8CACF48 /* RecvByteBufferAllocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8C4C50D698B1DEFB51F1F16BE93A09 /* RecvByteBufferAllocator.swift */; };
+		85FEA385FA503F7F3EE6BFDB33E27FD9 /* CNIODarwin.h in Headers */ = {isa = PBXBuildFile; fileRef = 06AC20879F741C1AFA991B4112C3F282 /* CNIODarwin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		877C5FED67F2F5D2F6F5B380ADC2F520 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052C2CB51F0C6DB4EC917B004CFADD3 /* FileDescriptor.swift */; };
+		89EED804893B76C753A60983E000E72C /* EventLoopFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CD89BEAC60D2EE15E5A8972FDD69F3 /* EventLoopFuture.swift */; };
+		8DE8FFE1CD122D09191CABCAEE48061D /* ConvenienceOptionSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7452B17C9748DDFE669C798EA1660 /* ConvenienceOptionSupport.swift */; };
+		900F8FECFCE3B8FF3F89AAE4BD04C377 /* IOData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC6CA9D434DCF69C3E87A8A9DB976E /* IOData.swift */; };
+		90EC8E904E12CB53971C69385FB87700 /* DatagramVectorReadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4236D90FEEBCBC8E59778C58E15AD6 /* DatagramVectorReadManager.swift */; };
+		9413932433D82939FEBD4EA3783D0FE4 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D165F65821EE2F6D88D6044325454FB /* Socket.swift */; };
+		95D8695263EBC374A4CD3C961F55B662 /* CNIOLinux.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E02AFBB03B2D76692C66B4D6569B7E1 /* CNIOLinux.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98C9C564CA36A96C1E234095B97BB6FE /* CNIOSHA1-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40085849879F66199C915D4C08D53974 /* CNIOSHA1-dummy.m */; };
+		99E5ED3E23E3BFB198486F8CC5BCFF01 /* ChannelHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BE4E849310CEEC7B695D68A6BC2A46 /* ChannelHandlers.swift */; };
+		9A4EA2424BBDDBFE1BF2F81669EAFA68 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5356A122707256275F1C7A165E3EF40 /* Embedded.swift */; };
+		9A54F002B88F2EE6A8E6CB16971726C4 /* CNIOLinux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC604C9C8B666621BE1E2F5CA9D0E7D /* CNIOLinux.framework */; };
+		9B5FD48C3360C78904D29FF5A686DB83 /* CNIODarwin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9DB0AC03D870F23BF39E8848A033DB /* CNIODarwin-dummy.m */; };
+		A4359BA626FD6B0CD4EFA07271F9CEEC /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE3E3C27762B663A53BAA523EC2583 /* IO.swift */; };
+		A5140677D2B0D572FDB549D8918A9A1B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316C201181F4E25362FE01E991F9251 /* Utilities.swift */; };
+		A887B0F751A75744A9BE9249E0B1731D /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241DA4DE55FF7192B6F21878BAE35710 /* FileHandle.swift */; };
+		AB0FEAC3589F367428BA2B2C69205D0D /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481AF66203B5369AB4F4921E1A7AC3FE /* Resolver.swift */; };
+		AF902A25D93E5DE5825E794973989810 /* MarkedCircularBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40B3418A8CA956F16C1611F10680D4 /* MarkedCircularBuffer.swift */; };
+		B06EED8030E878590E94D7B15ACD12D7 /* Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA6D8D1887B57C17681862453CDCF0 /* Interfaces.swift */; };
+		B10BC128C19B9C79C3CE79003C430242 /* SwiftNIO-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948F8389F28DF7A99196339EF9FB832 /* SwiftNIO-dummy.m */; };
+		B71C781F93DA9CFF7BB0FF9509790566 /* CNIOWindows-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BBC9DE104C7B4DFC28BA661F5FA4734 /* CNIOWindows-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7A7E7ACB3BE321C5D2D48F94569703E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		B8E690C374D037063437BF25CCE8D456 /* Linux.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17640AD05CDFE7D6B1677157FD4F12E /* Linux.swift */; };
+		B907A886729B0DD0691884A277BCF74E /* FileRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE45BD072FE5C9145A830006FD1560 /* FileRegion.swift */; };
+		BA77444E0438804CE12B1EB22B0AC56D /* shim.c in Sources */ = {isa = PBXBuildFile; fileRef = 7701FCE8D4553D173D88300A71062FCE /* shim.c */; };
+		BC393D83D73C865BBAE2C50B35DEC525 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		BC945E8B48EDE80662C6BD71C4E2EC5E /* SelectableEventLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98CFF06008E3E22FE1B44B8A1C5243 /* SelectableEventLoop.swift */; };
+		BD3B6AA366B6260E118136EA946E4F81 /* SocketChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B2760552BA2B452433D64650AA5A2D /* SocketChannel.swift */; };
+		BE529CD8F1E3D11C2021589CEA6A708B /* CNIOWindows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59FB5B60D83C28317AAC5728FC8E4BC /* CNIOWindows.framework */; };
+		BE7986FDDE2566A6317B8A09CEFE0280 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		BE95EBF0BC836B28814990B56C8D6AFC /* ByteBuffer-int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E6D137D23F3CB996D83C6B1BBE69E /* ByteBuffer-int.swift */; };
+		C227423945BB84596EC133DBAA13DF48 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A28E44A9A84592B7A3C371F020995A /* System.swift */; };
+		C335F6879A4A8AABBFCE103632B7145E /* TypeAssistedChannelHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036CDBD77A43C50A535A3EC999C358A /* TypeAssistedChannelHandler.swift */; };
+		C4B67E413A7EB6B4895266ED9AAF8D5D /* ByteBuffer-core.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6415E764CB44E321EA6AC86CB140DB /* ByteBuffer-core.swift */; };
+		C5344D073AB909C229EACFD05B9B6251 /* ChannelInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D39576E889F41BC5713A66EBEAAD1E /* ChannelInvoker.swift */; };
+		C540D445DE287D694D1FC4C0F767C6E5 /* PendingDatagramWritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82F090A5079959716582F68DE64C8C /* PendingDatagramWritesManager.swift */; };
+		C9B8050B5E00C7C11FB7D7D0D41D6201 /* NIOAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000DF03E2FDDEC8AFB6A105E7C873AC /* NIOAtomic.swift */; };
+		CA734B0BCDAEC913863856F888487332 /* CNIODarwin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A13F31362E33D4BCBF21BF4B6D49860 /* CNIODarwin.framework */; };
+		CF97654E37E0AC8727A7B29081F2BC2E /* RSocketSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5FD0FD29957605920A6235A4DA52B2 /* RSocketSwift-dummy.m */; };
+		D10CE32B07D9803973141388F5DB4C7D /* ControlMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415C3ACD12711B24DAED62FACB50CCC /* ControlMessage.swift */; };
+		D1146A703D2E0118AD187BB5908C38B5 /* RSocketSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 699E1C20D9C10D146772C6981C1E55CB /* RSocketSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1CD63BF106072337650DF5A31F77AD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */; };
+		D237F8360463292284702ECB8076C63F /* ByteBuffer-conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1BE302387F202743BAD974A70C036 /* ByteBuffer-conversions.swift */; };
+		D4617C6F58E8695348E315D62C5B3106 /* cpp_magic.h in Headers */ = {isa = PBXBuildFile; fileRef = ED0ACA5E86B8D0D44693FDFF3C32FF0D /* cpp_magic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4824E4A507F764D4EBBCDFAC650DE37 /* CNIOSHA1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EABFA4968743CCB7864BFAE4AC6DDD7 /* CNIOSHA1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5353B3675E3D5FF9CF1521668D40000 /* shim.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3B135DBF3B5021A3BE92C5D067FCF /* shim.c */; };
+		D684D940A9A2D1E7B92546038E3C1167 /* CNIOAtomics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46583E63FC0B08E3CD0BC4943569B3C4 /* CNIOAtomics.framework */; };
+		D90944431C908AAFA3D28C928471CB5B /* NIOAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883F0706E531226F428435633AA77730 /* NIOAny.swift */; };
+		D9134851D57CF19858E488E2D5635064 /* c_nio_sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = D7D29AB9E701766CB8775781B2697A4C /* c_nio_sha1.c */; };
+		DB9FCDE2854B66634E2584A1CA56F697 /* CNIOLinux-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB9AE0056C519FDFC2B8E3E978935DD /* CNIOLinux-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEA70EB8595E6261CB128009D5B809B1 /* CancelFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DFB4521A3EB6AA232712B08526ED03 /* CancelFrame.swift */; };
+		DF85748DAF8E0361AB22F648C2FF78B2 /* BaseSocketChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92903018EEC3DCAA03A1CD35EE31DE8D /* BaseSocketChannel.swift */; };
+		E07E843AEA7CC718606A42F31FA0878E /* ServerSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8AB85F3CDE0B4B990ECD55FC9F136D /* ServerSocket.swift */; };
+		E5DE8C9702213CD73CB3E8E71B1FC2D9 /* CNIOAtomics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 176672D2187769B81D99E9E91F560A6C /* CNIOAtomics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6452994410CA130BC9BF4986223697F /* shim.c in Sources */ = {isa = PBXBuildFile; fileRef = 32DFA16864DD92578E8F24E4ED8D2AB6 /* shim.c */; };
+		E691C82A8FF049746DD85BD38CA204B1 /* CNIOSHA1-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E50E20EC231A2E5FE87389F1B0777D8F /* CNIOSHA1-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E828F64A5C2001FBAD01154771E61C0A /* Pods-RSocketSwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FA4646D7AD53DAE5E5524847E11794 /* Pods-RSocketSwift_Tests-dummy.m */; };
+		E932073A9C1618E973BD9C2C78B24F6C /* PipeChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13801E37C51F3607A3057D2F05186124 /* PipeChannel.swift */; };
+		EA3D7C935F4EC2160638E8B73D435533 /* BSDSocketAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF97E012E079D970DA65396A85119FF3 /* BSDSocketAPI.swift */; };
+		EDE17CE616008F1A1A1787C772E28F2B /* GetaddrinfoResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32CEFBFD877B2081DCFCBA23CAE45F /* GetaddrinfoResolver.swift */; };
+		EE852B89B35B7390EA2D21E727227110 /* PipePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B883E1EF9450FD8BB57EFE7E87B4160 /* PipePair.swift */; };
+		EF529EB796DDABA8BE83DA2C590031D5 /* CNIOSHA1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 875241E66143286AB0ACD200FD0B56AC /* CNIOSHA1.framework */; };
+		F24CE8ABBB6CDE2004D24B5C779AEE0F /* CNIOAtomics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46583E63FC0B08E3CD0BC4943569B3C4 /* CNIOAtomics.framework */; };
+		F473126FF66D9A77E11173C5EAFD4E50 /* Selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16590A6ED0CAD8E78AFE51752D90DAB /* Selector.swift */; };
+		F4DAF65DA07452F08D767A1C272AF6A1 /* CNIOWindows-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF18387C9D261191581F0E49A74BFECE /* CNIOWindows-dummy.m */; };
+		F5978BA58E3BF4E5140FA99A8BDF1BA7 /* CNIODarwin-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B149FD8540FA51CDA5D3E3833BC45B /* CNIODarwin-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8E11B7773F3756285BC2CFD54BCD5D0 /* CNIOAtomics.h in Headers */ = {isa = PBXBuildFile; fileRef = 00994A3320F4B603855DB7FACA7DE440 /* CNIOAtomics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF9D7D536EB06746D13D2311358FF732 /* NIOConcurrencyHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCEF3D1D3AEBF21E9AF8716F88F807D /* NIOConcurrencyHelpers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		20CBFFCF26AD5D4487DD54022011EB2E /* PBXContainerItemProxy */ = {
+		0F28692C344AEA34815A119135705907 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 34AE5D3759F5777C95294DE1FCCA6A81;
-			remoteInfo = "Pods-RSocketSwift_Example";
+			remoteGlobalIDString = E50EEBE8207624037F43288C584338F9;
+			remoteInfo = CNIOSHA1;
 		};
-		72F0B74D34BDBC8A36B0EE9F132C18B0 /* PBXContainerItemProxy */ = {
+		0F6C2D4DBB346FF0507D3620B85A28A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56A44E6B610D174593F40C5AD73224C4;
+			remoteInfo = CNIODarwin;
+		};
+		113B4D60B99455E0BA29755F3F68C6CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E31BF93EB20B6245622D5A44E45F9BCA;
+			remoteInfo = CNIOAtomics;
+		};
+		11DD2A38F3543DDAC6139BB2FBC50C9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E62229F86AA9810C2A7E6CF628B8486;
+			remoteInfo = SwiftNIO;
+		};
+		2AD3DEA44957AA49E9350A6E3FDCD10B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0A66DC2DC19095E11E5D3A679802D4;
+			remoteInfo = CNIOWindows;
+		};
+		3A160D5138F994738CE5E064F6C486C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 773FB76F4A2F42092713B9025F188877;
+			remoteInfo = SwiftNIOConcurrencyHelpers;
+		};
+		479D09F2B3396FC4615B0491E70BC8A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E31BF93EB20B6245622D5A44E45F9BCA;
+			remoteInfo = CNIOAtomics;
+		};
+		5E4A93B7DAC6B2F318B89DFDD13987AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34E23B39AFBC87A7678CDCA494DE5CDC;
+			remoteInfo = CNIOLinux;
+		};
+		7B92AC8853759D16BCCB6AA6A065C409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0A66DC2DC19095E11E5D3A679802D4;
+			remoteInfo = CNIOWindows;
+		};
+		7E441589804110D042BC8100B722278A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56A44E6B610D174593F40C5AD73224C4;
+			remoteInfo = CNIODarwin;
+		};
+		95AC695C3C1257B0F4F9BB719EE67A4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C4E439D3E3B5FBAAAACFD50A553E5673;
 			remoteInfo = RSocketSwift;
 		};
+		9BE8903E03F396E089C5D43C94DCAA5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34E23B39AFBC87A7678CDCA494DE5CDC;
+			remoteInfo = CNIOLinux;
+		};
+		BF7D22736F2EFA75F5C7237F888B556B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E62229F86AA9810C2A7E6CF628B8486;
+			remoteInfo = SwiftNIO;
+		};
+		C816C19C8DBEBE4FF98ACB288C8F7FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E31BF93EB20B6245622D5A44E45F9BCA;
+			remoteInfo = CNIOAtomics;
+		};
+		E094A589C0275736167FC108AE239A49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34AE5D3759F5777C95294DE1FCCA6A81;
+			remoteInfo = "Pods-RSocketSwift_Example";
+		};
+		E928B28FADFDC60553719755B818F682 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 773FB76F4A2F42092713B9025F188877;
+			remoteInfo = SwiftNIOConcurrencyHelpers;
+		};
+		F565374A939BA7393C6CD87526F1ED3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E50EEBE8207624037F43288C584338F9;
+			remoteInfo = CNIOSHA1;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0080A3A08375A8AAA6D1AAF6DDA56E8C /* BSDSocketAPIWindows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSDSocketAPIWindows.swift; path = Sources/NIO/BSDSocketAPIWindows.swift; sourceTree = "<group>"; };
+		00994A3320F4B603855DB7FACA7DE440 /* CNIOAtomics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CNIOAtomics.h; path = Sources/CNIOAtomics/include/CNIOAtomics.h; sourceTree = "<group>"; };
+		01FD6D0A5E54B0C8441B58662D96CB0B /* SwiftNIO.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftNIO.modulemap; sourceTree = "<group>"; };
+		040346113FD7341BD04D6AE25BE5B8E2 /* SwiftNIOConcurrencyHelpers-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftNIOConcurrencyHelpers-Info.plist"; sourceTree = "<group>"; };
 		0639B31E39EFE7D9E117507847F65658 /* Pods-RSocketSwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSocketSwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0697AD5BF8B54513E880CFBE1A0BE3A1 /* SocketOptionProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketOptionProvider.swift; path = Sources/NIO/SocketOptionProvider.swift; sourceTree = "<group>"; };
+		06AC20879F741C1AFA991B4112C3F282 /* CNIODarwin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CNIODarwin.h; path = Sources/CNIODarwin/include/CNIODarwin.h; sourceTree = "<group>"; };
+		089BAFA92BE90D1F8E2B6E6BB7D01AF1 /* Thread.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thread.swift; path = Sources/NIO/Thread.swift; sourceTree = "<group>"; };
+		0931C9CA2D3931D8A946DDB6A87C69EC /* ChannelPipeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelPipeline.swift; path = Sources/NIO/ChannelPipeline.swift; sourceTree = "<group>"; };
+		0948F8389F28DF7A99196339EF9FB832 /* SwiftNIO-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftNIO-dummy.m"; sourceTree = "<group>"; };
 		0988818D84DE92533CDEAAB8C8BE109B /* Pods-RSocketSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		0C8AB85F3CDE0B4B990ECD55FC9F136D /* ServerSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerSocket.swift; path = Sources/NIO/ServerSocket.swift; sourceTree = "<group>"; };
+		0D4236D90FEEBCBC8E59778C58E15AD6 /* DatagramVectorReadManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatagramVectorReadManager.swift; path = Sources/NIO/DatagramVectorReadManager.swift; sourceTree = "<group>"; };
 		0D844D1118CDECF0B5949F24A1DFD73A /* Pods-RSocketSwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSocketSwift_Tests-umbrella.h"; sourceTree = "<group>"; };
+		10B2760552BA2B452433D64650AA5A2D /* SocketChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketChannel.swift; path = Sources/NIO/SocketChannel.swift; sourceTree = "<group>"; };
+		112CD748ED5D362FB5C05A887CDF0442 /* BaseSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseSocket.swift; path = Sources/NIO/BaseSocket.swift; sourceTree = "<group>"; };
 		12CC3B8A89DED98C9E3115E77D56D769 /* Pods-RSocketSwift_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Tests-Info.plist"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		13801E37C51F3607A3057D2F05186124 /* PipeChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PipeChannel.swift; path = Sources/NIO/PipeChannel.swift; sourceTree = "<group>"; };
+		138FCFCFE17CF01AA3A0F83A9AEBDC6B /* CNIOLinux-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOLinux-prefix.pch"; sourceTree = "<group>"; };
+		149F7CCF882CF8BDECF4FFA614F13E02 /* ByteBuffer-views.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ByteBuffer-views.swift"; path = "Sources/NIO/ByteBuffer-views.swift"; sourceTree = "<group>"; };
+		176672D2187769B81D99E9E91F560A6C /* CNIOAtomics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOAtomics-umbrella.h"; sourceTree = "<group>"; };
+		17C61BB1B19AE10B4B65F11429138280 /* atomics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = atomics.swift; path = Sources/NIOConcurrencyHelpers/atomics.swift; sourceTree = "<group>"; };
+		1B850C3532EBE16BE764654160DA5CB3 /* CNIOWindows.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOWindows.debug.xcconfig; sourceTree = "<group>"; };
+		1D6656D1D7FC9DBF76692B7A4CB639E6 /* CNIOWindows.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CNIOWindows.h; path = Sources/CNIOWindows/include/CNIOWindows.h; sourceTree = "<group>"; };
+		23CA6D8D1887B57C17681862453CDCF0 /* Interfaces.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interfaces.swift; path = Sources/NIO/Interfaces.swift; sourceTree = "<group>"; };
+		2415C3ACD12711B24DAED62FACB50CCC /* ControlMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlMessage.swift; path = Sources/NIO/ControlMessage.swift; sourceTree = "<group>"; };
+		241DA4DE55FF7192B6F21878BAE35710 /* FileHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileHandle.swift; path = Sources/NIO/FileHandle.swift; sourceTree = "<group>"; };
+		2B33855DBCE5FEC670F696D322339CBB /* CircularBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircularBuffer.swift; path = Sources/NIO/CircularBuffer.swift; sourceTree = "<group>"; };
+		2B864242B6233EC37A5E4282EE85A2B9 /* CNIOSHA1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOSHA1.release.xcconfig; sourceTree = "<group>"; };
+		2BBC9DE104C7B4DFC28BA661F5FA4734 /* CNIOWindows-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOWindows-umbrella.h"; sourceTree = "<group>"; };
+		2EABFA4968743CCB7864BFAE4AC6DDD7 /* CNIOSHA1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CNIOSHA1.h; path = Sources/CNIOSHA1/include/CNIOSHA1.h; sourceTree = "<group>"; };
+		3000DF03E2FDDEC8AFB6A105E7C873AC /* NIOAtomic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NIOAtomic.swift; path = Sources/NIOConcurrencyHelpers/NIOAtomic.swift; sourceTree = "<group>"; };
+		30B56F035C4C73FEF638FE9C550263E7 /* CNIODarwin-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CNIODarwin-Info.plist"; sourceTree = "<group>"; };
+		321D9615E24B3BEB4DB160DC124E03D9 /* CNIOAtomics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOAtomics-prefix.pch"; sourceTree = "<group>"; };
+		32DFA16864DD92578E8F24E4ED8D2AB6 /* shim.c */ = {isa = PBXFileReference; includeInIndex = 1; name = shim.c; path = Sources/CNIOWindows/shim.c; sourceTree = "<group>"; };
 		32DFB4521A3EB6AA232712B08526ED03 /* CancelFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CancelFrame.swift; path = RSocketSwift/Classes/CancelFrame.swift; sourceTree = "<group>"; };
+		35D39576E889F41BC5713A66EBEAAD1E /* ChannelInvoker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelInvoker.swift; path = Sources/NIO/ChannelInvoker.swift; sourceTree = "<group>"; };
+		369149CB7FD5E2BB00087F9A5B546E4D /* NIOThreadPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NIOThreadPool.swift; path = Sources/NIO/NIOThreadPool.swift; sourceTree = "<group>"; };
+		385D03A2DBA8B0F6D700CCF8193CF075 /* BaseStreamSocketChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseStreamSocketChannel.swift; path = Sources/NIO/BaseStreamSocketChannel.swift; sourceTree = "<group>"; };
+		39C0AC6470AE1DB652AB9216AFBAD62D /* NonBlockingFileIO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NonBlockingFileIO.swift; path = Sources/NIO/NonBlockingFileIO.swift; sourceTree = "<group>"; };
+		3A25FE5BC964B39CD5D8BF237EC5D28E /* ThreadPosix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadPosix.swift; path = Sources/NIO/ThreadPosix.swift; sourceTree = "<group>"; };
 		3CC39B5F94C8310FDC4EF522CA171A0E /* Pods-RSocketSwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		3D617B1226C8F8E4E396D5A4F4199A32 /* CNIOWindows-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CNIOWindows-Info.plist"; sourceTree = "<group>"; };
+		3DB9AE0056C519FDFC2B8E3E978935DD /* CNIOLinux-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOLinux-umbrella.h"; sourceTree = "<group>"; };
+		3E05387108E5AAA830A393EAB3446B10 /* CNIOSHA1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CNIOSHA1.modulemap; sourceTree = "<group>"; };
+		3EECAB435207A345AD0BD163E4072385 /* CNIOLinux-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CNIOLinux-dummy.m"; sourceTree = "<group>"; };
+		40085849879F66199C915D4C08D53974 /* CNIOSHA1-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CNIOSHA1-dummy.m"; sourceTree = "<group>"; };
 		42CEE7AD624AAA2ABE168409D0D7ED5F /* Pods-RSocketSwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSocketSwift_Example-dummy.m"; sourceTree = "<group>"; };
-		4DA45F4B13FA9D4A1C6D9E907F5AA617 /* Pods_RSocketSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSocketSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4401FE2548EDE717D6485D83ED89DA20 /* ThreadWindows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadWindows.swift; path = Sources/NIO/ThreadWindows.swift; sourceTree = "<group>"; };
+		46583E63FC0B08E3CD0BC4943569B3C4 /* CNIOAtomics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNIOAtomics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		481AF66203B5369AB4F4921E1A7AC3FE /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/NIO/Resolver.swift; sourceTree = "<group>"; };
+		486833F356569CEA56B50482A0B4AA14 /* EventLoop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventLoop.swift; path = Sources/NIO/EventLoop.swift; sourceTree = "<group>"; };
+		4A1D16EDB0405CEE4C837F184DC39013 /* CNIOWindows.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CNIOWindows.framework; path = CNIOWindows.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CECE1D3F082EE1C5AF7E5E93BAEDF74 /* CNIODarwin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CNIODarwin.framework; path = CNIODarwin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D165F65821EE2F6D88D6044325454FB /* Socket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Socket.swift; path = Sources/NIO/Socket.swift; sourceTree = "<group>"; };
+		4DA45F4B13FA9D4A1C6D9E907F5AA617 /* Pods_RSocketSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RSocketSwift_Example.framework; path = "Pods-RSocketSwift_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EAB95C052B529A80F6F8A7042B33423 /* MulticastChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MulticastChannel.swift; path = Sources/NIO/MulticastChannel.swift; sourceTree = "<group>"; };
+		4EC604C9C8B666621BE1E2F5CA9D0E7D /* CNIOLinux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNIOLinux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F6A5629C697EE5E9F3E14C027F8589A /* Codec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Codec.swift; path = Sources/NIO/Codec.swift; sourceTree = "<group>"; };
+		5052C2CB51F0C6DB4EC917B004CFADD3 /* FileDescriptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileDescriptor.swift; path = Sources/NIO/FileDescriptor.swift; sourceTree = "<group>"; };
+		50A28E44A9A84592B7A3C371F020995A /* System.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = System.swift; path = Sources/NIO/System.swift; sourceTree = "<group>"; };
+		51F9E58207D4EE1A9320ED42B3A3D904 /* SwiftNIOConcurrencyHelpers-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftNIOConcurrencyHelpers-umbrella.h"; sourceTree = "<group>"; };
 		52D8D59A20A274FF59D0C6F65BEAA31C /* Pods-RSocketSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		53B087B83302CAC2786BC08CCCA7827F /* Channel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = Sources/NIO/Channel.swift; sourceTree = "<group>"; };
+		5664307032DF166D4DBB475AEAF0B490 /* CNIODarwin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIODarwin.release.xcconfig; sourceTree = "<group>"; };
+		57403EB01C7DD1E2E202CACC4361B6E4 /* SwiftNIO-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftNIO-Info.plist"; sourceTree = "<group>"; };
+		588FD1132FF24A9868144D2570D388CF /* SwiftNIOConcurrencyHelpers.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftNIOConcurrencyHelpers.modulemap; sourceTree = "<group>"; };
+		5ADE3E3C27762B663A53BAA523EC2583 /* IO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IO.swift; path = Sources/NIO/IO.swift; sourceTree = "<group>"; };
+		5B82F090A5079959716582F68DE64C8C /* PendingDatagramWritesManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PendingDatagramWritesManager.swift; path = Sources/NIO/PendingDatagramWritesManager.swift; sourceTree = "<group>"; };
+		5D15E9AA24ABD36B9D2D59A4146C1434 /* CNIOAtomics-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CNIOAtomics-Info.plist"; sourceTree = "<group>"; };
+		5E02AFBB03B2D76692C66B4D6569B7E1 /* CNIOLinux.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CNIOLinux.h; path = Sources/CNIOLinux/include/CNIOLinux.h; sourceTree = "<group>"; };
+		5E1730C569FEF6103C926E07F6F4BF7B /* AddressedEnvelope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddressedEnvelope.swift; path = Sources/NIO/AddressedEnvelope.swift; sourceTree = "<group>"; };
+		5E982D315A4CB75E8F15068B30779C7C /* NIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NIO.framework; path = SwiftNIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		625CB1C9862E9AED30CA4E1A12BA27DE /* HappyEyeballs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HappyEyeballs.swift; path = Sources/NIO/HappyEyeballs.swift; sourceTree = "<group>"; };
 		6304B51D0C0862F3959C666395608962 /* Pods-RSocketSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSocketSwift_Tests.modulemap"; sourceTree = "<group>"; };
-		659FC67A51E9DC6DF48A95003C2EBD38 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6316C201181F4E25362FE01E991F9251 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Sources/NIO/Utilities.swift; sourceTree = "<group>"; };
+		659FC67A51E9DC6DF48A95003C2EBD38 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		673CA60B9FF9D56D5AEAFAD4E2D7B368 /* NIOConcurrencyHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NIOConcurrencyHelpers.framework; path = SwiftNIOConcurrencyHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67D24F943235C17D5C709D91D231230F /* BSDSocketAPIPosix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSDSocketAPIPosix.swift; path = Sources/NIO/BSDSocketAPIPosix.swift; sourceTree = "<group>"; };
 		6852BD6ADFF80F01DD135A34599756BB /* Pods-RSocketSwift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSocketSwift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		699E1C20D9C10D146772C6981C1E55CB /* RSocketSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSocketSwift-umbrella.h"; sourceTree = "<group>"; };
+		6C214F1442E0ABD1FF186E95E472F846 /* CNIOWindows.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CNIOWindows.modulemap; sourceTree = "<group>"; };
 		6C8FA3A3B25A2E8F1AC73E1D19092913 /* RSocketSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RSocketSwift-Info.plist"; sourceTree = "<group>"; };
+		6E4E454FCEB8E6962BF000C66EDB5044 /* SingleStepByteToMessageDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleStepByteToMessageDecoder.swift; path = Sources/NIO/SingleStepByteToMessageDecoder.swift; sourceTree = "<group>"; };
+		6E8C4C50D698B1DEFB51F1F16BE93A09 /* RecvByteBufferAllocator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecvByteBufferAllocator.swift; path = Sources/NIO/RecvByteBufferAllocator.swift; sourceTree = "<group>"; };
 		6EFE7DFB7FF23D090EC7FB56FAB420DA /* Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Frame.swift; path = RSocketSwift/Classes/Frame.swift; sourceTree = "<group>"; };
+		6F1C5C1A1C8F9473CEF780C63705F78A /* CNIOLinux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CNIOLinux.framework; path = CNIOLinux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B1A0C64EE1AB4FDC26166604BC5728 /* Pods-RSocketSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71CAA5F5F861BD585EFBC555187DE144 /* RSocketSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSocketSwift-prefix.pch"; sourceTree = "<group>"; };
+		73E84E95B35CDD73EDF39BBBF7B40C76 /* PriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PriorityQueue.swift; path = Sources/NIO/PriorityQueue.swift; sourceTree = "<group>"; };
+		7701FCE8D4553D173D88300A71062FCE /* shim.c */ = {isa = PBXFileReference; includeInIndex = 1; name = shim.c; path = Sources/CNIODarwin/shim.c; sourceTree = "<group>"; };
 		778384830279B94982969F8429C1285C /* Pods-RSocketSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RSocketSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
+		7A3E6D137D23F3CB996D83C6B1BBE69E /* ByteBuffer-int.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ByteBuffer-int.swift"; path = "Sources/NIO/ByteBuffer-int.swift"; sourceTree = "<group>"; };
 		7B9473217910BF3D034786A454575CB9 /* RSocketSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RSocketSwift.modulemap; sourceTree = "<group>"; };
-		89EB71A9ED1BB372B3BE5B107A84658F /* Pods_RSocketSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSocketSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CEC6CA9D434DCF69C3E87A8A9DB976E /* IOData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IOData.swift; path = Sources/NIO/IOData.swift; sourceTree = "<group>"; };
+		7E726FF3C39CA7D6E00E6AF5EF72B7A4 /* CNIODarwin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CNIODarwin.modulemap; sourceTree = "<group>"; };
+		7E74EFBFEE89C8C5070381BDF39E3918 /* SwiftNIO-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftNIO-prefix.pch"; sourceTree = "<group>"; };
+		82E7452B17C9748DDFE669C798EA1660 /* ConvenienceOptionSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConvenienceOptionSupport.swift; path = Sources/NIO/ConvenienceOptionSupport.swift; sourceTree = "<group>"; };
+		836A217620A0715A59BC516E4A8B602A /* SocketAddresses.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketAddresses.swift; path = Sources/NIO/SocketAddresses.swift; sourceTree = "<group>"; };
+		848177F53167D59EF285691E37110E02 /* LinuxCPUSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinuxCPUSet.swift; path = Sources/NIO/LinuxCPUSet.swift; sourceTree = "<group>"; };
+		85DE45BD072FE5C9145A830006FD1560 /* FileRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileRegion.swift; path = Sources/NIO/FileRegion.swift; sourceTree = "<group>"; };
+		870514FBCE0286F3318D2DBFC87B9678 /* SocketProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketProtocols.swift; path = Sources/NIO/SocketProtocols.swift; sourceTree = "<group>"; };
+		875241E66143286AB0ACD200FD0B56AC /* CNIOSHA1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNIOSHA1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		883F0706E531226F428435633AA77730 /* NIOAny.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NIOAny.swift; path = Sources/NIO/NIOAny.swift; sourceTree = "<group>"; };
+		89E1BE302387F202743BAD974A70C036 /* ByteBuffer-conversions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ByteBuffer-conversions.swift"; path = "Sources/NIO/ByteBuffer-conversions.swift"; sourceTree = "<group>"; };
+		89EB71A9ED1BB372B3BE5B107A84658F /* Pods_RSocketSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RSocketSwift_Tests.framework; path = "Pods-RSocketSwift_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A13F31362E33D4BCBF21BF4B6D49860 /* CNIODarwin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNIODarwin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B418C2511F8A3317023E3107135574B /* ifaddrs-android.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "ifaddrs-android.c"; path = "Sources/CNIOLinux/ifaddrs-android.c"; sourceTree = "<group>"; };
+		8EE3B135DBF3B5021A3BE92C5D067FCF /* shim.c */ = {isa = PBXFileReference; includeInIndex = 1; name = shim.c; path = Sources/CNIOLinux/shim.c; sourceTree = "<group>"; };
+		90A4A7C676FBC0A947110679FB4E24ED /* c-atomics.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "c-atomics.c"; path = "Sources/CNIOAtomics/src/c-atomics.c"; sourceTree = "<group>"; };
+		90B855E082E40A004C7B84C9FFC6D460 /* c-nioatomics.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "c-nioatomics.c"; path = "Sources/CNIOAtomics/src/c-nioatomics.c"; sourceTree = "<group>"; };
+		92903018EEC3DCAA03A1CD35EE31DE8D /* BaseSocketChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseSocketChannel.swift; path = Sources/NIO/BaseSocketChannel.swift; sourceTree = "<group>"; };
 		92D890C0626763CB1231AAA07A5BF018 /* Pods-RSocketSwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94CDBCFAA500AAA056A036595C1B6F87 /* Heap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Heap.swift; path = Sources/NIO/Heap.swift; sourceTree = "<group>"; };
+		9686EA2264267BB6D6626376FCB3813A /* CNIODarwin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIODarwin.debug.xcconfig; sourceTree = "<group>"; };
+		96DB11168001F0678117E0CA76ECC9C9 /* DeadChannel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeadChannel.swift; path = Sources/NIO/DeadChannel.swift; sourceTree = "<group>"; };
+		97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9B1806B8A25642F2B42A581E5D483991 /* SwiftNIOConcurrencyHelpers-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftNIOConcurrencyHelpers-dummy.m"; sourceTree = "<group>"; };
+		9B883E1EF9450FD8BB57EFE7E87B4160 /* PipePair.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PipePair.swift; path = Sources/NIO/PipePair.swift; sourceTree = "<group>"; };
+		9BD05E05316906984708D1257A253B86 /* SwiftNIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftNIO.debug.xcconfig; sourceTree = "<group>"; };
+		9CD3EC70C907BBF13BEF4FC94CADBE53 /* CNIOSHA1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOSHA1.debug.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F32FB70057C87D416234738742C4F3F /* Bootstrap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bootstrap.swift; path = Sources/NIO/Bootstrap.swift; sourceTree = "<group>"; };
+		A036CDBD77A43C50A535A3EC999C358A /* TypeAssistedChannelHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeAssistedChannelHandler.swift; path = Sources/NIO/TypeAssistedChannelHandler.swift; sourceTree = "<group>"; };
+		A1C32E346587B6A6C37AD86C78881D4B /* ChannelHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelHandler.swift; path = Sources/NIO/ChannelHandler.swift; sourceTree = "<group>"; };
+		A2FF808089B29B41511A4C8B2834DEC2 /* CNIOAtomics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CNIOAtomics-dummy.m"; sourceTree = "<group>"; };
+		A5CF9B3AD58D540EA1D08238E007400E /* CNIOLinux.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOLinux.debug.xcconfig; sourceTree = "<group>"; };
 		A69B8E77A0FB8445B0085C4F69DA440C /* Pods-RSocketSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSocketSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A71C8D639CDFA8EDA80D996F269557AB /* SwiftNIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftNIO.release.xcconfig; sourceTree = "<group>"; };
+		A8BE4E849310CEEC7B695D68A6BC2A46 /* ChannelHandlers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelHandlers.swift; path = Sources/NIO/ChannelHandlers.swift; sourceTree = "<group>"; };
+		AAD640377A3A1799F564231E405064E7 /* CNIOLinux-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CNIOLinux-Info.plist"; sourceTree = "<group>"; };
+		AC85CE1BC856AA3180B082330A9B8AD6 /* ifaddrs-android.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ifaddrs-android.h"; path = "Sources/CNIOLinux/include/ifaddrs-android.h"; sourceTree = "<group>"; };
+		B17640AD05CDFE7D6B1677157FD4F12E /* Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Linux.swift; path = Sources/NIO/Linux.swift; sourceTree = "<group>"; };
+		B5356A122707256275F1C7A165E3EF40 /* Embedded.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Embedded.swift; path = Sources/NIO/Embedded.swift; sourceTree = "<group>"; };
+		B7535CD95E2D19DBF1E3A7C6D441A301 /* NIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7F4755B386144CE5A64B92DD50D2D57 /* CNIOSHA1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CNIOSHA1.framework; path = CNIOSHA1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8CD89BEAC60D2EE15E5A8972FDD69F3 /* EventLoopFuture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventLoopFuture.swift; path = Sources/NIO/EventLoopFuture.swift; sourceTree = "<group>"; };
+		B9B149FD8540FA51CDA5D3E3833BC45B /* CNIODarwin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIODarwin-umbrella.h"; sourceTree = "<group>"; };
+		B9F4ABE9EC7BF31372C4B7BB34B1A638 /* SwiftNIO-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftNIO-umbrella.h"; sourceTree = "<group>"; };
+		BC40B3418A8CA956F16C1611F10680D4 /* MarkedCircularBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkedCircularBuffer.swift; path = Sources/NIO/MarkedCircularBuffer.swift; sourceTree = "<group>"; };
 		BF3D5BA4BC3F56BEF0F24438A0971B8A /* RSocketSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSocketSwift.debug.xcconfig; sourceTree = "<group>"; };
+		C16590A6ED0CAD8E78AFE51752D90DAB /* Selector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Selector.swift; path = Sources/NIO/Selector.swift; sourceTree = "<group>"; };
+		C22E51015680664F14B436B2FB060CC1 /* CNIOAtomics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOAtomics.release.xcconfig; sourceTree = "<group>"; };
+		C436FFF975EDD51ED8662022186E2BDA /* CNIOWindows-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOWindows-prefix.pch"; sourceTree = "<group>"; };
 		C4FBB10ADDC9001558482474DD966C86 /* FrameType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameType.swift; path = RSocketSwift/Classes/FrameType.swift; sourceTree = "<group>"; };
 		CA625E0D0AF0B6F0F28B14B7948FD625 /* RSocketSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSocketSwift.release.xcconfig; sourceTree = "<group>"; };
+		CB119C86AFFFC61F09A31812F6665F25 /* CNIOSHA1-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOSHA1-prefix.pch"; sourceTree = "<group>"; };
+		CB98CFF06008E3E22FE1B44B8A1C5243 /* SelectableEventLoop.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectableEventLoop.swift; path = Sources/NIO/SelectableEventLoop.swift; sourceTree = "<group>"; };
+		CBCEF3D1D3AEBF21E9AF8716F88F807D /* NIOConcurrencyHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NIOConcurrencyHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC1DAF4F02C0B408EF3603850301FB6 /* CNIODarwin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIODarwin-prefix.pch"; sourceTree = "<group>"; };
+		CE6415E764CB44E321EA6AC86CB140DB /* ByteBuffer-core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ByteBuffer-core.swift"; path = "Sources/NIO/ByteBuffer-core.swift"; sourceTree = "<group>"; };
+		CEB7F939AC2D6B30FE9F613A982FE8EC /* SwiftNIOConcurrencyHelpers-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftNIOConcurrencyHelpers-prefix.pch"; sourceTree = "<group>"; };
 		CF5FD0FD29957605920A6235A4DA52B2 /* RSocketSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSocketSwift-dummy.m"; sourceTree = "<group>"; };
-		D2BEFD971A4D59DF8E41338F073B00C8 /* RSocketSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = RSocketSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D2BEFD971A4D59DF8E41338F073B00C8 /* RSocketSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RSocketSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D41440DA4CD0D5570AD2BCF7928AFD74 /* Pods-RSocketSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSocketSwift_Example-umbrella.h"; sourceTree = "<group>"; };
+		D455CB0B4700F0C1F290E750850BBBFB /* IntegerTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerTypes.swift; path = Sources/NIO/IntegerTypes.swift; sourceTree = "<group>"; };
+		D7D29AB9E701766CB8775781B2697A4C /* c_nio_sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; name = c_nio_sha1.c; path = Sources/CNIOSHA1/c_nio_sha1.c; sourceTree = "<group>"; };
+		D91FC01385D3680BAE48C7A1E23CB088 /* CNIOAtomics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CNIOAtomics.framework; path = CNIOAtomics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D96F28238ADBE2268A44285EF8277F18 /* Selectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Selectable.swift; path = Sources/NIO/Selectable.swift; sourceTree = "<group>"; };
+		DA5874B6C9FF2E623705B4C8522BC927 /* CNIOAtomics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CNIOAtomics.modulemap; sourceTree = "<group>"; };
+		DB9DB0AC03D870F23BF39E8848A033DB /* CNIODarwin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CNIODarwin-dummy.m"; sourceTree = "<group>"; };
+		DCC4603650CA89252B44DB9A810971E2 /* SwiftNIOConcurrencyHelpers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftNIOConcurrencyHelpers.release.xcconfig; sourceTree = "<group>"; };
+		DCFE2E3DFE6DFA520C7800B78C9FCFFC /* ChannelOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChannelOption.swift; path = Sources/NIO/ChannelOption.swift; sourceTree = "<group>"; };
+		DD32CEFBFD877B2081DCFCBA23CAE45F /* GetaddrinfoResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetaddrinfoResolver.swift; path = Sources/NIO/GetaddrinfoResolver.swift; sourceTree = "<group>"; };
 		DDFFCF1963A25741F9B7F697CFAD1D95 /* Pods-RSocketSwift_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSocketSwift_Example-Info.plist"; sourceTree = "<group>"; };
+		DEF67534B9ED6E3848F45E3D1E15C6D2 /* SwiftNIOConcurrencyHelpers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftNIOConcurrencyHelpers.debug.xcconfig; sourceTree = "<group>"; };
+		DF18387C9D261191581F0E49A74BFECE /* CNIOWindows-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CNIOWindows-dummy.m"; sourceTree = "<group>"; };
+		DF97E012E079D970DA65396A85119FF3 /* BSDSocketAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSDSocketAPI.swift; path = Sources/NIO/BSDSocketAPI.swift; sourceTree = "<group>"; };
+		E10FB2F393CC51C7EBEFE52DA9412112 /* NIOCloseOnErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NIOCloseOnErrorHandler.swift; path = Sources/NIO/NIOCloseOnErrorHandler.swift; sourceTree = "<group>"; };
+		E40B022DF950AD33302E21B326DC934F /* CNIOLinux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOLinux.release.xcconfig; sourceTree = "<group>"; };
+		E50E20EC231A2E5FE87389F1B0777D8F /* CNIOSHA1-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CNIOSHA1-umbrella.h"; sourceTree = "<group>"; };
 		E68708882C96FBD2222235494030B250 /* Pods-RSocketSwift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSocketSwift_Example.modulemap"; sourceTree = "<group>"; };
-		E722383EFBEFC7AA4A52B484807A3F9F /* RSocketSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSocketSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EED3E68B179B8D90AB546F8CA787B1E4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E722383EFBEFC7AA4A52B484807A3F9F /* RSocketSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RSocketSwift.framework; path = RSocketSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9CF841CD36DD57EC6E604D1099F3B70 /* ByteBuffer-aux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ByteBuffer-aux.swift"; path = "Sources/NIO/ByteBuffer-aux.swift"; sourceTree = "<group>"; };
+		EA29570CEBA09FCDD99741F4884A0609 /* lock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = lock.swift; path = Sources/NIOConcurrencyHelpers/lock.swift; sourceTree = "<group>"; };
+		EAC75E491972B2D34F25E50A07C14C9B /* CNIOAtomics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOAtomics.debug.xcconfig; sourceTree = "<group>"; };
+		ED0ACA5E86B8D0D44693FDFF3C32FF0D /* cpp_magic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cpp_magic.h; path = Sources/CNIOAtomics/src/cpp_magic.h; sourceTree = "<group>"; };
+		ED576A0207036F72D247CB3CF1C60999 /* WSAStartup.c */ = {isa = PBXFileReference; includeInIndex = 1; name = WSAStartup.c; path = Sources/CNIOWindows/WSAStartup.c; sourceTree = "<group>"; };
+		EE04C9A0E8492DEFD88EF83F52264943 /* CNIOSHA1-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CNIOSHA1-Info.plist"; sourceTree = "<group>"; };
+		EED3E68B179B8D90AB546F8CA787B1E4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EF323E6AC161BEC510103AD267FC8742 /* DispathQueue+WithFuture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispathQueue+WithFuture.swift"; path = "Sources/NIO/DispathQueue+WithFuture.swift"; sourceTree = "<group>"; };
+		F41EB80D4639579BD94CF4B4FFE5DBBB /* CNIOWindows.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOWindows.release.xcconfig; sourceTree = "<group>"; };
+		F54E93B9109DD74537F5C26B725F66B0 /* PendingWritesManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PendingWritesManager.swift; path = Sources/NIO/PendingWritesManager.swift; sourceTree = "<group>"; };
+		F59FB5B60D83C28317AAC5728FC8E4BC /* CNIOWindows.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNIOWindows.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FA4646D7AD53DAE5E5524847E11794 /* Pods-RSocketSwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSocketSwift_Tests-dummy.m"; sourceTree = "<group>"; };
+		FD6E8F42AA561732E4F1082A697C4116 /* CNIOLinux.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CNIOLinux.modulemap; sourceTree = "<group>"; };
+		FFDB936D4A76DCDAF3E0B8E814601DD1 /* UniversalBootstrapSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UniversalBootstrapSupport.swift; path = Sources/NIO/UniversalBootstrapSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AFDC4EF60945B1BAC65FC3194C296A1F /* Frameworks */ = {
+		1B59DD92D34E230F050A10FF0CCFD131 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B261A03120CB9C147F4EB626102698E /* Foundation.framework in Frameworks */,
+				1C646075475647737C3BE3FCFFAC22DE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD2D9BC94DE9B5451B42E35E1C33C952 /* Frameworks */ = {
+		2AEC1294BFEE646EB210F962562F1A59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F756176105ECE0AAB24504866BA1C70A /* Foundation.framework in Frameworks */,
+				3A7B8CF5500E26562B1C1639C64CEDF2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEC78435DB02A4D67EA2C7B89E3E5ECC /* Frameworks */ = {
+		36C0684A030A43125B8592E8C26855A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60F179AF23D17D4CDAE025C37E6CAFB /* Foundation.framework in Frameworks */,
+				BC393D83D73C865BBAE2C50B35DEC525 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		438ADCAC992A6E6814EEE7C238EFEDA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1080E8B40E8F21D72BF5DC947A212786 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47BB9E26CCEC5F328143A1BB947E6DD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78141CFB392B65315A937510854768F3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		673E872D48A7A8A26E15C29E5EAAD963 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				005D864AF3DA89802515353245BA00AB /* Foundation.framework in Frameworks */,
+				5FEC48D1F9768A2EEE539D34AB19B11D /* NIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A91DB3A902C01D1781CFFD04FA6D63FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57A311218DA737993A4BC2B53A1EA1CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2F12827925D5189030497B76E2C66EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D684D940A9A2D1E7B92546038E3C1167 /* CNIOAtomics.framework in Frameworks */,
+				CA734B0BCDAEC913863856F888487332 /* CNIODarwin.framework in Frameworks */,
+				9A54F002B88F2EE6A8E6CB16971726C4 /* CNIOLinux.framework in Frameworks */,
+				EF529EB796DDABA8BE83DA2C590031D5 /* CNIOSHA1.framework in Frameworks */,
+				BE529CD8F1E3D11C2021589CEA6A708B /* CNIOWindows.framework in Frameworks */,
+				B7A7E7ACB3BE321C5D2D48F94569703E /* Foundation.framework in Frameworks */,
+				FF9D7D536EB06746D13D2311358FF732 /* NIOConcurrencyHelpers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E11074EF5B092F060BA6731FF158518A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE7986FDDE2566A6317B8A09CEFE0280 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9E0E87C2CC41BAB899D7803823C27FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F24CE8ABBB6CDE2004D24B5C779AEE0F /* CNIOAtomics.framework in Frameworks */,
+				D1CD63BF106072337650DF5A31F77AD4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		028F3538A3A85D42BB799BCF785619C7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA5874B6C9FF2E623705B4C8522BC927 /* CNIOAtomics.modulemap */,
+				A2FF808089B29B41511A4C8B2834DEC2 /* CNIOAtomics-dummy.m */,
+				5D15E9AA24ABD36B9D2D59A4146C1434 /* CNIOAtomics-Info.plist */,
+				321D9615E24B3BEB4DB160DC124E03D9 /* CNIOAtomics-prefix.pch */,
+				176672D2187769B81D99E9E91F560A6C /* CNIOAtomics-umbrella.h */,
+				EAC75E491972B2D34F25E50A07C14C9B /* CNIOAtomics.debug.xcconfig */,
+				C22E51015680664F14B436B2FB060CC1 /* CNIOAtomics.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CNIOAtomics";
+			sourceTree = "<group>";
+		};
+		1885DBE853D11BD8C120C06CEF2BE263 /* CNIOAtomics */ = {
+			isa = PBXGroup;
+			children = (
+				90A4A7C676FBC0A947110679FB4E24ED /* c-atomics.c */,
+				90B855E082E40A004C7B84C9FFC6D460 /* c-nioatomics.c */,
+				00994A3320F4B603855DB7FACA7DE440 /* CNIOAtomics.h */,
+				ED0ACA5E86B8D0D44693FDFF3C32FF0D /* cpp_magic.h */,
+				028F3538A3A85D42BB799BCF785619C7 /* Support Files */,
+			);
+			name = CNIOAtomics;
+			path = CNIOAtomics;
+			sourceTree = "<group>";
+		};
+		1C56530BA9C350DBAB41901B2DA0B773 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E05387108E5AAA830A393EAB3446B10 /* CNIOSHA1.modulemap */,
+				40085849879F66199C915D4C08D53974 /* CNIOSHA1-dummy.m */,
+				EE04C9A0E8492DEFD88EF83F52264943 /* CNIOSHA1-Info.plist */,
+				CB119C86AFFFC61F09A31812F6665F25 /* CNIOSHA1-prefix.pch */,
+				E50E20EC231A2E5FE87389F1B0777D8F /* CNIOSHA1-umbrella.h */,
+				9CD3EC70C907BBF13BEF4FC94CADBE53 /* CNIOSHA1.debug.xcconfig */,
+				2B864242B6233EC37A5E4282EE85A2B9 /* CNIOSHA1.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CNIOSHA1";
+			sourceTree = "<group>";
+		};
 		349611B88E52CA5F766ED51450F0813B /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,12 +595,76 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		3587E44AFE3CC38A10760ABD20BAED2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D91FC01385D3680BAE48C7A1E23CB088 /* CNIOAtomics.framework */,
+				4CECE1D3F082EE1C5AF7E5E93BAEDF74 /* CNIODarwin.framework */,
+				6F1C5C1A1C8F9473CEF780C63705F78A /* CNIOLinux.framework */,
+				B7F4755B386144CE5A64B92DD50D2D57 /* CNIOSHA1.framework */,
+				4A1D16EDB0405CEE4C837F184DC39013 /* CNIOWindows.framework */,
+				5E982D315A4CB75E8F15068B30779C7C /* NIO.framework */,
+				673CA60B9FF9D56D5AEAFAD4E2D7B368 /* NIOConcurrencyHelpers.framework */,
+				4DA45F4B13FA9D4A1C6D9E907F5AA617 /* Pods_RSocketSwift_Example.framework */,
+				89EB71A9ED1BB372B3BE5B107A84658F /* Pods_RSocketSwift_Tests.framework */,
+				E722383EFBEFC7AA4A52B484807A3F9F /* RSocketSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		361378E2F807D9E50FA63D52EA651339 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C214F1442E0ABD1FF186E95E472F846 /* CNIOWindows.modulemap */,
+				DF18387C9D261191581F0E49A74BFECE /* CNIOWindows-dummy.m */,
+				3D617B1226C8F8E4E396D5A4F4199A32 /* CNIOWindows-Info.plist */,
+				C436FFF975EDD51ED8662022186E2BDA /* CNIOWindows-prefix.pch */,
+				2BBC9DE104C7B4DFC28BA661F5FA4734 /* CNIOWindows-umbrella.h */,
+				1B850C3532EBE16BE764654160DA5CB3 /* CNIOWindows.debug.xcconfig */,
+				F41EB80D4639579BD94CF4B4FFE5DBBB /* CNIOWindows.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CNIOWindows";
+			sourceTree = "<group>";
+		};
+		3936B348D9D11D513B2A9FB8698616E4 /* SwiftNIOConcurrencyHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				17C61BB1B19AE10B4B65F11429138280 /* atomics.swift */,
+				EA29570CEBA09FCDD99741F4884A0609 /* lock.swift */,
+				3000DF03E2FDDEC8AFB6A105E7C873AC /* NIOAtomic.swift */,
+				AD19F8B9BEF69BE2D696C39DF8413FD4 /* Support Files */,
+			);
+			name = SwiftNIOConcurrencyHelpers;
+			path = SwiftNIOConcurrencyHelpers;
+			sourceTree = "<group>";
+		};
 		43012827C6B0E75EA6501E0ACCA93882 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
 				60572498F467C3C686FAF13FD98D21E1 /* RSocketSwift */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		48C2DDA3A632BDE98A69C5DD0C9A9E34 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				97E6BAEF34C5064700AA7AEC82B47113 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4AC1417AC6F2640C6F1031CDBE342055 /* CNIOWindows */ = {
+			isa = PBXGroup;
+			children = (
+				1D6656D1D7FC9DBF76692B7A4CB639E6 /* CNIOWindows.h */,
+				32DFA16864DD92578E8F24E4ED8D2AB6 /* shim.c */,
+				ED576A0207036F72D247CB3CF1C60999 /* WSAStartup.c */,
+				361378E2F807D9E50FA63D52EA651339 /* Support Files */,
+			);
+			name = CNIOWindows;
+			path = CNIOWindows;
 			sourceTree = "<group>";
 		};
 		60572498F467C3C686FAF13FD98D21E1 /* RSocketSwift */ = {
@@ -132,6 +678,41 @@
 			);
 			name = RSocketSwift;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		61C919C522E52C1E5DF5E53CBE839414 /* CNIOLinux */ = {
+			isa = PBXGroup;
+			children = (
+				5E02AFBB03B2D76692C66B4D6569B7E1 /* CNIOLinux.h */,
+				8B418C2511F8A3317023E3107135574B /* ifaddrs-android.c */,
+				AC85CE1BC856AA3180B082330A9B8AD6 /* ifaddrs-android.h */,
+				8EE3B135DBF3B5021A3BE92C5D067FCF /* shim.c */,
+				A5AFF400775581CFE8A8051F09942890 /* Support Files */,
+			);
+			name = CNIOLinux;
+			path = CNIOLinux;
+			sourceTree = "<group>";
+		};
+		6E24AF8C798EDF322EBD9E3CD6305D0E /* CNIODarwin */ = {
+			isa = PBXGroup;
+			children = (
+				06AC20879F741C1AFA991B4112C3F282 /* CNIODarwin.h */,
+				7701FCE8D4553D173D88300A71062FCE /* shim.c */,
+				B89EB5F22DCB050772DFFA72DC585DC9 /* Support Files */,
+			);
+			name = CNIODarwin;
+			path = CNIODarwin;
+			sourceTree = "<group>";
+		};
+		70B75D18A328755EE98FD6A0285B3AE3 /* CNIOSHA1 */ = {
+			isa = PBXGroup;
+			children = (
+				D7D29AB9E701766CB8775781B2697A4C /* c_nio_sha1.c */,
+				2EABFA4968743CCB7864BFAE4AC6DDD7 /* CNIOSHA1.h */,
+				1C56530BA9C350DBAB41901B2DA0B773 /* Support Files */,
+			);
+			name = CNIOSHA1;
+			path = CNIOSHA1;
 			sourceTree = "<group>";
 		};
 		726442F0F92B1CCE4592C980A7BF6196 /* Pods-RSocketSwift_Tests */ = {
@@ -148,6 +729,35 @@
 			);
 			name = "Pods-RSocketSwift_Tests";
 			path = "Target Support Files/Pods-RSocketSwift_Tests";
+			sourceTree = "<group>";
+		};
+		7AF1FF58F74BA16023BC434916832F8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46583E63FC0B08E3CD0BC4943569B3C4 /* CNIOAtomics.framework */,
+				8A13F31362E33D4BCBF21BF4B6D49860 /* CNIODarwin.framework */,
+				4EC604C9C8B666621BE1E2F5CA9D0E7D /* CNIOLinux.framework */,
+				875241E66143286AB0ACD200FD0B56AC /* CNIOSHA1.framework */,
+				F59FB5B60D83C28317AAC5728FC8E4BC /* CNIOWindows.framework */,
+				B7535CD95E2D19DBF1E3A7C6D441A301 /* NIO.framework */,
+				CBCEF3D1D3AEBF21E9AF8716F88F807D /* NIOConcurrencyHelpers.framework */,
+				48C2DDA3A632BDE98A69C5DD0C9A9E34 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		808185D312A891BBA43FC1EAB8BBC227 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1885DBE853D11BD8C120C06CEF2BE263 /* CNIOAtomics */,
+				6E24AF8C798EDF322EBD9E3CD6305D0E /* CNIODarwin */,
+				61C919C522E52C1E5DF5E53CBE839414 /* CNIOLinux */,
+				70B75D18A328755EE98FD6A0285B3AE3 /* CNIOSHA1 */,
+				4AC1417AC6F2640C6F1031CDBE342055 /* CNIOWindows */,
+				AFE279A2D793AA1907EB0FC79312820E /* SwiftNIO */,
+				3936B348D9D11D513B2A9FB8698616E4 /* SwiftNIOConcurrencyHelpers */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		90AA5DDF62B44FC04645E0C318263654 /* Support Files */ = {
@@ -175,6 +785,21 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
+		A5AFF400775581CFE8A8051F09942890 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD6E8F42AA561732E4F1082A697C4116 /* CNIOLinux.modulemap */,
+				3EECAB435207A345AD0BD163E4072385 /* CNIOLinux-dummy.m */,
+				AAD640377A3A1799F564231E405064E7 /* CNIOLinux-Info.plist */,
+				138FCFCFE17CF01AA3A0F83A9AEBDC6B /* CNIOLinux-prefix.pch */,
+				3DB9AE0056C519FDFC2B8E3E978935DD /* CNIOLinux-umbrella.h */,
+				A5CF9B3AD58D540EA1D08238E007400E /* CNIOLinux.debug.xcconfig */,
+				E40B022DF950AD33302E21B326DC934F /* CNIOLinux.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CNIOLinux";
+			sourceTree = "<group>";
+		};
 		A92D1537617FE70F60764C6F5DEDE9C0 /* Pods-RSocketSwift_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,12 +817,114 @@
 			path = "Target Support Files/Pods-RSocketSwift_Example";
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		AD19F8B9BEF69BE2D696C39DF8413FD4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				588FD1132FF24A9868144D2570D388CF /* SwiftNIOConcurrencyHelpers.modulemap */,
+				9B1806B8A25642F2B42A581E5D483991 /* SwiftNIOConcurrencyHelpers-dummy.m */,
+				040346113FD7341BD04D6AE25BE5B8E2 /* SwiftNIOConcurrencyHelpers-Info.plist */,
+				CEB7F939AC2D6B30FE9F613A982FE8EC /* SwiftNIOConcurrencyHelpers-prefix.pch */,
+				51F9E58207D4EE1A9320ED42B3A3D904 /* SwiftNIOConcurrencyHelpers-umbrella.h */,
+				DEF67534B9ED6E3848F45E3D1E15C6D2 /* SwiftNIOConcurrencyHelpers.debug.xcconfig */,
+				DCC4603650CA89252B44DB9A810971E2 /* SwiftNIOConcurrencyHelpers.release.xcconfig */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftNIOConcurrencyHelpers";
+			sourceTree = "<group>";
+		};
+		AFE279A2D793AA1907EB0FC79312820E /* SwiftNIO */ = {
+			isa = PBXGroup;
+			children = (
+				5E1730C569FEF6103C926E07F6F4BF7B /* AddressedEnvelope.swift */,
+				112CD748ED5D362FB5C05A887CDF0442 /* BaseSocket.swift */,
+				92903018EEC3DCAA03A1CD35EE31DE8D /* BaseSocketChannel.swift */,
+				385D03A2DBA8B0F6D700CCF8193CF075 /* BaseStreamSocketChannel.swift */,
+				9F32FB70057C87D416234738742C4F3F /* Bootstrap.swift */,
+				DF97E012E079D970DA65396A85119FF3 /* BSDSocketAPI.swift */,
+				67D24F943235C17D5C709D91D231230F /* BSDSocketAPIPosix.swift */,
+				0080A3A08375A8AAA6D1AAF6DDA56E8C /* BSDSocketAPIWindows.swift */,
+				E9CF841CD36DD57EC6E604D1099F3B70 /* ByteBuffer-aux.swift */,
+				89E1BE302387F202743BAD974A70C036 /* ByteBuffer-conversions.swift */,
+				CE6415E764CB44E321EA6AC86CB140DB /* ByteBuffer-core.swift */,
+				7A3E6D137D23F3CB996D83C6B1BBE69E /* ByteBuffer-int.swift */,
+				149F7CCF882CF8BDECF4FFA614F13E02 /* ByteBuffer-views.swift */,
+				53B087B83302CAC2786BC08CCCA7827F /* Channel.swift */,
+				A1C32E346587B6A6C37AD86C78881D4B /* ChannelHandler.swift */,
+				A8BE4E849310CEEC7B695D68A6BC2A46 /* ChannelHandlers.swift */,
+				35D39576E889F41BC5713A66EBEAAD1E /* ChannelInvoker.swift */,
+				DCFE2E3DFE6DFA520C7800B78C9FCFFC /* ChannelOption.swift */,
+				0931C9CA2D3931D8A946DDB6A87C69EC /* ChannelPipeline.swift */,
+				2B33855DBCE5FEC670F696D322339CBB /* CircularBuffer.swift */,
+				4F6A5629C697EE5E9F3E14C027F8589A /* Codec.swift */,
+				2415C3ACD12711B24DAED62FACB50CCC /* ControlMessage.swift */,
+				82E7452B17C9748DDFE669C798EA1660 /* ConvenienceOptionSupport.swift */,
+				0D4236D90FEEBCBC8E59778C58E15AD6 /* DatagramVectorReadManager.swift */,
+				96DB11168001F0678117E0CA76ECC9C9 /* DeadChannel.swift */,
+				EF323E6AC161BEC510103AD267FC8742 /* DispathQueue+WithFuture.swift */,
+				B5356A122707256275F1C7A165E3EF40 /* Embedded.swift */,
+				486833F356569CEA56B50482A0B4AA14 /* EventLoop.swift */,
+				B8CD89BEAC60D2EE15E5A8972FDD69F3 /* EventLoopFuture.swift */,
+				5052C2CB51F0C6DB4EC917B004CFADD3 /* FileDescriptor.swift */,
+				241DA4DE55FF7192B6F21878BAE35710 /* FileHandle.swift */,
+				85DE45BD072FE5C9145A830006FD1560 /* FileRegion.swift */,
+				DD32CEFBFD877B2081DCFCBA23CAE45F /* GetaddrinfoResolver.swift */,
+				625CB1C9862E9AED30CA4E1A12BA27DE /* HappyEyeballs.swift */,
+				94CDBCFAA500AAA056A036595C1B6F87 /* Heap.swift */,
+				D455CB0B4700F0C1F290E750850BBBFB /* IntegerTypes.swift */,
+				23CA6D8D1887B57C17681862453CDCF0 /* Interfaces.swift */,
+				5ADE3E3C27762B663A53BAA523EC2583 /* IO.swift */,
+				7CEC6CA9D434DCF69C3E87A8A9DB976E /* IOData.swift */,
+				B17640AD05CDFE7D6B1677157FD4F12E /* Linux.swift */,
+				848177F53167D59EF285691E37110E02 /* LinuxCPUSet.swift */,
+				BC40B3418A8CA956F16C1611F10680D4 /* MarkedCircularBuffer.swift */,
+				4EAB95C052B529A80F6F8A7042B33423 /* MulticastChannel.swift */,
+				883F0706E531226F428435633AA77730 /* NIOAny.swift */,
+				E10FB2F393CC51C7EBEFE52DA9412112 /* NIOCloseOnErrorHandler.swift */,
+				369149CB7FD5E2BB00087F9A5B546E4D /* NIOThreadPool.swift */,
+				39C0AC6470AE1DB652AB9216AFBAD62D /* NonBlockingFileIO.swift */,
+				5B82F090A5079959716582F68DE64C8C /* PendingDatagramWritesManager.swift */,
+				F54E93B9109DD74537F5C26B725F66B0 /* PendingWritesManager.swift */,
+				13801E37C51F3607A3057D2F05186124 /* PipeChannel.swift */,
+				9B883E1EF9450FD8BB57EFE7E87B4160 /* PipePair.swift */,
+				73E84E95B35CDD73EDF39BBBF7B40C76 /* PriorityQueue.swift */,
+				6E8C4C50D698B1DEFB51F1F16BE93A09 /* RecvByteBufferAllocator.swift */,
+				481AF66203B5369AB4F4921E1A7AC3FE /* Resolver.swift */,
+				D96F28238ADBE2268A44285EF8277F18 /* Selectable.swift */,
+				CB98CFF06008E3E22FE1B44B8A1C5243 /* SelectableEventLoop.swift */,
+				C16590A6ED0CAD8E78AFE51752D90DAB /* Selector.swift */,
+				0C8AB85F3CDE0B4B990ECD55FC9F136D /* ServerSocket.swift */,
+				6E4E454FCEB8E6962BF000C66EDB5044 /* SingleStepByteToMessageDecoder.swift */,
+				4D165F65821EE2F6D88D6044325454FB /* Socket.swift */,
+				836A217620A0715A59BC516E4A8B602A /* SocketAddresses.swift */,
+				10B2760552BA2B452433D64650AA5A2D /* SocketChannel.swift */,
+				0697AD5BF8B54513E880CFBE1A0BE3A1 /* SocketOptionProvider.swift */,
+				870514FBCE0286F3318D2DBFC87B9678 /* SocketProtocols.swift */,
+				50A28E44A9A84592B7A3C371F020995A /* System.swift */,
+				089BAFA92BE90D1F8E2B6E6BB7D01AF1 /* Thread.swift */,
+				3A25FE5BC964B39CD5D8BF237EC5D28E /* ThreadPosix.swift */,
+				4401FE2548EDE717D6485D83ED89DA20 /* ThreadWindows.swift */,
+				A036CDBD77A43C50A535A3EC999C358A /* TypeAssistedChannelHandler.swift */,
+				FFDB936D4A76DCDAF3E0B8E814601DD1 /* UniversalBootstrapSupport.swift */,
+				6316C201181F4E25362FE01E991F9251 /* Utilities.swift */,
+				D22719D7E0447080B74333C264213FC3 /* Support Files */,
+			);
+			name = SwiftNIO;
+			path = SwiftNIO;
+			sourceTree = "<group>";
+		};
+		B89EB5F22DCB050772DFFA72DC585DC9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E726FF3C39CA7D6E00E6AF5EF72B7A4 /* CNIODarwin.modulemap */,
+				DB9DB0AC03D870F23BF39E8848A033DB /* CNIODarwin-dummy.m */,
+				30B56F035C4C73FEF638FE9C550263E7 /* CNIODarwin-Info.plist */,
+				CDC1DAF4F02C0B408EF3603850301FB6 /* CNIODarwin-prefix.pch */,
+				B9B149FD8540FA51CDA5D3E3833BC45B /* CNIODarwin-umbrella.h */,
+				9686EA2264267BB6D6626376FCB3813A /* CNIODarwin.debug.xcconfig */,
+				5664307032DF166D4DBB475AEAF0B490 /* CNIODarwin.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CNIODarwin";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -205,54 +932,115 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				43012827C6B0E75EA6501E0ACCA93882 /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				E33B2BA0D5FB8F69D89CFBCACC55D8D7 /* Products */,
+				7AF1FF58F74BA16023BC434916832F8E /* Frameworks */,
+				808185D312A891BBA43FC1EAB8BBC227 /* Pods */,
+				3587E44AFE3CC38A10760ABD20BAED2A /* Products */,
 				349611B88E52CA5F766ED51450F0813B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D22719D7E0447080B74333C264213FC3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				01FD6D0A5E54B0C8441B58662D96CB0B /* SwiftNIO.modulemap */,
+				0948F8389F28DF7A99196339EF9FB832 /* SwiftNIO-dummy.m */,
+				57403EB01C7DD1E2E202CACC4361B6E4 /* SwiftNIO-Info.plist */,
+				7E74EFBFEE89C8C5070381BDF39E3918 /* SwiftNIO-prefix.pch */,
+				B9F4ABE9EC7BF31372C4B7BB34B1A638 /* SwiftNIO-umbrella.h */,
+				9BD05E05316906984708D1257A253B86 /* SwiftNIO.debug.xcconfig */,
+				A71C8D639CDFA8EDA80D996F269557AB /* SwiftNIO.release.xcconfig */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E33B2BA0D5FB8F69D89CFBCACC55D8D7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4DA45F4B13FA9D4A1C6D9E907F5AA617 /* Pods_RSocketSwift_Example.framework */,
-				89EB71A9ED1BB372B3BE5B107A84658F /* Pods_RSocketSwift_Tests.framework */,
-				E722383EFBEFC7AA4A52B484807A3F9F /* RSocketSwift.framework */,
-			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftNIO";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4A645A0FDAD4852BA1D4C7ED04EC665C /* Headers */ = {
+		13D92AD56E225D181EDD0E3E29E53437 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B397E943F200A3EFF00A5060B8E67BA0 /* Pods-RSocketSwift_Example-umbrella.h in Headers */,
+				E5DE8C9702213CD73CB3E8E71B1FC2D9 /* CNIOAtomics-umbrella.h in Headers */,
+				F8E11B7773F3756285BC2CFD54BCD5D0 /* CNIOAtomics.h in Headers */,
+				D4617C6F58E8695348E315D62C5B3106 /* cpp_magic.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68429DC2911A82D9F3177184516096C4 /* Headers */ = {
+		6F9067414602B699DA57ECAE1F4015EC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092D39CACCAC2A22CD0E45B8FDA382A7 /* Pods-RSocketSwift_Tests-umbrella.h in Headers */,
+				F5978BA58E3BF4E5140FA99A8BDF1BA7 /* CNIODarwin-umbrella.h in Headers */,
+				85FEA385FA503F7F3EE6BFDB33E27FD9 /* CNIODarwin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCAF9A223E564BC6D87B98DCD573FB2B /* Headers */ = {
+		74B5F4A14F35F8802F003C527C17484B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4514C15273E75B39E37D5BC3770DB6F /* RSocketSwift-umbrella.h in Headers */,
+				6BD1604B9563F6B4317BD3D98F69703F /* SwiftNIO-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		795CE305D8E286C52F8AF9109A4400EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E691C82A8FF049746DD85BD38CA204B1 /* CNIOSHA1-umbrella.h in Headers */,
+				D4824E4A507F764D4EBBCDFAC650DE37 /* CNIOSHA1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831CD3BA9287EF8B6FA20173DD6DCEAF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71C781F93DA9CFF7BB0FF9509790566 /* CNIOWindows-umbrella.h in Headers */,
+				3A457914CC68F7598C0151CFFB221F7B /* CNIOWindows.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9683EF959A226B355625AA74D528AB5C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F229172A9B7500147B32954B1467790 /* SwiftNIOConcurrencyHelpers-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973C566BB3BC1038AA6815BCCC582E19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				260C10983A5B1592E50CA5B55A4DC9F2 /* Pods-RSocketSwift_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2C77B6744E849907E8A3E7DE3EA0126 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B831E60BA9B8BE42F20C2637FB634DC /* Pods-RSocketSwift_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEBCBFDEA33A5D6D8B5B381A5A82E80F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1146A703D2E0118AD187BB5908C38B5 /* RSocketSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E628E2B9C6CD06D83EFB6FDB24B7292F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9FCDE2854B66634E2584A1CA56F697 /* CNIOLinux-umbrella.h in Headers */,
+				95D8695263EBC374A4CD3C961F55B662 /* CNIOLinux.h in Headers */,
+				6F5AAA586B8287AE05DC3A68AE4C9469 /* ifaddrs-android.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,58 +1049,199 @@
 /* Begin PBXNativeTarget section */
 		34AE5D3759F5777C95294DE1FCCA6A81 /* Pods-RSocketSwift_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A70157D802EDE28BBED13D3CF65AE609 /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Example" */;
+			buildConfigurationList = 92936B151689300DAAD622A8F1D2E134 /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Example" */;
 			buildPhases = (
-				4A645A0FDAD4852BA1D4C7ED04EC665C /* Headers */,
-				B73199A3BD9421F054ABA5C9E2D2BFC6 /* Sources */,
-				DEC78435DB02A4D67EA2C7B89E3E5ECC /* Frameworks */,
-				04BAF3F679B9C49B9BB5AFD36D7185D0 /* Resources */,
+				C2C77B6744E849907E8A3E7DE3EA0126 /* Headers */,
+				8BBCC2EA95DA2EE279261C9C4B8EA4E7 /* Sources */,
+				47BB9E26CCEC5F328143A1BB947E6DD3 /* Frameworks */,
+				D3B89B57DA477B4C3FAF00D3E9A7ED49 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3CEE6E1D00D6430AE4E88215F7D38BCF /* PBXTargetDependency */,
+				D889E10B091C592735D36E62EBDC61DA /* PBXTargetDependency */,
+				7B3C238AEAEDF1805815EC01ACC00B67 /* PBXTargetDependency */,
+				BE832639CAEFD2FED57F7039B348D471 /* PBXTargetDependency */,
+				B15D0F46380C3E5F7EFAF73DAA3432FA /* PBXTargetDependency */,
+				48077639B5B87B0DABA8658C41D4F288 /* PBXTargetDependency */,
+				11A3DB98812D5A8952A7A155036E968D /* PBXTargetDependency */,
+				25824EB6CB5782F91940EB50C6DD8A2F /* PBXTargetDependency */,
+				03BEC05937B61AFC18DA56FF12381F1F /* PBXTargetDependency */,
 			);
 			name = "Pods-RSocketSwift_Example";
 			productName = "Pods-RSocketSwift_Example";
 			productReference = 4DA45F4B13FA9D4A1C6D9E907F5AA617 /* Pods_RSocketSwift_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6AC2B9C9A96C4DADDE69B30584A5AFEB /* Pods-RSocketSwift_Tests */ = {
+		34E23B39AFBC87A7678CDCA494DE5CDC /* CNIOLinux */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A1617FABB2DC14A4B360A8FF1F851FD /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Tests" */;
+			buildConfigurationList = 48F98A685E8DEDD1309D55828B94C6F0 /* Build configuration list for PBXNativeTarget "CNIOLinux" */;
 			buildPhases = (
-				68429DC2911A82D9F3177184516096C4 /* Headers */,
-				234B853DD0D71725E87CD9605856A8FD /* Sources */,
-				CD2D9BC94DE9B5451B42E35E1C33C952 /* Frameworks */,
-				0CA0C643485F1172F78B887040684DC4 /* Resources */,
+				E628E2B9C6CD06D83EFB6FDB24B7292F /* Headers */,
+				DA033B497CE14D267D7964165A2055B9 /* Sources */,
+				1B59DD92D34E230F050A10FF0CCFD131 /* Frameworks */,
+				80B7AED68C42976836E4FEBF1503241F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				143CA52A44E71DB70ED31353CB3A77EB /* PBXTargetDependency */,
+			);
+			name = CNIOLinux;
+			productName = CNIOLinux;
+			productReference = 6F1C5C1A1C8F9473CEF780C63705F78A /* CNIOLinux.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4A0A66DC2DC19095E11E5D3A679802D4 /* CNIOWindows */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AE35604441A8EF2925275593554AD0F /* Build configuration list for PBXNativeTarget "CNIOWindows" */;
+			buildPhases = (
+				831CD3BA9287EF8B6FA20173DD6DCEAF /* Headers */,
+				EBF88B99DEB7A00573D84645ABF64CE5 /* Sources */,
+				438ADCAC992A6E6814EEE7C238EFEDA6 /* Frameworks */,
+				99FFAB22DADB3B2EA60FA7D18A460A78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CNIOWindows;
+			productName = CNIOWindows;
+			productReference = 4A1D16EDB0405CEE4C837F184DC39013 /* CNIOWindows.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		56A44E6B610D174593F40C5AD73224C4 /* CNIODarwin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E0518962CF6135A55435A951F7279A8 /* Build configuration list for PBXNativeTarget "CNIODarwin" */;
+			buildPhases = (
+				6F9067414602B699DA57ECAE1F4015EC /* Headers */,
+				93A67B605C30EC8EEB7865E05CF40167 /* Sources */,
+				36C0684A030A43125B8592E8C26855A8 /* Frameworks */,
+				09959FC1C15A4092346AD33583DE9B2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CNIODarwin;
+			productName = CNIODarwin;
+			productReference = 4CECE1D3F082EE1C5AF7E5E93BAEDF74 /* CNIODarwin.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5E62229F86AA9810C2A7E6CF628B8486 /* SwiftNIO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F6F0DD59516D236E524701C56FF74ED /* Build configuration list for PBXNativeTarget "SwiftNIO" */;
+			buildPhases = (
+				74B5F4A14F35F8802F003C527C17484B /* Headers */,
+				B49AC571E2E79ACC0E0A06A2ABF0A3A8 /* Sources */,
+				C2F12827925D5189030497B76E2C66EF /* Frameworks */,
+				3A9800B37EC7A3A5FE7D056AE0663843 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77D239EC9FD058B47D1C31C95835D14C /* PBXTargetDependency */,
+				D893CF08581ADA6B2C3EAA8E9EE21558 /* PBXTargetDependency */,
+				CAF2DF8C04A74A878F3BFC02F063AAB5 /* PBXTargetDependency */,
+				82A907AC7D00B762F398668B1A501469 /* PBXTargetDependency */,
+				50A73638130B1BAA42B10C9A7FF9B700 /* PBXTargetDependency */,
+				44199B2F6E97F390228B20640C204B20 /* PBXTargetDependency */,
+			);
+			name = SwiftNIO;
+			productName = SwiftNIO;
+			productReference = 5E982D315A4CB75E8F15068B30779C7C /* NIO.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6AC2B9C9A96C4DADDE69B30584A5AFEB /* Pods-RSocketSwift_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6ADD4BE23E8037AB36E73C4D5A8DACF /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Tests" */;
+			buildPhases = (
+				973C566BB3BC1038AA6815BCCC582E19 /* Headers */,
+				7DEDCA6D6F69DA337CFD47839FC38126 /* Sources */,
+				E11074EF5B092F060BA6731FF158518A /* Frameworks */,
+				47ED56AF5E43994190BD5A2E4D99F162 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65827889A312127F02C5135EDC5C5D23 /* PBXTargetDependency */,
 			);
 			name = "Pods-RSocketSwift_Tests";
 			productName = "Pods-RSocketSwift_Tests";
 			productReference = 89EB71A9ED1BB372B3BE5B107A84658F /* Pods_RSocketSwift_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		773FB76F4A2F42092713B9025F188877 /* SwiftNIOConcurrencyHelpers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7673E3F06D375FE28D4786A04EA1D13 /* Build configuration list for PBXNativeTarget "SwiftNIOConcurrencyHelpers" */;
+			buildPhases = (
+				9683EF959A226B355625AA74D528AB5C /* Headers */,
+				97F835C67851F17FB1A6567CF245E90A /* Sources */,
+				F9E0E87C2CC41BAB899D7803823C27FD /* Frameworks */,
+				806A2CAD67BCAB7A61788E460AA4C66B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F539DF017C02E39282E5883D9DB2EBAE /* PBXTargetDependency */,
+			);
+			name = SwiftNIOConcurrencyHelpers;
+			productName = SwiftNIOConcurrencyHelpers;
+			productReference = 673CA60B9FF9D56D5AEAFAD4E2D7B368 /* NIOConcurrencyHelpers.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C4E439D3E3B5FBAAAACFD50A553E5673 /* RSocketSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD5E282EEE998996DFE58C426BA4D8E9 /* Build configuration list for PBXNativeTarget "RSocketSwift" */;
+			buildConfigurationList = B96668F02257FDAEB043E72A4757AD4A /* Build configuration list for PBXNativeTarget "RSocketSwift" */;
 			buildPhases = (
-				FCAF9A223E564BC6D87B98DCD573FB2B /* Headers */,
-				6BA404C6A7C08B5375E063FFDC643A16 /* Sources */,
-				AFDC4EF60945B1BAC65FC3194C296A1F /* Frameworks */,
-				A856427C502C5798806DB09CA1ED6EC2 /* Resources */,
+				CEBCBFDEA33A5D6D8B5B381A5A82E80F /* Headers */,
+				A50B5DE19A22060D65BBA8046F42FAAC /* Sources */,
+				673E872D48A7A8A26E15C29E5EAAD963 /* Frameworks */,
+				A23F3ED7D79B74E873351923B42522FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6300CF48A17C74709E5288F4101C49C3 /* PBXTargetDependency */,
+			);
+			name = RSocketSwift;
+			productName = RSocketSwift;
+			productReference = E722383EFBEFC7AA4A52B484807A3F9F /* RSocketSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E31BF93EB20B6245622D5A44E45F9BCA /* CNIOAtomics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3829B66378F10FA02B34E202E917FC18 /* Build configuration list for PBXNativeTarget "CNIOAtomics" */;
+			buildPhases = (
+				13D92AD56E225D181EDD0E3E29E53437 /* Headers */,
+				C9B409EC82D41F854A477B64C3080EDD /* Sources */,
+				2AEC1294BFEE646EB210F962562F1A59 /* Frameworks */,
+				69B733B8F5483FFD2AD08BC192ACA41B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RSocketSwift;
-			productName = RSocketSwift;
-			productReference = E722383EFBEFC7AA4A52B484807A3F9F /* RSocketSwift.framework */;
+			name = CNIOAtomics;
+			productName = CNIOAtomics;
+			productReference = D91FC01385D3680BAE48C7A1E23CB088 /* CNIOAtomics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E50EEBE8207624037F43288C584338F9 /* CNIOSHA1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B3C3A867B2BC54D19F4E3F789F0DE7E /* Build configuration list for PBXNativeTarget "CNIOSHA1" */;
+			buildPhases = (
+				795CE305D8E286C52F8AF9109A4400EC /* Headers */,
+				159A6E63F5BD337AF5CC8D5A8B3E6230 /* Sources */,
+				A91DB3A902C01D1781CFFD04FA6D63FC /* Frameworks */,
+				1489D7DBB7F509A59909B464C79EECD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CNIOSHA1;
+			productName = CNIOSHA1;
+			productReference = B7F4755B386144CE5A64B92DD50D2D57 /* CNIOSHA1.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -323,11 +1252,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				TargetAttributes = {
-					C4E439D3E3B5FBAAAACFD50A553E5673 = {
-						LastSwiftMigration = 1170;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -338,33 +1262,89 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E33B2BA0D5FB8F69D89CFBCACC55D8D7 /* Products */;
+			productRefGroup = 3587E44AFE3CC38A10760ABD20BAED2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E31BF93EB20B6245622D5A44E45F9BCA /* CNIOAtomics */,
+				56A44E6B610D174593F40C5AD73224C4 /* CNIODarwin */,
+				34E23B39AFBC87A7678CDCA494DE5CDC /* CNIOLinux */,
+				E50EEBE8207624037F43288C584338F9 /* CNIOSHA1 */,
+				4A0A66DC2DC19095E11E5D3A679802D4 /* CNIOWindows */,
 				34AE5D3759F5777C95294DE1FCCA6A81 /* Pods-RSocketSwift_Example */,
 				6AC2B9C9A96C4DADDE69B30584A5AFEB /* Pods-RSocketSwift_Tests */,
 				C4E439D3E3B5FBAAAACFD50A553E5673 /* RSocketSwift */,
+				5E62229F86AA9810C2A7E6CF628B8486 /* SwiftNIO */,
+				773FB76F4A2F42092713B9025F188877 /* SwiftNIOConcurrencyHelpers */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04BAF3F679B9C49B9BB5AFD36D7185D0 /* Resources */ = {
+		09959FC1C15A4092346AD33583DE9B2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0CA0C643485F1172F78B887040684DC4 /* Resources */ = {
+		1489D7DBB7F509A59909B464C79EECD9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A856427C502C5798806DB09CA1ED6EC2 /* Resources */ = {
+		3A9800B37EC7A3A5FE7D056AE0663843 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ED56AF5E43994190BD5A2E4D99F162 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B733B8F5483FFD2AD08BC192ACA41B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		806A2CAD67BCAB7A61788E460AA4C66B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B7AED68C42976836E4FEBF1503241F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99FFAB22DADB3B2EA60FA7D18A460A78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A23F3ED7D79B74E873351923B42522FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3B89B57DA477B4C3FAF00D3E9A7ED49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,55 +1354,284 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		234B853DD0D71725E87CD9605856A8FD /* Sources */ = {
+		159A6E63F5BD337AF5CC8D5A8B3E6230 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E62BE307706644C4CBF618C2CCAE1EFE /* Pods-RSocketSwift_Tests-dummy.m in Sources */,
+				D9134851D57CF19858E488E2D5635064 /* c_nio_sha1.c in Sources */,
+				98C9C564CA36A96C1E234095B97BB6FE /* CNIOSHA1-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6BA404C6A7C08B5375E063FFDC643A16 /* Sources */ = {
+		7DEDCA6D6F69DA337CFD47839FC38126 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B597699BA4500F2330FA70CC8DD609A7 /* CancelFrame.swift in Sources */,
-				CB60AA21B33C16FF9C85D53D36CED762 /* Frame.swift in Sources */,
-				3ADF8792F203D96D6430A6A081FFE42A /* FrameType.swift in Sources */,
-				574ED76E17C5FFB80E65061441C48ADF /* RSocketSwift-dummy.m in Sources */,
+				E828F64A5C2001FBAD01154771E61C0A /* Pods-RSocketSwift_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B73199A3BD9421F054ABA5C9E2D2BFC6 /* Sources */ = {
+		8BBCC2EA95DA2EE279261C9C4B8EA4E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95EC8080D19A783D985F6F0AC3CFB020 /* Pods-RSocketSwift_Example-dummy.m in Sources */,
+				81AE24A967126DEBF0C57D30C5D01BC1 /* Pods-RSocketSwift_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93A67B605C30EC8EEB7865E05CF40167 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B5FD48C3360C78904D29FF5A686DB83 /* CNIODarwin-dummy.m in Sources */,
+				BA77444E0438804CE12B1EB22B0AC56D /* shim.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97F835C67851F17FB1A6567CF245E90A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F9E87CE84594230E7C74DEC7902C449 /* atomics.swift in Sources */,
+				26B6ED28EB36239924AB0EAAF748378F /* lock.swift in Sources */,
+				C9B8050B5E00C7C11FB7D7D0D41D6201 /* NIOAtomic.swift in Sources */,
+				2F6E977E49A0D20E7E29B23A577631C8 /* SwiftNIOConcurrencyHelpers-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50B5DE19A22060D65BBA8046F42FAAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA70EB8595E6261CB128009D5B809B1 /* CancelFrame.swift in Sources */,
+				26C0ED9976ACC1A952586BE84B5486F1 /* Frame.swift in Sources */,
+				13EF1D089F3EF640EBE6C902C5E6B6D7 /* FrameType.swift in Sources */,
+				CF97654E37E0AC8727A7B29081F2BC2E /* RSocketSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B49AC571E2E79ACC0E0A06A2ABF0A3A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65466FB166BD26CC3235ECB36353A536 /* AddressedEnvelope.swift in Sources */,
+				3BFE35D4D13095C28285D35C69745FF5 /* BaseSocket.swift in Sources */,
+				DF85748DAF8E0361AB22F648C2FF78B2 /* BaseSocketChannel.swift in Sources */,
+				1EBEF55A95277F4C0A74FB0D739149B1 /* BaseStreamSocketChannel.swift in Sources */,
+				693BDA03C58397B784DD74C337C39BE6 /* Bootstrap.swift in Sources */,
+				EA3D7C935F4EC2160638E8B73D435533 /* BSDSocketAPI.swift in Sources */,
+				7BC524FB4848926E81A5BD461D842A9B /* BSDSocketAPIPosix.swift in Sources */,
+				1F4CA36F64E78E9FA02D464F4DA530FA /* BSDSocketAPIWindows.swift in Sources */,
+				3058B406BDCCBE82BB67F76FC2099D29 /* ByteBuffer-aux.swift in Sources */,
+				D237F8360463292284702ECB8076C63F /* ByteBuffer-conversions.swift in Sources */,
+				C4B67E413A7EB6B4895266ED9AAF8D5D /* ByteBuffer-core.swift in Sources */,
+				BE95EBF0BC836B28814990B56C8D6AFC /* ByteBuffer-int.swift in Sources */,
+				6AE8B2B7D6C4AA7AA7438A33AA9E34E5 /* ByteBuffer-views.swift in Sources */,
+				3F2683126D7F77F84C02A7BC26164C41 /* Channel.swift in Sources */,
+				30A94E81A8E3F344EFC9C900CE734A97 /* ChannelHandler.swift in Sources */,
+				99E5ED3E23E3BFB198486F8CC5BCFF01 /* ChannelHandlers.swift in Sources */,
+				C5344D073AB909C229EACFD05B9B6251 /* ChannelInvoker.swift in Sources */,
+				331A9CA65A97FDC17B1497E794B76826 /* ChannelOption.swift in Sources */,
+				58170E4053E3ABE4035A624B7E6962BD /* ChannelPipeline.swift in Sources */,
+				70D78D332B258DE52DEBEBE6D2F9024F /* CircularBuffer.swift in Sources */,
+				52CDB6662B1286D44839775F03D6B2A1 /* Codec.swift in Sources */,
+				D10CE32B07D9803973141388F5DB4C7D /* ControlMessage.swift in Sources */,
+				8DE8FFE1CD122D09191CABCAEE48061D /* ConvenienceOptionSupport.swift in Sources */,
+				90EC8E904E12CB53971C69385FB87700 /* DatagramVectorReadManager.swift in Sources */,
+				3E9478A74E23AAB81C4CA8D8D48EC6C8 /* DeadChannel.swift in Sources */,
+				015854DECF5B2BFC0A164C403A2FF9B7 /* DispathQueue+WithFuture.swift in Sources */,
+				9A4EA2424BBDDBFE1BF2F81669EAFA68 /* Embedded.swift in Sources */,
+				48ABDB686114D6538C64777DEEA9F8A9 /* EventLoop.swift in Sources */,
+				89EED804893B76C753A60983E000E72C /* EventLoopFuture.swift in Sources */,
+				877C5FED67F2F5D2F6F5B380ADC2F520 /* FileDescriptor.swift in Sources */,
+				A887B0F751A75744A9BE9249E0B1731D /* FileHandle.swift in Sources */,
+				B907A886729B0DD0691884A277BCF74E /* FileRegion.swift in Sources */,
+				EDE17CE616008F1A1A1787C772E28F2B /* GetaddrinfoResolver.swift in Sources */,
+				00B885EE85A4ADA3809935FE59F49E55 /* HappyEyeballs.swift in Sources */,
+				37DE8106BDDBAF7971CA0EF0909E658B /* Heap.swift in Sources */,
+				3E78F10B0F5EE758914742606949BA6E /* IntegerTypes.swift in Sources */,
+				B06EED8030E878590E94D7B15ACD12D7 /* Interfaces.swift in Sources */,
+				A4359BA626FD6B0CD4EFA07271F9CEEC /* IO.swift in Sources */,
+				900F8FECFCE3B8FF3F89AAE4BD04C377 /* IOData.swift in Sources */,
+				B8E690C374D037063437BF25CCE8D456 /* Linux.swift in Sources */,
+				137FB2FF61DDF89041484D4CAB2E38AC /* LinuxCPUSet.swift in Sources */,
+				AF902A25D93E5DE5825E794973989810 /* MarkedCircularBuffer.swift in Sources */,
+				02D8234AB404D6D049C6E7E9B67988C8 /* MulticastChannel.swift in Sources */,
+				D90944431C908AAFA3D28C928471CB5B /* NIOAny.swift in Sources */,
+				403C8DA4838C96ED5BAA987D8B981416 /* NIOCloseOnErrorHandler.swift in Sources */,
+				31098614F13E61A8FFEA85B05904C2D1 /* NIOThreadPool.swift in Sources */,
+				54C5CF34D4373E81176186D263EB7784 /* NonBlockingFileIO.swift in Sources */,
+				C540D445DE287D694D1FC4C0F767C6E5 /* PendingDatagramWritesManager.swift in Sources */,
+				3A84EEE43FF979B331A34F76CD99FD88 /* PendingWritesManager.swift in Sources */,
+				E932073A9C1618E973BD9C2C78B24F6C /* PipeChannel.swift in Sources */,
+				EE852B89B35B7390EA2D21E727227110 /* PipePair.swift in Sources */,
+				623880CE1AF8D81F3F289A61A410AD3F /* PriorityQueue.swift in Sources */,
+				83CB58EE98967283A2ECD3FDB8CACF48 /* RecvByteBufferAllocator.swift in Sources */,
+				AB0FEAC3589F367428BA2B2C69205D0D /* Resolver.swift in Sources */,
+				125A256620638BB77BD4F84B8755BFD6 /* Selectable.swift in Sources */,
+				BC945E8B48EDE80662C6BD71C4E2EC5E /* SelectableEventLoop.swift in Sources */,
+				F473126FF66D9A77E11173C5EAFD4E50 /* Selector.swift in Sources */,
+				E07E843AEA7CC718606A42F31FA0878E /* ServerSocket.swift in Sources */,
+				43270E81DDBFE6F26C41E4AE2269038F /* SingleStepByteToMessageDecoder.swift in Sources */,
+				9413932433D82939FEBD4EA3783D0FE4 /* Socket.swift in Sources */,
+				798EB269577660FB8CD4BC6310EB4EE2 /* SocketAddresses.swift in Sources */,
+				BD3B6AA366B6260E118136EA946E4F81 /* SocketChannel.swift in Sources */,
+				337475E7AA952628D747A79341B56340 /* SocketOptionProvider.swift in Sources */,
+				2C4444B75917395F7C59600AF02E7655 /* SocketProtocols.swift in Sources */,
+				B10BC128C19B9C79C3CE79003C430242 /* SwiftNIO-dummy.m in Sources */,
+				C227423945BB84596EC133DBAA13DF48 /* System.swift in Sources */,
+				41F49B120B23704B342F0982059200E7 /* Thread.swift in Sources */,
+				42DE689F9FFE58E654941E94752FB765 /* ThreadPosix.swift in Sources */,
+				41236C35F9C9F706B6E89AB3A2E8EFBD /* ThreadWindows.swift in Sources */,
+				C335F6879A4A8AABBFCE103632B7145E /* TypeAssistedChannelHandler.swift in Sources */,
+				0B97D751B9B7C231483900524E99F12F /* UniversalBootstrapSupport.swift in Sources */,
+				A5140677D2B0D572FDB549D8918A9A1B /* Utilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B409EC82D41F854A477B64C3080EDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5918116D3066B4D4396DB74196F7FCB2 /* c-atomics.c in Sources */,
+				8270C3C80B2EA5A122B0F9852A87FF12 /* c-nioatomics.c in Sources */,
+				45D5A76B423A05A9A4C4C7CD6E891C18 /* CNIOAtomics-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA033B497CE14D267D7964165A2055B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				016A9D29C1884DFDDE95865E86A503CE /* CNIOLinux-dummy.m in Sources */,
+				0B8AF16C4590E517AA461B19B91BA986 /* ifaddrs-android.c in Sources */,
+				D5353B3675E3D5FF9CF1521668D40000 /* shim.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBF88B99DEB7A00573D84645ABF64CE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4DAF65DA07452F08D767A1C272AF6A1 /* CNIOWindows-dummy.m in Sources */,
+				E6452994410CA130BC9BF4986223697F /* shim.c in Sources */,
+				2E134A84C6B552EC8E25301BDB9EEF6B /* WSAStartup.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		143CA52A44E71DB70ED31353CB3A77EB /* PBXTargetDependency */ = {
+		03BEC05937B61AFC18DA56FF12381F1F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-RSocketSwift_Example";
-			target = 34AE5D3759F5777C95294DE1FCCA6A81 /* Pods-RSocketSwift_Example */;
-			targetProxy = 20CBFFCF26AD5D4487DD54022011EB2E /* PBXContainerItemProxy */;
+			name = SwiftNIOConcurrencyHelpers;
+			target = 773FB76F4A2F42092713B9025F188877 /* SwiftNIOConcurrencyHelpers */;
+			targetProxy = 3A160D5138F994738CE5E064F6C486C9 /* PBXContainerItemProxy */;
 		};
-		3CEE6E1D00D6430AE4E88215F7D38BCF /* PBXTargetDependency */ = {
+		11A3DB98812D5A8952A7A155036E968D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RSocketSwift;
 			target = C4E439D3E3B5FBAAAACFD50A553E5673 /* RSocketSwift */;
-			targetProxy = 72F0B74D34BDBC8A36B0EE9F132C18B0 /* PBXContainerItemProxy */;
+			targetProxy = 95AC695C3C1257B0F4F9BB719EE67A4C /* PBXContainerItemProxy */;
+		};
+		25824EB6CB5782F91940EB50C6DD8A2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftNIO;
+			target = 5E62229F86AA9810C2A7E6CF628B8486 /* SwiftNIO */;
+			targetProxy = BF7D22736F2EFA75F5C7237F888B556B /* PBXContainerItemProxy */;
+		};
+		44199B2F6E97F390228B20640C204B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftNIOConcurrencyHelpers;
+			target = 773FB76F4A2F42092713B9025F188877 /* SwiftNIOConcurrencyHelpers */;
+			targetProxy = E928B28FADFDC60553719755B818F682 /* PBXContainerItemProxy */;
+		};
+		48077639B5B87B0DABA8658C41D4F288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOWindows;
+			target = 4A0A66DC2DC19095E11E5D3A679802D4 /* CNIOWindows */;
+			targetProxy = 2AD3DEA44957AA49E9350A6E3FDCD10B /* PBXContainerItemProxy */;
+		};
+		50A73638130B1BAA42B10C9A7FF9B700 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOWindows;
+			target = 4A0A66DC2DC19095E11E5D3A679802D4 /* CNIOWindows */;
+			targetProxy = 7B92AC8853759D16BCCB6AA6A065C409 /* PBXContainerItemProxy */;
+		};
+		6300CF48A17C74709E5288F4101C49C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftNIO;
+			target = 5E62229F86AA9810C2A7E6CF628B8486 /* SwiftNIO */;
+			targetProxy = 11DD2A38F3543DDAC6139BB2FBC50C9F /* PBXContainerItemProxy */;
+		};
+		65827889A312127F02C5135EDC5C5D23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RSocketSwift_Example";
+			target = 34AE5D3759F5777C95294DE1FCCA6A81 /* Pods-RSocketSwift_Example */;
+			targetProxy = E094A589C0275736167FC108AE239A49 /* PBXContainerItemProxy */;
+		};
+		77D239EC9FD058B47D1C31C95835D14C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOAtomics;
+			target = E31BF93EB20B6245622D5A44E45F9BCA /* CNIOAtomics */;
+			targetProxy = 479D09F2B3396FC4615B0491E70BC8A6 /* PBXContainerItemProxy */;
+		};
+		7B3C238AEAEDF1805815EC01ACC00B67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIODarwin;
+			target = 56A44E6B610D174593F40C5AD73224C4 /* CNIODarwin */;
+			targetProxy = 7E441589804110D042BC8100B722278A /* PBXContainerItemProxy */;
+		};
+		82A907AC7D00B762F398668B1A501469 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOSHA1;
+			target = E50EEBE8207624037F43288C584338F9 /* CNIOSHA1 */;
+			targetProxy = F565374A939BA7393C6CD87526F1ED3B /* PBXContainerItemProxy */;
+		};
+		B15D0F46380C3E5F7EFAF73DAA3432FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOSHA1;
+			target = E50EEBE8207624037F43288C584338F9 /* CNIOSHA1 */;
+			targetProxy = 0F28692C344AEA34815A119135705907 /* PBXContainerItemProxy */;
+		};
+		BE832639CAEFD2FED57F7039B348D471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOLinux;
+			target = 34E23B39AFBC87A7678CDCA494DE5CDC /* CNIOLinux */;
+			targetProxy = 5E4A93B7DAC6B2F318B89DFDD13987AE /* PBXContainerItemProxy */;
+		};
+		CAF2DF8C04A74A878F3BFC02F063AAB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOLinux;
+			target = 34E23B39AFBC87A7678CDCA494DE5CDC /* CNIOLinux */;
+			targetProxy = 9BE8903E03F396E089C5D43C94DCAA5F /* PBXContainerItemProxy */;
+		};
+		D889E10B091C592735D36E62EBDC61DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOAtomics;
+			target = E31BF93EB20B6245622D5A44E45F9BCA /* CNIOAtomics */;
+			targetProxy = C816C19C8DBEBE4FF98ACB288C8F7FA5 /* PBXContainerItemProxy */;
+		};
+		D893CF08581ADA6B2C3EAA8E9EE21558 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIODarwin;
+			target = 56A44E6B610D174593F40C5AD73224C4 /* CNIODarwin */;
+			targetProxy = 0F6C2D4DBB346FF0507D3620B85A28A7 /* PBXContainerItemProxy */;
+		};
+		F539DF017C02E39282E5883D9DB2EBAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CNIOAtomics;
+			target = E31BF93EB20B6245622D5A44E45F9BCA /* CNIOAtomics */;
+			targetProxy = 113B4D60B99455E0BA29755F3F68C6CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		971D80D6C7919C8194B7DF01C1F7AFDC /* Debug */ = {
+		107BE960E0BCB2CA7CC1D986B0A8DE9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF3D5BA4BC3F56BEF0F24438A0971B8A /* RSocketSwift.debug.xcconfig */;
+			baseConfigurationReference = DCC4603650CA89252B44DB9A810971E2 /* SwiftNIOConcurrencyHelpers.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -432,52 +1641,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RSocketSwift/RSocketSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RSocketSwift/RSocketSwift-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftNIOConcurrencyHelpers/SwiftNIOConcurrencyHelpers-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftNIOConcurrencyHelpers/SwiftNIOConcurrencyHelpers-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RSocketSwift/RSocketSwift.modulemap";
-				PRODUCT_MODULE_NAME = RSocketSwift;
-				PRODUCT_NAME = RSocketSwift;
+				MODULEMAP_FILE = "Target Support Files/SwiftNIOConcurrencyHelpers/SwiftNIOConcurrencyHelpers.modulemap";
+				PRODUCT_MODULE_NAME = NIOConcurrencyHelpers;
+				PRODUCT_NAME = NIOConcurrencyHelpers;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A0EAD68F70DEC1F38F32D4E4E89AC398 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70B1A0C64EE1AB4FDC26166604BC5728 /* Pods-RSocketSwift_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -485,11 +1660,45 @@
 			};
 			name = Release;
 		};
-		AD652CE60B19D445B9C8C3AF655EB828 /* Debug */ = {
+		13B422AC26141876DE2DC144DFA91980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A71C8D639CDFA8EDA80D996F269557AB /* SwiftNIO.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftNIO/SwiftNIO-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftNIO/SwiftNIO-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftNIO/SwiftNIO.modulemap";
+				PRODUCT_MODULE_NAME = NIO;
+				PRODUCT_NAME = NIO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		177C55E4DB8B771585E979318C032531 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A69B8E77A0FB8445B0085C4F69DA440C /* Pods-RSocketSwift_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -501,7 +1710,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-RSocketSwift_Tests/Pods-RSocketSwift_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RSocketSwift_Tests/Pods-RSocketSwift_Tests.modulemap";
@@ -518,132 +1727,7 @@
 			};
 			name = Debug;
 		};
-		ADA489FBF682B2EB7A0E716FFB3E1374 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0988818D84DE92533CDEAAB8C8BE109B /* Pods-RSocketSwift_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B0087CB4594321EF41619F3181FE120E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		B4A086F2B1F5BB5BBD455F6EBF146FF7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA625E0D0AF0B6F0F28B14B7948FD625 /* RSocketSwift.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RSocketSwift/RSocketSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RSocketSwift/RSocketSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RSocketSwift/RSocketSwift.modulemap";
-				PRODUCT_MODULE_NAME = RSocketSwift;
-				PRODUCT_NAME = RSocketSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -694,7 +1778,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -707,11 +1791,338 @@
 			};
 			name = Debug;
 		};
-		E21929C7F71229EBDAFA5F0977959302 /* Release */ = {
+		28836194B76E078694D2CF7D18DB6DCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAC75E491972B2D34F25E50A07C14C9B /* CNIOAtomics.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOAtomics/CNIOAtomics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOAtomics/CNIOAtomics-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOAtomics/CNIOAtomics.modulemap";
+				PRODUCT_MODULE_NAME = CNIOAtomics;
+				PRODUCT_NAME = CNIOAtomics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		28D2FA3EBD553B77641F10F516665120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70B1A0C64EE1AB4FDC26166604BC5728 /* Pods-RSocketSwift_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3ED632C4459A438445E81D150E494E2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CD3EC70C907BBF13BEF4FC94CADBE53 /* CNIOSHA1.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOSHA1/CNIOSHA1-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOSHA1/CNIOSHA1-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOSHA1/CNIOSHA1.modulemap";
+				PRODUCT_MODULE_NAME = CNIOSHA1;
+				PRODUCT_NAME = CNIOSHA1;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3F73B2577303FB9E91E1D3AAE7D3D6D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEF67534B9ED6E3848F45E3D1E15C6D2 /* SwiftNIOConcurrencyHelpers.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftNIOConcurrencyHelpers/SwiftNIOConcurrencyHelpers-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftNIOConcurrencyHelpers/SwiftNIOConcurrencyHelpers-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftNIOConcurrencyHelpers/SwiftNIOConcurrencyHelpers.modulemap";
+				PRODUCT_MODULE_NAME = NIOConcurrencyHelpers;
+				PRODUCT_NAME = NIOConcurrencyHelpers;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		540A50A0966FB343E12D99581206B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9686EA2264267BB6D6626376FCB3813A /* CNIODarwin.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIODarwin/CNIODarwin-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIODarwin/CNIODarwin-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIODarwin/CNIODarwin.modulemap";
+				PRODUCT_MODULE_NAME = CNIODarwin;
+				PRODUCT_NAME = CNIODarwin;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5A007286EE26DA591088B620D0C08854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5664307032DF166D4DBB475AEAF0B490 /* CNIODarwin.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIODarwin/CNIODarwin-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIODarwin/CNIODarwin-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIODarwin/CNIODarwin.modulemap";
+				PRODUCT_MODULE_NAME = CNIODarwin;
+				PRODUCT_NAME = CNIODarwin;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5A464B5D9C27D0E49895E2F20C8AA756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA625E0D0AF0B6F0F28B14B7948FD625 /* RSocketSwift.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSocketSwift/RSocketSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSocketSwift/RSocketSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSocketSwift/RSocketSwift.modulemap";
+				PRODUCT_MODULE_NAME = RSocketSwift;
+				PRODUCT_NAME = RSocketSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6B50561571D2C3895C4EBCE809012607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF3D5BA4BC3F56BEF0F24438A0971B8A /* RSocketSwift.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSocketSwift/RSocketSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSocketSwift/RSocketSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSocketSwift/RSocketSwift.modulemap";
+				PRODUCT_MODULE_NAME = RSocketSwift;
+				PRODUCT_NAME = RSocketSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6BE88D31FA60F84505DE7FB6AE249DA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E40B022DF950AD33302E21B326DC934F /* CNIOLinux.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOLinux/CNIOLinux-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOLinux/CNIOLinux-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOLinux/CNIOLinux.modulemap";
+				PRODUCT_MODULE_NAME = CNIOLinux;
+				PRODUCT_NAME = CNIOLinux;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7366C9FFECD16825018F5BBF7E01A69E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BD05E05316906984708D1257A253B86 /* SwiftNIO.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftNIO/SwiftNIO-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftNIO/SwiftNIO-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftNIO/SwiftNIO.modulemap";
+				PRODUCT_MODULE_NAME = NIO;
+				PRODUCT_NAME = NIO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		745E413AFCB7CBAC2AF7628373370AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52D8D59A20A274FF59D0C6F65BEAA31C /* Pods-RSocketSwift_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -723,7 +2134,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-RSocketSwift_Tests/Pods-RSocketSwift_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RSocketSwift_Tests/Pods-RSocketSwift_Tests.modulemap";
@@ -741,14 +2152,280 @@
 			};
 			name = Release;
 		};
+		75522496E420EE48D6E8E1A12436BCB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0988818D84DE92533CDEAAB8C8BE109B /* Pods-RSocketSwift_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSocketSwift_Example/Pods-RSocketSwift_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F5315CA3128BC37979CD432DAD30BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B850C3532EBE16BE764654160DA5CB3 /* CNIOWindows.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOWindows/CNIOWindows-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOWindows/CNIOWindows-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOWindows/CNIOWindows.modulemap";
+				PRODUCT_MODULE_NAME = CNIOWindows;
+				PRODUCT_NAME = CNIOWindows;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8FBF2936C048A6ACEB504E3845DE6EE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C22E51015680664F14B436B2FB060CC1 /* CNIOAtomics.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOAtomics/CNIOAtomics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOAtomics/CNIOAtomics-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOAtomics/CNIOAtomics.modulemap";
+				PRODUCT_MODULE_NAME = CNIOAtomics;
+				PRODUCT_NAME = CNIOAtomics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9185ABA6058E9D2E5ED66950709FCE62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5CF9B3AD58D540EA1D08238E007400E /* CNIOLinux.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOLinux/CNIOLinux-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOLinux/CNIOLinux-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOLinux/CNIOLinux.modulemap";
+				PRODUCT_MODULE_NAME = CNIOLinux;
+				PRODUCT_NAME = CNIOLinux;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D7F39A00D2C8EDD8361DCD1B2B2B8256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41EB80D4639579BD94CF4B4FFE5DBBB /* CNIOWindows.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOWindows/CNIOWindows-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOWindows/CNIOWindows-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOWindows/CNIOWindows.modulemap";
+				PRODUCT_MODULE_NAME = CNIOWindows;
+				PRODUCT_NAME = CNIOWindows;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D804AE253D71A93E7B58AD1533C95909 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B864242B6233EC37A5E4282EE85A2B9 /* CNIOSHA1.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CNIOSHA1/CNIOSHA1-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CNIOSHA1/CNIOSHA1-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CNIOSHA1/CNIOSHA1.modulemap";
+				PRODUCT_MODULE_NAME = CNIOSHA1;
+				PRODUCT_NAME = CNIOSHA1;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A1617FABB2DC14A4B360A8FF1F851FD /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Tests" */ = {
+		2E0518962CF6135A55435A951F7279A8 /* Build configuration list for PBXNativeTarget "CNIODarwin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AD652CE60B19D445B9C8C3AF655EB828 /* Debug */,
-				E21929C7F71229EBDAFA5F0977959302 /* Release */,
+				540A50A0966FB343E12D99581206B192 /* Debug */,
+				5A007286EE26DA591088B620D0C08854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3829B66378F10FA02B34E202E917FC18 /* Build configuration list for PBXNativeTarget "CNIOAtomics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28836194B76E078694D2CF7D18DB6DCF /* Debug */,
+				8FBF2936C048A6ACEB504E3845DE6EE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -756,26 +2433,80 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
-				B0087CB4594321EF41619F3181FE120E /* Release */,
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A70157D802EDE28BBED13D3CF65AE609 /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Example" */ = {
+		48F98A685E8DEDD1309D55828B94C6F0 /* Build configuration list for PBXNativeTarget "CNIOLinux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ADA489FBF682B2EB7A0E716FFB3E1374 /* Debug */,
-				A0EAD68F70DEC1F38F32D4E4E89AC398 /* Release */,
+				9185ABA6058E9D2E5ED66950709FCE62 /* Debug */,
+				6BE88D31FA60F84505DE7FB6AE249DA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD5E282EEE998996DFE58C426BA4D8E9 /* Build configuration list for PBXNativeTarget "RSocketSwift" */ = {
+		5AE35604441A8EF2925275593554AD0F /* Build configuration list for PBXNativeTarget "CNIOWindows" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				971D80D6C7919C8194B7DF01C1F7AFDC /* Debug */,
-				B4A086F2B1F5BB5BBD455F6EBF146FF7 /* Release */,
+				8F5315CA3128BC37979CD432DAD30BE4 /* Debug */,
+				D7F39A00D2C8EDD8361DCD1B2B2B8256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92936B151689300DAAD622A8F1D2E134 /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75522496E420EE48D6E8E1A12436BCB1 /* Debug */,
+				28D2FA3EBD553B77641F10F516665120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B3C3A867B2BC54D19F4E3F789F0DE7E /* Build configuration list for PBXNativeTarget "CNIOSHA1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ED632C4459A438445E81D150E494E2C /* Debug */,
+				D804AE253D71A93E7B58AD1533C95909 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F6F0DD59516D236E524701C56FF74ED /* Build configuration list for PBXNativeTarget "SwiftNIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7366C9FFECD16825018F5BBF7E01A69E /* Debug */,
+				13B422AC26141876DE2DC144DFA91980 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B96668F02257FDAEB043E72A4757AD4A /* Build configuration list for PBXNativeTarget "RSocketSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B50561571D2C3895C4EBCE809012607 /* Debug */,
+				5A464B5D9C27D0E49895E2F20C8AA756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6ADD4BE23E8037AB36E73C4D5A8DACF /* Build configuration list for PBXNativeTarget "Pods-RSocketSwift_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177C55E4DB8B771585E979318C032531 /* Debug */,
+				745E413AFCB7CBAC2AF7628373370AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7673E3F06D375FE28D4786A04EA1D13 /* Build configuration list for PBXNativeTarget "SwiftNIOConcurrencyHelpers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F73B2577303FB9E91E1D3AAE7D3D6D1 /* Debug */,
+				107BE960E0BCB2CA7CC1D986B0A8DE9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

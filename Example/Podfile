@@ -1,3 +1,6 @@
+# Platform version to build against
+platform :ios, '10.0'
+
 use_frameworks!
 
 target 'RSocketSwift_Example' do

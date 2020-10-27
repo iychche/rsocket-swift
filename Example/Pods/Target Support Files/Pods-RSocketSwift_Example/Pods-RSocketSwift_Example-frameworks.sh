@@ -197,10 +197,24 @@ if [ -r "${ARTIFACT_LIST_FILE}" ]; then
 fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOAtomics/CNIOAtomics.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIODarwin/CNIODarwin.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOLinux/CNIOLinux.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOSHA1/CNIOSHA1.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RSocketSwift/RSocketSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOAtomics/CNIOAtomics.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIODarwin/CNIODarwin.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOLinux/CNIOLinux.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOSHA1/CNIOSHA1.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RSocketSwift/RSocketSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

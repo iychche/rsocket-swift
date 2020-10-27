@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NIO
 
 public enum FrameType: Int {
     case Reserved = 0x00

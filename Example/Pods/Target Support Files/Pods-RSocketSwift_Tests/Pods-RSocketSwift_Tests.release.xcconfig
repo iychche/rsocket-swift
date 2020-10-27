@@ -1,7 +1,7 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/RSocketSwift"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CNIOAtomics" "${PODS_CONFIGURATION_BUILD_DIR}/CNIODarwin" "${PODS_CONFIGURATION_BUILD_DIR}/CNIOLinux" "${PODS_CONFIGURATION_BUILD_DIR}/CNIOSHA1" "${PODS_CONFIGURATION_BUILD_DIR}/CNIOWindows" "${PODS_CONFIGURATION_BUILD_DIR}/RSocketSwift" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftNIO" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftNIOConcurrencyHelpers"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/RSocketSwift/RSocketSwift.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "RSocketSwift"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CNIOAtomics/CNIOAtomics.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CNIODarwin/CNIODarwin.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CNIOLinux/CNIOLinux.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CNIOSHA1/CNIOSHA1.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CNIOWindows/CNIOWindows.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RSocketSwift/RSocketSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftNIO/NIO.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "CNIOAtomics" -framework "CNIODarwin" -framework "CNIOLinux" -framework "CNIOSHA1" -framework "CNIOWindows" -framework "NIO" -framework "NIOConcurrencyHelpers" -framework "RSocketSwift"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
