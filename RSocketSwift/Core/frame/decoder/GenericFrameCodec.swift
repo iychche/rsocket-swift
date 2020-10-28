@@ -37,4 +37,65 @@ public class GenericFrameCodec {
         
         return metaData
     }
+    
+    public static func encode(allocator: ByteBufferAllocator,
+                         frameType: FrameType,
+                         streamId: Int,
+                         fragmentFollows: Bool,
+                         metadata: ByteBuffer?,
+                         data: ByteBuffer) -> ByteBuffer {
+        return encode(allocator,
+                      frameType: frameType,
+                      streamId: streamId,
+                      fragmentFollows: fragmentFollows,
+                      complete: false,
+                      next: false,
+                      requestN: 0,
+                      metadata: metadata,
+                      data: data)
+        
+    }
+    
+    public static func encode(_ allocator: ByteBufferAllocator,
+                              frameType: FrameType,
+                              streamId: Int,
+                              fragmentFollows: Bool,
+                              complete: Bool,
+                              next: Bool,
+                              requestN: Int,
+                              metadata: ByteBuffer?,
+                              data: ByteBuffer?) -> ByteBuffer {
+        let hasMetadata = metadata != nil
+        var flags = 0
+        
+        if hasMetadata {
+            flags = flags | FrameHeaderCodec.FLAGS_M
+        }
+        
+        if fragmentFollows {
+            flags = flags | FrameHeaderCodec.FLAGS_F
+        }
+        
+        if complete {
+            flags = flags | FrameHeaderCodec.FLAGS_C
+        }
+        if next {
+            flags = flags | FrameHeaderCodec.FLAGS_N
+        }
+        
+        var header = FrameHeaderCodec.encode(allocator,
+                                             streamId: streamId,
+                                             frameTypeEncodeType: FrameType.Flags.CAN_HAVE_METADATA.hashValue,
+                                             frameType: frameType,
+                                             flags: flags)
+        if requestN > 0 {
+            header.writeInteger(requestN)
+        }
+        
+        return FrameBodyCodec.encode(allocator,
+                                     header: header,
+                                     metadata: metadata,
+                                     hasMetadata: hasMetadata,
+                                     data: data)
+    }
 }

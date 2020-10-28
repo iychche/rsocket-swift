@@ -30,4 +30,6 @@ public class ZeroCopyPayloadDecoder: PayloadDecoder {
         // In Swift the Automatic Reference Count takes care of retain and release the objects. We do not have to manually keep track of the reference count and hence this ZeroCopyPayloadDecoder might not be applicable.
         return DefaultPayload.create(data: d!) // This is just defaulted to some value to satisfy the return
     }
+    
+    
 }
