@@ -22,4 +22,12 @@ public class RequestResponseFrameCodec {
     public static func metadata(byteBuf: inout ByteBuffer) -> ByteBuffer {
         return GenericFrameCodec.metadata(byteBuf: &byteBuf)!
     }
+    
+    public static func encode(_ allocator: ByteBufferAllocator,
+                              streamId: Int,
+                              fragmentFollows: Bool,
+                              metadata: ByteBuffer?,
+                              data: ByteBuffer) -> ByteBuffer {
+        return GenericFrameCodec.encode(allocator: allocator, frameType: FrameType.RequestResponse, streamId: streamId, fragmentFollows: fragmentFollows, metadata: metadata, data: data)
+    }
 }

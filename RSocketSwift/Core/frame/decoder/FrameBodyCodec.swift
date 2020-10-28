@@ -33,7 +33,7 @@ public class FrameBodyCodec {
             if (data.writerIndex - data.readerIndex) > 0 {
                 addData = true
             } else {
-//                data.release() // No equivalent function in Swift
+               //data.release() // No equivalent function in Swift
                 addData = false
             }
         } else {
@@ -46,7 +46,7 @@ public class FrameBodyCodec {
             if (metadata.writerIndex - metadata.readerIndex) > 0 {
                 addMetadata = true
             } else {
-                //                metadata.release() // No equivalent function in Swift
+                //metadata.release() // No equivalent function in Swift
                 addMetadata = false
             }
         } else {
@@ -58,10 +58,11 @@ public class FrameBodyCodec {
             encodeLength(&header, length: length)
         }
         
+        var data = data!
+        var metadata = metadata!
+        var newByteBuffer: ByteBuffer
         if addMetadata && addData {
-            var newByteBuffer = ByteBufferAllocator().buffer(capacity: 3)
-            var data = data!
-            var metadata = metadata!
+           newByteBuffer = ByteBufferAllocator().buffer(capacity: 3)
             
             newByteBuffer.writeBuffer(&header)
             newByteBuffer.moveWriterIndex(to: header.capacity)
@@ -72,8 +73,7 @@ public class FrameBodyCodec {
             
             return newByteBuffer
         } else if addMetadata {
-            var newByteBuffer = ByteBufferAllocator().buffer(capacity: 3)
-            var metadata = metadata!
+            newByteBuffer = ByteBufferAllocator().buffer(capacity: 2)
             
             newByteBuffer.writeBuffer(&header)
             newByteBuffer.moveWriterIndex(to: header.capacity)
@@ -82,8 +82,7 @@ public class FrameBodyCodec {
             
             return newByteBuffer
         } else if addData {
-            var newByteBuffer = ByteBufferAllocator().buffer(capacity: 3)
-            var data = data!
+            newByteBuffer = ByteBufferAllocator().buffer(capacity: 2)
             
             newByteBuffer.writeBuffer(&header)
             newByteBuffer.moveWriterIndex(to: header.capacity)
