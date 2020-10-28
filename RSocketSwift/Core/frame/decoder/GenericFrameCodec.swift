@@ -85,7 +85,7 @@ public class GenericFrameCodec {
         
         var header = FrameHeaderCodec.encode(allocator,
                                              streamId: streamId,
-                                             frameTypeEncodeType: FrameType.Flags.CAN_HAVE_METADATA.rawValue,
+                                             frameTypeEncodeType: FrameType.Flags.CAN_HAVE_METADATA,
                                              frameType: frameType,
                                              flags: flags)
         if requestN > 0 {
