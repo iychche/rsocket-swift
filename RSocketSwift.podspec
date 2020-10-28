@@ -29,7 +29,7 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-  s.source_files = 'RSocketSwift/Classes/**/*'
+  s.source_files = 'RSocketSwift/Core/**/*'
   s.dependency 'SwiftNIO', '2.23.0'
   # s.resource_bundles = {
   #   'RSocketSwift' => ['RSocketSwift/Assets/*.png']
