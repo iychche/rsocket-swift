@@ -47,14 +47,14 @@ public class FrameHeaderCodec {
     
     public static func encode(_ allocator: ByteBufferAllocator,
                               streamId: Int,
-                              frameTypeEncodeType: Int,
+                              frameTypeEncodeType: FrameType.Flags,
                               frameType: FrameType,
                               flags: Int) -> ByteBuffer {
         if !frameType.canHaveMetaData(FrameType.Flags(rawValue: flags)!) && (flags & FLAGS_M) == FLAGS_M {
             fatalError("bad value for metadata flag")
         }
         
-        let typeAndFlagsShort: Int16 = Int16(frameTypeEncodeType << FRAME_TYPE_SHIFT) | Int16(flags)
+        let typeAndFlagsShort: Int16 = Int16(frameTypeEncodeType.rawValue << FRAME_TYPE_SHIFT) | Int16(flags)
         let typeAndFlagsInt: Int = Int(typeAndFlagsShort)
         
         let fullCapacity = streamId + typeAndFlagsInt
