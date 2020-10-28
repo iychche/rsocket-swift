@@ -25,12 +25,18 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Sumit Nathany' => 'sumit_nathany@intuit.com' }
-  s.source           = { :git => 'https://github.com/Sumit Nathany/RSocketSwift.git', :branch => 'master' }
+  s.source           = { :git => 'https://github.com/Sumit Nathany/RSocketSwift.git', :branch => 'WS/rsocket-decoder-payload-utils_reorgFolderStructure' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
+
   s.ios.deployment_target = '10.0'
-  s.source_files = 'RSocketSwift/Core/**/*'
-  s.dependency 'SwiftNIO', '2.23.0'
+
+  s.default_subspecs = 'Core'
+
+  s.subspec 'Core' do |core|
+    s.source_files = 'RSocketSwift/Core/**/*.swift'
+    s.dependency 'SwiftNIO', '2.23.0'
+  end
   # s.resource_bundles = {
   #   'RSocketSwift' => ['RSocketSwift/Assets/*.png']
   # }

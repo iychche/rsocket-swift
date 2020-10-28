@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		1C1D7D881184CF5220DA62A7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2D45289C237AF7A70FC15EBB /* Pods_RSocketSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSocketSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		385F34192A1FCA8B4AE41A76 /* RSocketSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RSocketSwift.podspec; path = ../RSocketSwift.podspec; sourceTree = "<group>"; };
+		385F34192A1FCA8B4AE41A76 /* RSocketSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RSocketSwift.podspec; path = ../RSocketSwift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5FB6B4E713BCDBF25DD5C613 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RSocketSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSocketSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
