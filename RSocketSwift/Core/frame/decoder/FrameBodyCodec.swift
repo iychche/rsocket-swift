@@ -60,36 +60,40 @@ public class FrameBodyCodec {
         
         var data = data!
         var metadata = metadata!
-        var newByteBuffer: ByteBuffer
+        var compositeByteBuffer: ByteBuffer
+        
         if addMetadata && addData {
-           newByteBuffer = ByteBufferAllocator().buffer(capacity: 3)
             
-            newByteBuffer.writeBuffer(&header)
-            newByteBuffer.moveWriterIndex(to: header.capacity)
-            newByteBuffer.writeBuffer(&data)
-            newByteBuffer.moveWriterIndex(to: data.capacity)
-            newByteBuffer.writeBuffer(&metadata)
-            newByteBuffer.moveWriterIndex(to: metadata.capacity)
+           compositeByteBuffer = ByteBufferAllocator().buffer(capacity: 3)
             
-            return newByteBuffer
+            compositeByteBuffer.writeBuffer(&header)
+            compositeByteBuffer.moveWriterIndex(to: header.capacity)
+            compositeByteBuffer.writeBuffer(&data)
+            compositeByteBuffer.moveWriterIndex(to: data.capacity)
+            compositeByteBuffer.writeBuffer(&metadata)
+            compositeByteBuffer.moveWriterIndex(to: metadata.capacity)
+            
+            return compositeByteBuffer
         } else if addMetadata {
-            newByteBuffer = ByteBufferAllocator().buffer(capacity: 2)
+        
+            compositeByteBuffer = ByteBufferAllocator().buffer(capacity: 2)
             
-            newByteBuffer.writeBuffer(&header)
-            newByteBuffer.moveWriterIndex(to: header.capacity)
-            newByteBuffer.writeBuffer(&metadata)
-            newByteBuffer.moveWriterIndex(to: metadata.capacity)
+            compositeByteBuffer.writeBuffer(&header)
+            compositeByteBuffer.moveWriterIndex(to: header.capacity)
+            compositeByteBuffer.writeBuffer(&metadata)
+            compositeByteBuffer.moveWriterIndex(to: metadata.capacity)
             
-            return newByteBuffer
+            return compositeByteBuffer
         } else if addData {
-            newByteBuffer = ByteBufferAllocator().buffer(capacity: 2)
             
-            newByteBuffer.writeBuffer(&header)
-            newByteBuffer.moveWriterIndex(to: header.capacity)
-            newByteBuffer.writeBuffer(&data)
-            newByteBuffer.moveWriterIndex(to: data.capacity)
+            compositeByteBuffer = ByteBufferAllocator().buffer(capacity: 2)
             
-            return newByteBuffer
+            compositeByteBuffer.writeBuffer(&header)
+            compositeByteBuffer.moveWriterIndex(to: header.capacity)
+            compositeByteBuffer.writeBuffer(&data)
+            compositeByteBuffer.moveWriterIndex(to: data.capacity)
+            
+            return compositeByteBuffer
         } else {
             return header
         }
