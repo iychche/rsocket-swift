@@ -30,15 +30,15 @@ public class ErrorFrameCodec {
     public static let MIN_USER_ALLOWED_ERROR_CODE = 0x00000301
     public static let MAX_USER_ALLOWED_ERROR_CODE = 0xFFFFFFFE
     
-    public static func encode(_ allocator: ByteBufferAllocator, streamId: Int, data: ByteBuffer) -> ByteBuffer {
+    public static func encode(_ allocator: ByteBufferAllocator,streamId: Int, data: ByteBuffer, rSocketException: RSocketErrorException? = nil) throws -> ByteBuffer {
         var data = data
         var header = FrameHeaderCodec.encode(allocator, streamId: streamId, frameTypeEncodeType: FrameType.Flags.EMPTY, frameType: FrameType.Error, flags: 0)
         
-        let errorCode = 0 //TODO
+        let errorCode = rSocketException?.getErrorCode() ?? APPLICATION_ERROR
             
         header.writeInteger(errorCode)
         
-        var compositeByteBuffer = ByteBufferAllocator().buffer(capacity: 2)
+        var compositeByteBuffer = ByteBufferAllocator().buffer(capacity: header.capacity + data.capacity)
         compositeByteBuffer.writeBuffer(&header)
         compositeByteBuffer.moveWriterIndex(to: header.capacity)
         compositeByteBuffer.writeBuffer(&data)
@@ -46,46 +46,25 @@ public class ErrorFrameCodec {
         
         return compositeByteBuffer
         
-        /*ByteBuf header = FrameHeaderCodec.encode(allocator, streamId, FrameType.ERROR, 0);
-
-        int errorCode =
-            t instanceof RSocketErrorException
-                ? ((RSocketErrorException) t).errorCode()
-                : APPLICATION_ERROR;
-
-        header.writeInt(errorCode);
-
-        return allocator.compositeBuffer(2).addComponents(true, header, data);*/
     }
     
-    public static func encode(_ allocator: ByteBufferAllocator, streamId: Int) {
+    public static func encode(_ allocator: ByteBufferAllocator, streamId: Int, rSocketException: RSocketErrorException? = nil) throws -> ByteBuffer {
         
-        //TODO
-        
+        let message = rSocketException?.getMessage()
+        var byteBuffer = ByteBufferAllocator().buffer(capacity: message?.count ?? 0)
+        byteBuffer.writeString(message ?? "")
+       
+        return try encode(allocator, streamId: streamId, data: byteBuffer, rSocketException: rSocketException)
     }
-    
-    /*public static ByteBuf encode(ByteBufAllocator allocator, int streamId, Throwable t) {
-      String message = t.getMessage() == null ? "" : t.getMessage();
-      ByteBuf data = ByteBufUtil.writeUtf8(allocator, message);
-      return encode(allocator, streamId, t, data);
-    }*/
-    
+
     public static func errorCode( byteBuf: inout ByteBuffer) -> Int {
         
         byteBuf.moveReaderIndex(to: 0)
         byteBuf.moveReaderIndex(to: FrameHeaderCodec.size())
-        let i = byteBuf.readerIndex
+        let i = byteBuf.readInteger(as: Int.self)
         byteBuf.moveReaderIndex(to: 0)
-        return i
+        return i!
     }
-    
-    /*public static int errorCode(ByteBuf byteBuf) {
-      byteBuf.markReaderIndex();
-      byteBuf.skipBytes(FrameHeaderCodec.size());
-      int i = byteBuf.readInt();
-      byteBuf.resetReaderIndex();
-      return i;
-    }*/
     
     public static func data( byteBuf: inout ByteBuffer) -> ByteBuffer {
         
@@ -96,19 +75,9 @@ public class ErrorFrameCodec {
         return slice
     }
     
-    /*public static ByteBuf data(ByteBuf byteBuf) {
-      byteBuf.markReaderIndex();
-      byteBuf.skipBytes(FrameHeaderCodec.size() + Integer.BYTES);
-      ByteBuf slice = byteBuf.slice();
-      byteBuf.resetReaderIndex();
-      return slice;
-    }*/
-    
     public static func dataUtf8(byteBuf: inout ByteBuffer) -> String {
         return "\(data(byteBuf: &byteBuf))"
     }
     
-    /*public static String dataUtf8(ByteBuf byteBuf) {
-      return data(byteBuf).toString(StandardCharsets.UTF_8);
-    }*/
 }
+
