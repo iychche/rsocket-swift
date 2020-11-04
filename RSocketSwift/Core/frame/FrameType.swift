@@ -39,6 +39,11 @@ public enum FrameType: Int {
 
     case Extension = 0x3F //, Flags.CanHaveData or Flags.CanHaveMetadata);
     
+    private static var FRAME_TYPES_BY_ENCODED_TYPE : [FrameType] = [] {
+        didSet {
+            //TODO
+        }
+    }
     /**
      * Verifies whether the frame type can have data.
      - Parameter flags: Flags constant.
@@ -83,6 +88,7 @@ public enum FrameType: Int {
     public func isRequestType(_ flags: Flags) -> Bool {
         return Flags.IS_REQUEST_TYPE.rawValue == (flags.rawValue & Flags.IS_REQUEST_TYPE.rawValue)
     }
+    
     
     public enum Flags: Int {
         case EMPTY = 0b00000

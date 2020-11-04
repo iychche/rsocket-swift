@@ -32,12 +32,20 @@ public class FrameHeaderCodec {
     private static var FRAME_FLAGS_MASK = 0b0000_0011_1111_1111
     private static var FRAME_TYPE_BITS = 6
     private static var FRAME_TYPE_SHIFT = 16 - FRAME_TYPE_BITS
+    private static var disableFrameTypeCheck: Bool = false {
+        didSet {
+            if !DISABLE_FRAME_TYPE_CHECK.isEmpty {
+                disableFrameTypeCheck = true
+            }
+        }
+    }
     
     public static func hasMetaData(_ byteBuf: ByteBuffer) -> Bool {
         return true
     }
     
     public static func flags( byteBuf: inout ByteBuffer) -> Int {
+        //TODO
         return 0
     }
     
@@ -72,4 +80,52 @@ public class FrameHeaderCodec {
         
         return buffer
     }
+    
+    public func frameType(_ byteBuf: inout ByteBuffer) -> FrameType {
+        byteBuf.moveReaderIndex(to: 0)
+        byteBuf.moveReaderIndex(forwardBy: 4)
+        let typeAndFlags = byteBuf.readerIndex & 0xFFFF
+        //TODO
+        let result = FrameType.Cancel
+        return result
+    }
+    
+   /* public static FrameType frameType(ByteBuf byteBuf) {
+      byteBuf.markReaderIndex();
+      byteBuf.skipBytes(Integer.BYTES);
+      int typeAndFlags = byteBuf.readShort() & 0xFFFF;
+
+      FrameType result = FrameType.fromEncodedType(typeAndFlags >> FRAME_TYPE_SHIFT);
+
+      if (FrameType.PAYLOAD == result) {
+        final int flags = typeAndFlags & FRAME_FLAGS_MASK;
+
+        boolean complete = FLAGS_C == (flags & FLAGS_C);
+        boolean next = FLAGS_N == (flags & FLAGS_N);
+        if (next && complete) {
+          result = FrameType.NEXT_COMPLETE;
+        } else if (complete) {
+          result = FrameType.COMPLETE;
+        } else if (next) {
+          result = FrameType.NEXT;
+        } else {
+          throw new IllegalArgumentException("Payload must set either or both of NEXT and COMPLETE.");
+        }
+      }
+
+      byteBuf.resetReaderIndex();
+
+      return result;
+    }*/
+    
+    public func ensureFrameType (frametype: FrameType, byteBuf: inout ByteBuffer) {
+        if !FrameHeaderCodec.disableFrameTypeCheck {
+            let typeInFrame = frameType(&byteBuf)
+            
+            if  typeInFrame != frametype {
+                assertionFailure("expected " + "\(frametype)" + ", but saw " + "\(typeInFrame)")
+            }
+        }
+    }
+    
 }
