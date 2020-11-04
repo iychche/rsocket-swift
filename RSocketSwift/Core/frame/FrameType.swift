@@ -92,37 +92,6 @@ public enum FrameType: Int {
         case IS_REQUEST_TYPE = 0b00010
         case HAS_INITIAL_REQUEST_N = 0b00001
     }
-
-
-//    val hasInitialRequest: Boolean = flags check Flags.HasInitialRequest
-//    val isRequestType: Boolean = flags check Flags.Request
-//    val isFragmentable: Boolean = flags check Flags.Fragmentable
-//    val canHaveMetadata: Boolean = flags check Flags.CanHaveMetadata
-//    val canHaveData: Boolean = flags check Flags.CanHaveData
-
-//    private object Flags {
-//        const val Empty = 0
-//        const val HasInitialRequest = 1
-//        const val Request = 2
-//        const val Fragmentable = 4
-//        const val CanHaveMetadata = 8
-//        const val CanHaveData = 16
-//    }
-//
-//    companion object {
-//        private val encodedTypes: Array<FrameType?>
-//
-//        init {
-//            val maximumEncodedType = values().map(FrameType::encodedType).maxOrNull() ?: 0
-//            encodedTypes = arrayOfNulls(maximumEncodedType + 1)
-//            values().forEach { encodedTypes[it.encodedType] = it }
-//        }
-//
-//        operator fun invoke(encodedType: Int): FrameType =
-//        encodedTypes[encodedType] ?: throw IllegalArgumentException("Frame type $encodedType is unknown")
-//    }
 }
-
-
 
 
