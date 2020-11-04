@@ -35,8 +35,11 @@ public class SetupFrameCodec {
                               metadataMimeType: String,
                               dataMimeType: String,
                               setupPayload: Payload) -> ByteBuffer {
+      
+        //TODO: resumeToken: Unpooled.EMPTY_BUFFER :- have to fine equivalent in swiftNIO
+        var resumeToken = ByteBuffer.init()
         
-        return encode(allocator, lease: lease, keepaliveInterval: keepaliveInterval, maxLifetime: maxLifetime, resumeToken: Unpooled.EMPTY_BUFFER, metadataMimeType: metadataMimeType, dataMimeType: dataMimeType, setupPayload: setupPayload)
+        return encode(allocator, lease: lease, keepaliveInterval: keepaliveInterval, maxLifetime: maxLifetime, resumeToken: &resumeToken, metadataMimeType: metadataMimeType, dataMimeType: dataMimeType, setupPayload: setupPayload)
         
     }
     
@@ -79,7 +82,7 @@ public class SetupFrameCodec {
             resumeToken.moveReaderIndex(to: 0)
         }
         
-       //TODO
+       //TODO find the equivalent of ByteBufUtil.utf8Bytes in Swift NIO
        /* // Write metadata mime-type
         int length = ByteBufUtil.utf8Bytes(metadataMimeType);
         header.writeByte(length);
@@ -94,74 +97,101 @@ public class SetupFrameCodec {
         return FrameBodyCodec.encode(allocator, header: header, metadata: metaData, hasMetadata: hasMetadata, data: data)
     }
     
-   /* public static ByteBuf encode(
-        final ByteBufAllocator allocator,
-        final boolean lease,
-        final int keepaliveInterval,
-        final int maxLifetime,
-        final ByteBuf resumeToken,
-        final String metadataMimeType,
-        final String dataMimeType,
-        final Payload setupPayload) {
-
-      final ByteBuf data = setupPayload.sliceData();
-      final boolean hasMetadata = setupPayload.hasMetadata();
-      final ByteBuf metadata = hasMetadata ? setupPayload.sliceMetadata() : null;
-
-      int flags = 0;
-
-      if (resumeToken.readableBytes() > 0) {
-        flags |= FLAGS_RESUME_ENABLE;
-      }
-
-      if (lease) {
-        flags |= FLAGS_WILL_HONOR_LEASE;
-      }
-
-      if (hasMetadata) {
-        flags |= FrameHeaderCodec.FLAGS_M;
-      }
-
-      final ByteBuf header = FrameHeaderCodec.encodeStreamZero(allocator, FrameType.SETUP, flags);
-
-      header.writeInt(CURRENT_VERSION).writeInt(keepaliveInterval).writeInt(maxLifetime);
-
-      if ((flags & FLAGS_RESUME_ENABLE) != 0) {
-        resumeToken.markReaderIndex();
-        header.writeShort(resumeToken.readableBytes()).writeBytes(resumeToken);
-        resumeToken.resetReaderIndex();
-      }
-
-      // Write metadata mime-type
-      int length = ByteBufUtil.utf8Bytes(metadataMimeType);
-      header.writeByte(length);
-      ByteBufUtil.writeUtf8(header, metadataMimeType);
-
-      // Write data mime-type
-      length = ByteBufUtil.utf8Bytes(dataMimeType);
-      header.writeByte(length);
-      ByteBufUtil.writeUtf8(header, dataMimeType);
-
-      return FrameBodyCodec.encode(allocator, header, metadata, hasMetadata, data);
+    public static func version(byteBuf: ByteBuffer) -> Int {
+        //TODO
+        return 0
+    }
+    /*public static int version(ByteBuf byteBuf) {
+      FrameHeaderCodec.ensureFrameType(FrameType.SETUP, byteBuf);
+      byteBuf.markReaderIndex();
+      int version = byteBuf.skipBytes(VERSION_FIELD_OFFSET).readInt();
+      byteBuf.resetReaderIndex();
+      return version;
     }*/
     
-    /*public static ByteBuf encode(
-        final ByteBufAllocator allocator,
-        final boolean lease,
-        final int keepaliveInterval,
-        final int maxLifetime,
-        final String metadataMimeType,
-        final String dataMimeType,
-        final Payload setupPayload) {
-      return encode(
-          allocator,
-          lease,
-          keepaliveInterval,
-          maxLifetime,
-          Unpooled.EMPTY_BUFFER,
-          metadataMimeType,
-          dataMimeType,
-          setupPayload);
-    }*/
+    public static func humanReadableVersion(byteBuf: ByteBuffer) -> String {
+        let encodedVersion = version(byteBuf: byteBuf)
+        return "\(VersionCodec.major(version: encodedVersion))" + "." + "\(VersionCodec.minor(version: encodedVersion))"
+    }
+    
+    public static func isSupportedVersion(byteBuf: ByteBuffer) -> Bool {
+        return CURRENT_VERSION == version(byteBuf: byteBuf)
+    }
+    
+    public static func resumeTokenLength(byteBuf: inout ByteBuffer) -> Int {
+        //TODO Cross check the functionality
+        byteBuf.moveReaderIndex(to: 0)
+        byteBuf.moveReaderIndex(forwardBy: VARIABLE_DATA_OFFSET)
+        let tokenLength = byteBuf.readerIndex & 0xFFFF
+        byteBuf.moveReaderIndex(to: 0)
+        return tokenLength
+    }
+
+    public static func keepAliveInterval(byteBuf: inout ByteBuffer) -> Int {
+        byteBuf.moveReaderIndex(to: 0)
+        byteBuf.moveReaderIndex(forwardBy: KEEPALIVE_INTERVAL_FIELD_OFFSET)
+        let keepAliveInterval = byteBuf.readInteger(as: Int.self)!
+        byteBuf.moveReaderIndex(to: 0)
+        return keepAliveInterval
+    }
+  
+    public static func keepAliveMaxLifetime(byteBuf: inout ByteBuffer) -> Int {
+        byteBuf.moveReaderIndex(to: 0)
+        byteBuf.moveReaderIndex(forwardBy: KEEPALIVE_MAX_LIFETIME_FIELD_OFFSET)
+        let keepAliveMaxLifetime = byteBuf.readInteger(as: Int.self)!
+        byteBuf.moveReaderIndex(to: 0)
+        return keepAliveMaxLifetime
+    }
+
+    public static func honorLease(byteBuf: inout ByteBuffer) -> Bool {
+        return FLAGS_WILL_HONOR_LEASE & FrameHeaderCodec.flags(byteBuf: &byteBuf) == FLAGS_WILL_HONOR_LEASE
+    }
+    
+    public static func resumeEnabled(byteBuf: inout ByteBuffer) -> Bool {
+        return FLAGS_RESUME_ENABLE & FrameHeaderCodec.flags(byteBuf: &byteBuf) == FLAGS_RESUME_ENABLE
+    }
+    
+    public static func metadata(byteBuf: inout ByteBuffer) -> ByteBuffer? {
+        let hasMetadata = FrameHeaderCodec.hasMetaData(byteBuf)
+        if !hasMetadata {
+            return nil
+        }
+        byteBuf.moveReaderIndex(to: 0)
+        skipToPayload(byteBuf: &byteBuf)
+        let metadata = FrameBodyCodec.metadataWithoutMarking(byteBuf: byteBuf)
+        byteBuf.moveReaderIndex(to: 0)
+        return metadata
+    }
+    
+    public static func data(byteBuf: inout ByteBuffer) -> ByteBuffer {
+        let hasMetadata = FrameHeaderCodec.hasMetaData(byteBuf)
+        byteBuf.moveReaderIndex(to: 0)
+        skipToPayload(byteBuf: &byteBuf)
+        let data = FrameBodyCodec.dataWithoutMarking(byteBuf: byteBuf, hasMetadata: hasMetadata)
+        byteBuf.moveReaderIndex(to: 0)
+        return data
+    }
+    
+    public static func bytesToSkipToMimeType(byteBuf: inout ByteBuffer) -> Int {
+        var bytesToSkip = VARIABLE_DATA_OFFSET
+        if (FLAGS_RESUME_ENABLE & FrameHeaderCodec.flags(byteBuf: &byteBuf)) == FLAGS_RESUME_ENABLE {
+            bytesToSkip += resumeTokenLength(byteBuf: &byteBuf) + 2 //Short.BYTES = 2
+            
+        }
+        return bytesToSkip
+    }
+    
+    public static func skipToPayload(byteBuf: inout ByteBuffer) {
+        
+        //TODO Cross check the functionality
+        let skip = bytesToSkipToMimeType(byteBuf: &byteBuf)
+        byteBuf.moveReaderIndex(forwardBy: skip)
+        var length = byteBuf.readerIndex
+        byteBuf.moveReaderIndex(to: skip + 1)
+        byteBuf.moveReaderIndex(forwardBy: length)
+        length = byteBuf.readerIndex
+        byteBuf.moveReaderIndex(to: length + 1)
+        
+    }
 }
 
