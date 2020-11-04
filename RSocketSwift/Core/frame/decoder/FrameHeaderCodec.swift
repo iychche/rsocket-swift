@@ -45,6 +45,12 @@ public class FrameHeaderCodec {
         return 6
     }
     
+    static func encodeStreamZero (_ allocator: ByteBufferAllocator,
+                              frameType: FrameType,
+                              flags: Int) -> ByteBuffer {
+         return encode(allocator, streamId: 0, frameTypeEncodeType: FrameType.Flags(rawValue: flags)!, frameType: frameType, flags: flags)
+     }
+     
     public static func encode(_ allocator: ByteBufferAllocator,
                               streamId: Int,
                               frameTypeEncodeType: FrameType.Flags,
