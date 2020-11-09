@@ -28,6 +28,6 @@ public class RequestResponseFrameCodec {
                               fragmentFollows: Bool,
                               metadata: ByteBuffer?,
                               data: ByteBuffer) -> ByteBuffer {
-        return GenericFrameCodec.encode(allocator: allocator, frameType: FrameType.RequestResponse, streamId: streamId, fragmentFollows: fragmentFollows, metadata: metadata, data: data)
+        return GenericFrameCodec.encode(allocator: allocator, frameType: FrameType.RequestResponse.frameTypeValue, streamId: streamId, fragmentFollows: fragmentFollows, metadata: metadata, data: data)
     }
 }

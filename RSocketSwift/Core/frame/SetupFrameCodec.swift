@@ -70,7 +70,7 @@ public class SetupFrameCodec {
             flags |= FrameHeaderCodec.FLAGS_M
         }
         
-        var header = FrameHeaderCodec.encodeStreamZero(allocator, frameType: FrameType.Setup, flags: flags)
+        var header = FrameHeaderCodec.encodeStreamZero(allocator, frameType: FrameType.Setup.frameTypeValue, flags: flags)
         header.writeInteger(CURRENT_VERSION)
         header.writeInteger(keepaliveInterval)
         header.writeInteger(maxLifetime)

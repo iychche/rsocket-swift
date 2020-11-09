@@ -54,21 +54,20 @@ public class FrameHeaderCodec {
     }
     
     static func encodeStreamZero (_ allocator: ByteBufferAllocator,
-                              frameType: FrameType,
+                                  frameType: FrameTypeClass,
                               flags: Int) -> ByteBuffer {
-         return encode(allocator, streamId: 0, frameTypeEncodeType: FrameType.Flags(rawValue: flags)!, frameType: frameType, flags: flags)
+        return encode(allocator, streamId: 0, frameType: frameType, flags: flags)
      }
      
     public static func encode(_ allocator: ByteBufferAllocator,
                               streamId: Int,
-                              frameTypeEncodeType: FrameType.Flags,
-                              frameType: FrameType,
+                              frameType: FrameTypeClass,
                               flags: Int) -> ByteBuffer {
-        if !frameType.canHaveMetaData(FrameType.Flags(rawValue: flags)!) && (flags & FLAGS_M) == FLAGS_M {
+        if !frameType.canHaveMetaData() && (flags & FLAGS_M) == FLAGS_M {
             fatalError("bad value for metadata flag")
         }
         
-        let typeAndFlagsShort: Int16 = Int16(frameTypeEncodeType.rawValue << FRAME_TYPE_SHIFT) | Int16(flags)
+        let typeAndFlagsShort: Int16 = Int16(frameType.getEncodedType() << FRAME_TYPE_SHIFT) | Int16(flags)
         let typeAndFlagsInt: Int = Int(typeAndFlagsShort)
         
         let fullCapacity = streamId + typeAndFlagsInt
@@ -118,14 +117,14 @@ public class FrameHeaderCodec {
       return result;
     }*/
     
-    public func ensureFrameType (frametype: FrameType, byteBuf: inout ByteBuffer) {
+   /* public func ensureFrameType (frametype: FrameType, byteBuf: inout ByteBuffer) {
         if !FrameHeaderCodec.disableFrameTypeCheck {
             let typeInFrame = frameType(&byteBuf)
             
-            if  typeInFrame != frametype {
+            if typeInFrame != frametype {
                 assertionFailure("expected " + "\(frametype)" + ", but saw " + "\(typeInFrame)")
             }
         }
-    }
+    }*/
     
 }

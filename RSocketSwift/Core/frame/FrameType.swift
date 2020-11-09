@@ -8,88 +8,250 @@
 import Foundation
 import NIO
 
-public enum FrameType: Int {
-    case Reserved = 0x00
+public enum FrameType {
 
-    //CONNECTION
-    case Setup = 0x01 // Flags.CanHaveData or Flags.CanHaveMetadata),
-    case Lease = 0x02 // Flags.CanHaveMetadata),
-    case KeepAlive = 0x03 // Flags.CanHaveData),
+     public static var allCases: [FrameType] {
+            return [.Reserved, .Setup]
+        }
+     // Reserved. 
+     case Reserved
+     
+     //CONNECTION
+     case Setup
+     case Lease
+     case KeepAlive
+     
+     //REQUEST
+     case RequestResponse
+     case RequestFnF
+     case RequestStream
+     case RequestChannel
+     
+     // DURING REQUEST
+     case RequestN
+     case Cancel
+     
+     // RESPONSE
+     case Payload
+     case Error
 
-    // METADATA
-    case MetadataPush = 0x0C //, Flags.CanHaveMetadata),
+     // METADATA
+     case MetadataPush
+     
+     // RESUMPTION
+     case Resume
+     case ResumeOk
 
-    //REQUEST
-    case RequestFnF = 0x05 //, Flags.CanHaveData or Flags.CanHaveMetadata or Flags.Fragmentable or Flags.Request),
-    case RequestResponse = 0x04 //, Flags.CanHaveData or Flags.CanHaveMetadata or Flags.Fragmentable or Flags.Request),
-    case RequestStream = 0x06 //, Flags.CanHaveMetadata or Flags.CanHaveData or Flags.HasInitialRequest or Flags.Fragmentable or Flags.Request),
-    case RequestChannel = 0x07 //, Flags.CanHaveMetadata or Flags.CanHaveData or Flags.HasInitialRequest or Flags.Fragmentable or Flags.Request),
+     case Extension
 
-    // DURING REQUEST
-    case RequestN = 0x08 //,
-    case Cancel = 0x09 //,
-
-    // RESPONSE
-    case Payload = 0x0A //, Flags.CanHaveData or Flags.CanHaveMetadata or Flags.Fragmentable),
-    case Error = 0x0B //, Flags.CanHaveData),
-
-    // RESUMPTION
-    case Resume = 0x0D //,
-    case ResumeOk = 0x0E //),
-
-    case Extension = 0x3F //, Flags.CanHaveData or Flags.CanHaveMetadata);
-    
-    private static var FRAME_TYPES_BY_ENCODED_TYPE : [FrameType] = [] {
-        didSet {
-            //TODO
+    var frameTypeValue: FrameTypeClass {
+        switch self {
+            case .Reserved:
+                return FrameTypeClass(encodedType: 0x00)
+            case .Setup:
+                return FrameTypeClass(encodedType: 0x01, flags: Flags.CAN_HAVE_METADATA.rawValue | Flags.CAN_HAVE_DATA.rawValue)
+            case .Lease:
+                return FrameTypeClass(encodedType: 0x02, flags: Flags.CAN_HAVE_METADATA.rawValue)
+            case .RequestResponse:
+                return FrameTypeClass(encodedType: 0x04, flags: Flags.CAN_HAVE_DATA.rawValue |                                                      Flags.CAN_HAVE_METADATA.rawValue |
+                                                             Flags.IS_FRAGMENTABLE.rawValue |
+                                                             Flags.IS_REQUEST_TYPE.rawValue)
+                    
+        case .KeepAlive:
+            return FrameTypeClass(encodedType: 0x03, flags: Flags.CAN_HAVE_DATA.rawValue)
+        case .RequestFnF:
+            return FrameTypeClass(encodedType: 0x05, flags: Flags.CAN_HAVE_DATA.rawValue |                                                          Flags.CAN_HAVE_METADATA.rawValue |
+                                                         Flags.IS_FRAGMENTABLE.rawValue |
+                                                         Flags.IS_REQUEST_TYPE.rawValue)
+        case .RequestStream:
+            return FrameTypeClass(encodedType: 0x06, flags: Flags.CAN_HAVE_METADATA.rawValue |
+                                                         Flags.CAN_HAVE_DATA.rawValue |
+                                                         Flags.HAS_INITIAL_REQUEST_N.rawValue |
+                                                         Flags.IS_FRAGMENTABLE.rawValue |
+                                                         Flags.IS_REQUEST_TYPE.rawValue)
+        case .RequestChannel:
+            return FrameTypeClass(encodedType: 0x07, flags: Flags.CAN_HAVE_METADATA.rawValue |
+                                                         Flags.CAN_HAVE_DATA.rawValue |
+                                                         Flags.HAS_INITIAL_REQUEST_N.rawValue |
+                                                         Flags.IS_FRAGMENTABLE.rawValue |
+                                                         Flags.IS_REQUEST_TYPE.rawValue)
+        case .RequestN:
+            return FrameTypeClass(encodedType: 0x08)
+        case .Cancel:
+            return FrameTypeClass(encodedType: 0x09)
+        case .Payload:
+            return FrameTypeClass(encodedType: 0x0A, flags: Flags.CAN_HAVE_DATA.rawValue |                                                          Flags.CAN_HAVE_METADATA.rawValue |
+                                                         Flags.IS_FRAGMENTABLE.rawValue)
+        case .Error:
+            return FrameTypeClass(encodedType: 0x0B, flags: Flags.CAN_HAVE_DATA.rawValue)
+        case .MetadataPush:
+            return FrameTypeClass(encodedType: 0x0C, flags: Flags.CAN_HAVE_METADATA.rawValue)
+        case .Resume:
+            return FrameTypeClass(encodedType: 0x0D)
+        case .ResumeOk:
+            return FrameTypeClass(encodedType: 0x0E)
+        case .Extension:
+            return FrameTypeClass(encodedType: 0x3F, flags: Flags.CAN_HAVE_DATA.rawValue |                                                          Flags.CAN_HAVE_METADATA.rawValue)
         }
     }
+     public enum Flags: Int {
+         case EMPTY = 0b00000
+         case CAN_HAVE_DATA = 0b10000
+         case CAN_HAVE_METADATA = 0b01000
+         case IS_FRAGMENTABLE = 0b00100
+         case IS_REQUEST_TYPE = 0b00010
+         case HAS_INITIAL_REQUEST_N = 0b00001
+     }
+ }
+
+public class FrameTypeClass {
+    
+    private var encodedType: Int
+    private var flags: Int
+
+    init(encodedType: Int) {
+        self.encodedType = encodedType
+        self.flags = FrameType.Flags.EMPTY.rawValue
+    }
+    
+    init(encodedType: Int, flags: Int) {
+        self.encodedType = encodedType
+        self.flags = flags
+    }
+    
+    private static var FRAME_TYPES_BY_ENCODED_TYPE : [FrameType] = [] {
+         didSet {
+            //TODO
+            
+         }
+     }
+     
+    func getValues(encodeType: Int) {
+        let maxFrameType_Cases = encodeType <= FrameType.allCases.count ? encodeType : FrameType.allCases.count
+        var FRAME_TYPES_BY_ENCODED_TYPE : [FrameType] = []
+        for i in 0...maxFrameType_Cases {
+            FRAME_TYPES_BY_ENCODED_TYPE.append(FrameType.allCases[i])
+        }
+    }
+    
+    public func getEncodedType() -> Int{
+      return encodedType
+    }
+
+     public static func fromEncodedType(encodedType: Int) throws -> FrameType {
+         let frameType: FrameType? = FRAME_TYPES_BY_ENCODED_TYPE[encodedType]
+         guard let frametype =  frameType else {
+             throw NSException(name: NSExceptionName(rawValue: "IllegalArgumentException"), reason: "Frame type is unknown : \(encodedType)", userInfo:nil) as! Error
+         }
+         return frametype
+     }
+     /**
+      * Verifies whether the frame type can have data.
+      - Parameter flags: Flags constant.
+      - Returns: whether the frame type can have data
+      */
+    public func canHaveData() -> Bool {
+        return FrameType.Flags.CAN_HAVE_DATA.rawValue == (flags & FrameType.Flags.CAN_HAVE_DATA.rawValue)
+     }
+     
+     /**
+      * Verifies whether the frame type can have metadata
+      - Parameter flags: Flags constant.
+      - Returns: whether the frame type can have metadata
+      */
+    public func canHaveMetaData() -> Bool {
+        return FrameType.Flags.CAN_HAVE_METADATA.rawValue == (flags & FrameType.Flags.CAN_HAVE_METADATA.rawValue)
+     }
+     
+     /**
+      * Verifies whether the frame type starts with an initial {@code requestN}.
+      - Parameter flags: Flags constant.
+      - Returns: wether the frame type starts with an initial {@code requestN}
+      */
+    public func hasInitialRequestN() -> Bool {
+        return FrameType.Flags.HAS_INITIAL_REQUEST_N.rawValue == (flags & FrameType.Flags.HAS_INITIAL_REQUEST_N.rawValue)
+     }
+     
     /**
-     * Verifies whether the frame type can have data.
+     Verifies whether the frame type is fragmentable.
      - Parameter flags: Flags constant.
-     - Returns: whether the frame type can have data
+     - Returns: whether the frame type is fragmentable
      */
-    public func canHaveData(_ flags: Flags) -> Bool {
-        return Flags.CAN_HAVE_DATA.rawValue == (flags.rawValue & Flags.CAN_HAVE_DATA.rawValue)
-    }
-    
-    /**
-     * Verifies whether the frame type can have metadata
+    public func isFragmentable() -> Bool {
+        return FrameType.Flags.IS_FRAGMENTABLE.rawValue == (flags & FrameType.Flags.IS_FRAGMENTABLE.rawValue)
+     }
+     
+     /**
+     Verifies whether the frame type is a request type.
      - Parameter flags: Flags constant.
-     - Returns: whether the frame type can have metadata
+     - Returns: whether the frame type is a request type
      */
-    public func canHaveMetaData(_ flags: Flags) -> Bool {
-        return Flags.CAN_HAVE_METADATA.rawValue == (flags.rawValue & Flags.CAN_HAVE_METADATA.rawValue)
-    }
+    public func isRequestType() -> Bool {
+        return FrameType.Flags.IS_REQUEST_TYPE.rawValue == (flags & FrameType.Flags.IS_REQUEST_TYPE.rawValue)
+     }
+     
+}
+
+
+/*public enum FrameType {
+
+    public static var allCases: [FrameType] {
+           return [.Reserved(), .Setup()]
+       }
+    /** Reserved. */
+    case Reserved(val: Int = 0x00)
     
-    /**
-     * Verifies whether the frame type starts with an initial {@code requestN}.
-     - Parameter flags: Flags constant.
-     - Returns: wether the frame type starts with an initial {@code requestN}
-     */
-    public func hasInitialRequestN(_ flags: Flags) -> Bool {
-        return Flags.HAS_INITIAL_REQUEST_N.rawValue == (flags.rawValue & Flags.HAS_INITIAL_REQUEST_N.rawValue)
-    }
+    //CONNECTION
+    case Setup(val: Int = 0x01,
+              flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
+                               Flags.CAN_HAVE_METADATA.rawValue)
+    case Lease(val: Int = 0x02, flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue)
+    case KeepAlive(val: Int = 0x03, flagValue: Int = Flags.CAN_HAVE_DATA.rawValue)
     
-   /**
-    Verifies whether the frame type is fragmentable.
-    - Parameter flags: Flags constant.
-    - Returns: whether the frame type is fragmentable
-    */
-    public func isFragmentable(_ flags: Flags) -> Bool {
-        return Flags.IS_FRAGMENTABLE.rawValue == (flags.rawValue & Flags.IS_FRAGMENTABLE.rawValue)
-    }
+    //REQUEST
+    case RequestResponse(val: Int = 0x04,
+                       flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
+                                        Flags.CAN_HAVE_METADATA.rawValue |
+                                        Flags.IS_FRAGMENTABLE.rawValue |
+                                        Flags.IS_REQUEST_TYPE.rawValue)
+    case RequestFnF(val: Int = 0x05,
+                  flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
+                                   Flags.CAN_HAVE_METADATA.rawValue |
+                                   Flags.IS_FRAGMENTABLE.rawValue |
+                                   Flags.IS_REQUEST_TYPE.rawValue)
+    case RequestStream(val: Int = 0x06,
+                     flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue |                                              Flags.CAN_HAVE_DATA.rawValue |
+                                      Flags.HAS_INITIAL_REQUEST_N.rawValue |
+                                      Flags.IS_FRAGMENTABLE.rawValue |
+                                      Flags.IS_REQUEST_TYPE.rawValue)
+    case RequestChannel(val: Int = 0x07,
+                      flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue |                                             Flags.CAN_HAVE_DATA.rawValue |
+                                       Flags.HAS_INITIAL_REQUEST_N.rawValue |
+                                       Flags.IS_FRAGMENTABLE.rawValue |
+                                       Flags.IS_REQUEST_TYPE.rawValue)
     
-    /**
-    Verifies whether the frame type is a request type.
-    - Parameter flags: Flags constant.
-    - Returns: whether the frame type is a request type
-    */
-    public func isRequestType(_ flags: Flags) -> Bool {
-        return Flags.IS_REQUEST_TYPE.rawValue == (flags.rawValue & Flags.IS_REQUEST_TYPE.rawValue)
-    }
+    // DURING REQUEST
+    case RequestN(val: Int = 0x08)
+    case Cancel(val: Int = 0x09)
     
+    // RESPONSE
+    case Payload(val: Int = 0x0A,
+                flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
+                                 Flags.CAN_HAVE_METADATA.rawValue |
+                                 Flags.IS_FRAGMENTABLE.rawValue)
+    case Error(val: Int = 0x0B, flagValue: Int = Flags.CAN_HAVE_DATA.rawValue)
+
+    // METADATA
+    case MetadataPush(val: Int = 0x0C, flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue)
     
+    // RESUMPTION
+    case Resume(val: Int = 0x0D)
+    case ResumeOk(val: Int = 0x0E)
+
+    case Extension(val: Int = 0x3F ,
+                  flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
+                                   Flags.CAN_HAVE_METADATA.rawValue)
+
     public enum Flags: Int {
         case EMPTY = 0b00000
         case CAN_HAVE_DATA = 0b10000
@@ -99,5 +261,4 @@ public enum FrameType: Int {
         case HAS_INITIAL_REQUEST_N = 0b00001
     }
 }
-
-
+ */

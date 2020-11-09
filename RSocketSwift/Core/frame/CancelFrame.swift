@@ -12,12 +12,13 @@ public class CancelFrame: Frame {
     let frame: FrameType
 	var streamId: Int
 
-	init(frame: FrameType, streamId: Int) {
+    init(frame: FrameType, streamId: Int) {
 		self.frame = frame
 		self.streamId = streamId
+
 	}
     
     public func encode( allocator: ByteBufferAllocator, streamId: Int) -> ByteBuffer {
-        return FrameHeaderCodec.encode(allocator, streamId: streamId, frameTypeEncodeType: FrameType.Flags.EMPTY, frameType: FrameType.Cancel, flags: 0)
+        return FrameHeaderCodec.encode(allocator, streamId: streamId, frameType: FrameType.Cancel.frameTypeValue, flags: 0)
     }
 }
