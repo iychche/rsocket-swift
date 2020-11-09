@@ -11,7 +11,7 @@ import NIO
 public enum FrameType {
 
      public static var allCases: [FrameType] {
-        return [.Reserved, .Setup, .Lease, .KeepAlive, .RequestResponse, .RequestFnF, .RequestStream, .RequestChannel, .RequestN, .Cancel, .Payload, .Error, .MetadataPush, .Resume, .ResumeOk, .Extension]
+        return [.Reserved, .Setup, .Lease, .KeepAlive, .RequestResponse, .RequestFnF, .RequestStream, .RequestChannel, .RequestN, .Cancel, .Payload, .Error, .MetadataPush, .Resume, .ResumeOk, .Next, .Complete, .NextComplete, .Extension]
         }
      // Reserved.
      case Reserved
@@ -42,8 +42,10 @@ public enum FrameType {
      case Resume
      case ResumeOk
 
+     case Next
+     case Complete
+     case NextComplete
      case Extension
-
     var frameTypeValue: FrameTypeClass {
         switch self {
             case .Reserved:
@@ -92,6 +94,14 @@ public enum FrameType {
             return FrameTypeClass(encodedType: 0x0E)
         case .Extension:
             return FrameTypeClass(encodedType: 0x3F, flags: Flags.CAN_HAVE_DATA.rawValue |                                                          Flags.CAN_HAVE_METADATA.rawValue)
+        case .Next:
+            return FrameTypeClass(encodedType: 0xA0, flags: Flags.CAN_HAVE_DATA.rawValue |                                                          Flags.CAN_HAVE_METADATA.rawValue |
+                                                         Flags.IS_FRAGMENTABLE.rawValue)
+        case .Complete:
+            return FrameTypeClass(encodedType: 0xB0)
+        case .NextComplete:
+            return FrameTypeClass(encodedType: 0xC0, flags: Flags.CAN_HAVE_DATA.rawValue |                                                          Flags.CAN_HAVE_METADATA.rawValue |
+                                                         Flags.IS_FRAGMENTABLE.rawValue)
         }
     }
      public enum Flags: Int {

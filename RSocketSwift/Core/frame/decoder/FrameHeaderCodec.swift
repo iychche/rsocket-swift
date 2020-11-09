@@ -80,51 +80,42 @@ public class FrameHeaderCodec {
         return buffer
     }
     
-    public func frameType(_ byteBuf: inout ByteBuffer) -> FrameType {
+    public static func frameType(_ byteBuf: inout ByteBuffer) throws -> FrameType {
         byteBuf.moveReaderIndex(to: 0)
         byteBuf.moveReaderIndex(forwardBy: 4)
         let typeAndFlags = byteBuf.readerIndex & 0xFFFF
-        //TODO
-        let result = FrameType.Cancel
-        return result
-    }
-    
-   /* public static FrameType frameType(ByteBuf byteBuf) {
-      byteBuf.markReaderIndex();
-      byteBuf.skipBytes(Integer.BYTES);
-      int typeAndFlags = byteBuf.readShort() & 0xFFFF;
-
-      FrameType result = FrameType.fromEncodedType(typeAndFlags >> FRAME_TYPE_SHIFT);
-
-      if (FrameType.PAYLOAD == result) {
-        final int flags = typeAndFlags & FRAME_FLAGS_MASK;
-
-        boolean complete = FLAGS_C == (flags & FLAGS_C);
-        boolean next = FLAGS_N == (flags & FLAGS_N);
-        if (next && complete) {
-          result = FrameType.NEXT_COMPLETE;
-        } else if (complete) {
-          result = FrameType.COMPLETE;
-        } else if (next) {
-          result = FrameType.NEXT;
-        } else {
-          throw new IllegalArgumentException("Payload must set either or both of NEXT and COMPLETE.");
-        }
-      }
-
-      byteBuf.resetReaderIndex();
-
-      return result;
-    }*/
-    
-   /* public func ensureFrameType (frametype: FrameType, byteBuf: inout ByteBuffer) {
-        if !FrameHeaderCodec.disableFrameTypeCheck {
-            let typeInFrame = frameType(&byteBuf)
+        var result = try? FrameTypeClass.fromEncodedType(encodedType: typeAndFlags
+            >> FrameHeaderCodec.FRAME_TYPE_SHIFT)
+        
+        if FrameType.Payload == result {
+            let flags = typeAndFlags & FrameHeaderCodec.FRAME_FLAGS_MASK
             
-            if typeInFrame != frametype {
-                assertionFailure("expected " + "\(frametype)" + ", but saw " + "\(typeInFrame)")
+            let complete = FrameHeaderCodec.FLAGS_C == (flags & FrameHeaderCodec.FLAGS_C)
+            let next = FrameHeaderCodec.FLAGS_N == (flags & FrameHeaderCodec.FLAGS_N)
+            if next && complete {
+                result = FrameType.NextComplete
+            } else if complete {
+                result = FrameType.Complete
+            } else if next {
+                result = FrameType.Next
+            } else {
+                 throw NSException(name: NSExceptionName(rawValue: "IllegalArgumentException"), reason: "Payload must set either or both of NEXT and COMPLETE.", userInfo:nil) as! Error
             }
         }
-    }*/
+        
+        byteBuf.moveReaderIndex(to: 0)
+        
+        return result!
+    }
+        
+   public static func ensureFrameType (frametype: FrameType, byteBuf: inout ByteBuffer) {
+        if !FrameHeaderCodec.disableFrameTypeCheck {
+            let typeInFrame = try? frameType(&byteBuf)
+            
+            if typeInFrame != frametype {
+                assertionFailure("expected " + "\(frametype)" + ", but saw " + "\(String(describing: typeInFrame))")
+            }
+        }
+    }
     
 }

@@ -97,25 +97,21 @@ public class SetupFrameCodec {
         return FrameBodyCodec.encode(allocator, header: header, metadata: metaData, hasMetadata: hasMetadata, data: data)
     }
     
-    public static func version(byteBuf: ByteBuffer) -> Int {
-        //TODO
-        return 0
+    public static func version(byteBuf: inout ByteBuffer) -> Int {
+        FrameHeaderCodec.ensureFrameType(frametype: FrameType.Setup, byteBuf: &byteBuf)
+        byteBuf.moveReaderIndex(to: 0)
+        byteBuf.moveReaderIndex(forwardBy: SetupFrameCodec.VERSION_FIELD_OFFSET)
+        let version = byteBuf.readerIndex
+        return version
     }
-    /*public static int version(ByteBuf byteBuf) {
-      FrameHeaderCodec.ensureFrameType(FrameType.SETUP, byteBuf);
-      byteBuf.markReaderIndex();
-      int version = byteBuf.skipBytes(VERSION_FIELD_OFFSET).readInt();
-      byteBuf.resetReaderIndex();
-      return version;
-    }*/
-    
-    public static func humanReadableVersion(byteBuf: ByteBuffer) -> String {
-        let encodedVersion = version(byteBuf: byteBuf)
+ 
+    public static func humanReadableVersion(byteBuf: inout ByteBuffer) -> String {
+        let encodedVersion = version(byteBuf: &byteBuf)
         return "\(VersionCodec.major(version: encodedVersion))" + "." + "\(VersionCodec.minor(version: encodedVersion))"
     }
     
-    public static func isSupportedVersion(byteBuf: ByteBuffer) -> Bool {
-        return CURRENT_VERSION == version(byteBuf: byteBuf)
+    public static func isSupportedVersion(byteBuf: inout ByteBuffer) -> Bool {
+        return CURRENT_VERSION == version(byteBuf: &byteBuf)
     }
     
     public static func resumeTokenLength(byteBuf: inout ByteBuffer) -> Int {
