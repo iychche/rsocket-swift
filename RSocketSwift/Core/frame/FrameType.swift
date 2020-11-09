@@ -11,9 +11,9 @@ import NIO
 public enum FrameType {
 
      public static var allCases: [FrameType] {
-            return [.Reserved, .Setup]
+        return [.Reserved, .Setup, .Lease, .KeepAlive, .RequestResponse, .RequestFnF, .RequestStream, .RequestChannel, .RequestN, .Cancel, .Payload, .Error, .MetadataPush, .Resume, .ResumeOk, .Extension]
         }
-     // Reserved. 
+     // Reserved.
      case Reserved
      
      //CONNECTION
@@ -119,20 +119,21 @@ public class FrameTypeClass {
         self.flags = flags
     }
     
-    private static var FRAME_TYPES_BY_ENCODED_TYPE : [FrameType] = [] {
+    private static var FRAME_TYPES_BY_ENCODED_TYPE : [Int:FrameType] = [:] {
          didSet {
-            //TODO
-            
+            for frametype in FrameType.allCases {
+                FRAME_TYPES_BY_ENCODED_TYPE[frametype.frameTypeValue.getEncodedType()] = frametype
+            }
          }
      }
      
-    func getValues(encodeType: Int) {
+   /* func getValues(encodeType: Int) {
         let maxFrameType_Cases = encodeType <= FrameType.allCases.count ? encodeType : FrameType.allCases.count
         var FRAME_TYPES_BY_ENCODED_TYPE : [FrameType] = []
         for i in 0...maxFrameType_Cases {
             FRAME_TYPES_BY_ENCODED_TYPE.append(FrameType.allCases[i])
         }
-    }
+    }*/
     
     public func getEncodedType() -> Int{
       return encodedType
@@ -191,74 +192,3 @@ public class FrameTypeClass {
      }
      
 }
-
-
-/*public enum FrameType {
-
-    public static var allCases: [FrameType] {
-           return [.Reserved(), .Setup()]
-       }
-    /** Reserved. */
-    case Reserved(val: Int = 0x00)
-    
-    //CONNECTION
-    case Setup(val: Int = 0x01,
-              flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
-                               Flags.CAN_HAVE_METADATA.rawValue)
-    case Lease(val: Int = 0x02, flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue)
-    case KeepAlive(val: Int = 0x03, flagValue: Int = Flags.CAN_HAVE_DATA.rawValue)
-    
-    //REQUEST
-    case RequestResponse(val: Int = 0x04,
-                       flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
-                                        Flags.CAN_HAVE_METADATA.rawValue |
-                                        Flags.IS_FRAGMENTABLE.rawValue |
-                                        Flags.IS_REQUEST_TYPE.rawValue)
-    case RequestFnF(val: Int = 0x05,
-                  flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
-                                   Flags.CAN_HAVE_METADATA.rawValue |
-                                   Flags.IS_FRAGMENTABLE.rawValue |
-                                   Flags.IS_REQUEST_TYPE.rawValue)
-    case RequestStream(val: Int = 0x06,
-                     flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue |                                              Flags.CAN_HAVE_DATA.rawValue |
-                                      Flags.HAS_INITIAL_REQUEST_N.rawValue |
-                                      Flags.IS_FRAGMENTABLE.rawValue |
-                                      Flags.IS_REQUEST_TYPE.rawValue)
-    case RequestChannel(val: Int = 0x07,
-                      flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue |                                             Flags.CAN_HAVE_DATA.rawValue |
-                                       Flags.HAS_INITIAL_REQUEST_N.rawValue |
-                                       Flags.IS_FRAGMENTABLE.rawValue |
-                                       Flags.IS_REQUEST_TYPE.rawValue)
-    
-    // DURING REQUEST
-    case RequestN(val: Int = 0x08)
-    case Cancel(val: Int = 0x09)
-    
-    // RESPONSE
-    case Payload(val: Int = 0x0A,
-                flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
-                                 Flags.CAN_HAVE_METADATA.rawValue |
-                                 Flags.IS_FRAGMENTABLE.rawValue)
-    case Error(val: Int = 0x0B, flagValue: Int = Flags.CAN_HAVE_DATA.rawValue)
-
-    // METADATA
-    case MetadataPush(val: Int = 0x0C, flagValue: Int = Flags.CAN_HAVE_METADATA.rawValue)
-    
-    // RESUMPTION
-    case Resume(val: Int = 0x0D)
-    case ResumeOk(val: Int = 0x0E)
-
-    case Extension(val: Int = 0x3F ,
-                  flagValue: Int = Flags.CAN_HAVE_DATA.rawValue |
-                                   Flags.CAN_HAVE_METADATA.rawValue)
-
-    public enum Flags: Int {
-        case EMPTY = 0b00000
-        case CAN_HAVE_DATA = 0b10000
-        case CAN_HAVE_METADATA = 0b01000
-        case IS_FRAGMENTABLE = 0b00100
-        case IS_REQUEST_TYPE = 0b00010
-        case HAS_INITIAL_REQUEST_N = 0b00001
-    }
-}
- */
