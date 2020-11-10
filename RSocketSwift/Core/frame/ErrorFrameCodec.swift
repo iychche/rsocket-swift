@@ -32,7 +32,7 @@ public class ErrorFrameCodec {
     
     public static func encode(_ allocator: ByteBufferAllocator,streamId: Int, data: ByteBuffer, rSocketException: RSocketErrorException? = nil) throws -> ByteBuffer {
         var data = data
-        var header = FrameHeaderCodec.encode(allocator, streamId: streamId, frameTypeEncodeType: FrameType.Flags.EMPTY, frameType: FrameType.Error, flags: 0)
+        var header = FrameHeaderCodec.encode(allocator, streamId: streamId, frameType: FrameType.Error.frameTypeValue, flags: 0)
         
         let errorCode = rSocketException?.getErrorCode() ?? APPLICATION_ERROR
             

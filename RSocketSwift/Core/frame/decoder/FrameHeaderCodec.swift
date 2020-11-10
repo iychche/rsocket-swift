@@ -32,12 +32,20 @@ public class FrameHeaderCodec {
     private static var FRAME_FLAGS_MASK = 0b0000_0011_1111_1111
     private static var FRAME_TYPE_BITS = 6
     private static var FRAME_TYPE_SHIFT = 16 - FRAME_TYPE_BITS
+    private static var disableFrameTypeCheck: Bool = false {
+        didSet {
+            if !DISABLE_FRAME_TYPE_CHECK.isEmpty {
+                disableFrameTypeCheck = true
+            }
+        }
+    }
     
     public static func hasMetaData(_ byteBuf: ByteBuffer) -> Bool {
         return true
     }
     
     public static func flags( byteBuf: inout ByteBuffer) -> Int {
+        //TODO
         return 0
     }
     
@@ -45,16 +53,21 @@ public class FrameHeaderCodec {
         return 6
     }
     
+    static func encodeStreamZero (_ allocator: ByteBufferAllocator,
+                                  frameType: FrameTypeClass,
+                              flags: Int) -> ByteBuffer {
+        return encode(allocator, streamId: 0, frameType: frameType, flags: flags)
+     }
+     
     public static func encode(_ allocator: ByteBufferAllocator,
                               streamId: Int,
-                              frameTypeEncodeType: FrameType.Flags,
-                              frameType: FrameType,
+                              frameType: FrameTypeClass,
                               flags: Int) -> ByteBuffer {
-        if !frameType.canHaveMetaData(FrameType.Flags(rawValue: flags)!) && (flags & FLAGS_M) == FLAGS_M {
+        if !frameType.canHaveMetaData() && (flags & FLAGS_M) == FLAGS_M {
             fatalError("bad value for metadata flag")
         }
         
-        let typeAndFlagsShort: Int16 = Int16(frameTypeEncodeType.rawValue << FRAME_TYPE_SHIFT) | Int16(flags)
+        let typeAndFlagsShort: Int16 = Int16(frameType.getEncodedType() << FRAME_TYPE_SHIFT) | Int16(flags)
         let typeAndFlagsInt: Int = Int(typeAndFlagsShort)
         
         let fullCapacity = streamId + typeAndFlagsInt
@@ -66,4 +79,43 @@ public class FrameHeaderCodec {
         
         return buffer
     }
+    
+    public static func frameType(_ byteBuf: inout ByteBuffer) throws -> FrameType {
+        byteBuf.moveReaderIndex(to: 0)
+        byteBuf.moveReaderIndex(forwardBy: 4)
+        let typeAndFlags = byteBuf.readerIndex & 0xFFFF
+        var result = try? FrameTypeClass.fromEncodedType(encodedType: typeAndFlags
+            >> FrameHeaderCodec.FRAME_TYPE_SHIFT)
+        
+        if FrameType.Payload == result {
+            let flags = typeAndFlags & FrameHeaderCodec.FRAME_FLAGS_MASK
+            
+            let complete = FrameHeaderCodec.FLAGS_C == (flags & FrameHeaderCodec.FLAGS_C)
+            let next = FrameHeaderCodec.FLAGS_N == (flags & FrameHeaderCodec.FLAGS_N)
+            if next && complete {
+                result = FrameType.NextComplete
+            } else if complete {
+                result = FrameType.Complete
+            } else if next {
+                result = FrameType.Next
+            } else {
+                 throw NSException(name: NSExceptionName(rawValue: "IllegalArgumentException"), reason: "Payload must set either or both of NEXT and COMPLETE.", userInfo:nil) as! Error
+            }
+        }
+        
+        byteBuf.moveReaderIndex(to: 0)
+        
+        return result!
+    }
+        
+   public static func ensureFrameType (frametype: FrameType, byteBuf: inout ByteBuffer) {
+        if !FrameHeaderCodec.disableFrameTypeCheck {
+            let typeInFrame = try? frameType(&byteBuf)
+            
+            if typeInFrame != frametype {
+                assertionFailure("expected " + "\(frametype)" + ", but saw " + "\(String(describing: typeInFrame))")
+            }
+        }
+    }
+    
 }

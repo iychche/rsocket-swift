@@ -39,7 +39,7 @@ public class GenericFrameCodec {
     }
     
     public static func encode(allocator: ByteBufferAllocator,
-                         frameType: FrameType,
+                              frameType: FrameTypeClass,
                          streamId: Int,
                          fragmentFollows: Bool,
                          metadata: ByteBuffer?,
@@ -57,7 +57,7 @@ public class GenericFrameCodec {
     }
     
     public static func encode(_ allocator: ByteBufferAllocator,
-                              frameType: FrameType,
+                              frameType: FrameTypeClass,
                               streamId: Int,
                               fragmentFollows: Bool,
                               complete: Bool,
@@ -85,7 +85,6 @@ public class GenericFrameCodec {
         
         var header = FrameHeaderCodec.encode(allocator,
                                              streamId: streamId,
-                                             frameTypeEncodeType: FrameType.Flags.CAN_HAVE_METADATA,
                                              frameType: frameType,
                                              flags: flags)
         if requestN > 0 {
